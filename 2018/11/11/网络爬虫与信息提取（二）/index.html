@@ -7,7 +7,7 @@
 
     
 
-    <title>Mac配置默认python版本 | 拔山力尽吴江水，今古悠悠空浪花</title>
+    <title>网络爬虫与信息提取（二） | 拔山力尽吴江水，今古悠悠空浪花</title>
     <meta name="author" content="Hu Qimei">
     
     <meta name="description" content="blog">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="Mac配置默认python版本"/>
+    <meta property="og:title" content="网络爬虫与信息提取（二）"/>
     <meta property="og:site_name" content="胡其美个人博客"/>
 
     
@@ -227,12 +227,12 @@
             <div class="article-title">
                 
     
-        <h1>Mac配置默认python版本</h1>
+        <h1>网络爬虫与信息提取（二）</h1>
     
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-10-18T16:39:16.000Z"><a href="/2018/10/19/mac配置python版本/">2018-10-19</a></time>
+            <time class="pink-link-context" datetime="2018-11-11T06:39:16.000Z"><a href="/2018/11/11/网络爬虫与信息提取（二）/">2018-11-11</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -242,30 +242,65 @@
             
 
             <div class="toc pink-link-context hide-on-med-and-down">
-    
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#re库的基本使用"><span class="section table-of-contents-text">re库的基本使用</span></a></li></ol>
 </div>
 
 
             <div class="entry pink-link-context">
-                <p>将默认的python2更改为python3</p>
-<p>1.找到python3的路径：<code>which python3</code></p>
-<p>2.修改bashrc文件：<code>vi ~/.bashrc</code></p>
-<p>​    添加一行：alias python=’usr/local/bin/python3’</p>
-<p>3.重新加载bashrc： <code>. ~/.bashrc</code></p>
-<p>4.验证：python</p>
+                <p>什么是正则表达式：</p>
+<p>​    <u>通用的字符串表达框架</u></p>
+<p>​    <u>简洁表达一组字符串的表达式</u></p>
+<p>​    <u>针对字符串表达“简洁”和“特征”思想的工具</u></p>
+<p>​    <u>判断某字符串的特征归属</u></p>
+<p>在文本处理中非常常用：</p>
+<p>​    <u>表达文本类型的特征（病毒、入侵等）</u></p>
+<p>​    <u>同时查找或替换一组字符串</u></p>
+<p>​    <u>匹配字符串的全部或部分</u></p>
+<p>常用操作符:</p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108184401581.png" alt="image-20181108184401581"></p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108184457242.png" alt="image-20181108184457242"></p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108184901207.png" alt="image-20181108184901207"></p>
+<p>ip地址：</p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108185106845.png" alt="image-20181108185106845"></p>
+<h2 id="re库的基本使用"><a href="#re库的基本使用" class="headerlink" title="re库的基本使用"></a>re库的基本使用</h2><p>正则表达式的表示类型</p>
+<p>re库采用raw string类型（原生字符串类型，即不包含转义字符的字符串）表示正正则表达式，表示为：r’text’</p>
+<p>r’[1-9]\d{5}’     邮政编码</p>
+<p>r’\d{3}-\d{8}|\d{4}-\d{7}’  电话号码</p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108191122057.png" alt="image-20181108191122057"></p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108191154777.png" alt="image-20181108191154777"></p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108191215745.png" alt="image-20181108191215745"></p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108191601551.png" alt="image-20181108191601551"></p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108191850962.png" alt="image-20181108191850962"></p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108193300791.png" alt="image-20181108193300791"></p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108193626742.png" alt="image-20181108193626742"></p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108194613804.png" alt="image-20181108194613804"></p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108195450251.png" alt="image-20181108195450251"></p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108195528358.png" alt="image-20181108195528358"></p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108195604714.png" alt="image-20181108195604714"></p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108200351062.png" alt="image-20181108200351062"></p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181108235635114.png" alt="image-20181108235635114"></p>
+<p>默认为贪婪匹配，若需最小匹配：</p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181109200044589.png" alt="image-20181109200044589"></p>
+<p>小结</p>
+<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181109200119474.png" alt="image-20181109200119474"></p>
+<p>实例：</p>
+<p>目标：获取淘宝搜索页面的信息，提取商品名称和价格。</p>
+<p>理解：</p>
+<p>1.淘宝的搜索接口</p>
+<p>2.翻页的处理</p>
+<p>技术路线：</p>
+<p>Requests + re</p>
+<p>程序结构设计：</p>
+<p>步骤1：提交商品搜索请求，循环获取页面</p>
+<p>步骤2：对于每个页面，提取商品名称和价格信息</p>
+<p>步骤3：将信息输出到屏幕上</p>
 
                 
-<p class="pink-link-context">
-    <a href="/2018/10/31/古诗摘抄/" rel="next" title="">
-    Prev: 
-  </a>
-</p>
-
 
 
 <p class="pink-link-context">
-    <a href="/2018/10/19/TCP/" rel="next" title="TCP">
-    Next: TCP
+    <a href="/2018/11/08/网络爬虫与信息提取/" rel="next" title="网络爬虫与信息提取">
+    Next: 网络爬虫与信息提取
   </a>
 </p>
 
