@@ -7,7 +7,7 @@
 
     
 
-    <title>网络爬虫与信息提取 | 白日放歌须纵酒</title>
+    <title>网络爬虫与信息提取 | 暖风熏得游人醉，直把杭州作汴州</title>
     <meta name="author" content="Hu Qimei">
     
     <meta name="description" content="blog">
@@ -98,6 +98,20 @@
             </ul>
             <div>
     <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="http://ww2.sinaimg.cn/small/74990035jw1f1rjkd681bj20rs0rsdhg.jpg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">你的大名</p>
+                        <p class="desc">Web前端/iOS/技术宅</p>
+                    </div>
+                </div>
+            </div>
+        </li>
         
 
         
@@ -254,9 +268,9 @@
 
             <div class="entry pink-link-context">
                 <h2 id="网络爬虫与信息提取之一：规则-requests库"><a href="#网络爬虫与信息提取之一：规则-requests库" class="headerlink" title="网络爬虫与信息提取之一：规则(requests库)"></a>网络爬虫与信息提取之一：规则(requests库)</h2><p>官方文档：<a href="http://docs.python-requests.org/en/master/" target="_blank" rel="noopener">http://docs.python-requests.org/en/master/</a></p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181106194612284.png" alt="image-20181106194612284"></p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181106200422305.png" alt="image-20181106200422305"></p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181106200525161.png" alt="image-20181106200525161"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/1.png" alt="image-20181106194612284"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181106200422305.png" alt="image-20181106200422305"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181106200525161.png" alt="image-20181106200525161"></p>
 <p>查看网站robots协议：一般在网站根目录下，如：<a href="http://www.baidu.com/robots.txt，除非是类人行为，一般要遵守该协议。" target="_blank" rel="noopener">http://www.baidu.com/robots.txt，除非是类人行为，一般要遵守该协议。</a></p>
 <p>对于禁止虫爬取的网站，通过设置user-agent来爬取，以亚马逊网站为例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">kv = &#123;<span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0'</span>&#125;</span><br><span class="line"><span class="comment">#亚马逊商品链接</span></span><br><span class="line">url = <span class="string">"https://www.amazon.cn/dp/B078FFX8B6/ref=cngwdyfloorv2_recs_0?pf_rd_p=d2aa3428-dc2b-4cfe-bca6-5e3a33f2342e&amp;pf_rd_s=desktop-2&amp;pf_rd_t=36701&amp;pf_rd_i=desktop&amp;pf_rd_m=A1AJ19PSB66TGU&amp;pf_rd_r=E719K47QZ9Q399T6QCEC&amp;pf_rd_r=E719K47QZ9Q399T6QCEC&amp;pf_rd_p=d2aa3428-dc2b-4cfe-bca6-5e3a33f2342e"</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    r = requests.get(url, headers=kv)</span><br><span class="line"><span class="comment">#     r.status_code</span></span><br><span class="line"><span class="comment">#     r.requests.headers</span></span><br><span class="line">    r.raise_for_status</span><br><span class="line">    r.encoding = r.apparent_encoding</span><br><span class="line">    print(r.text[<span class="number">1000</span>:<span class="number">2000</span>])</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">"爬取失败"</span>)</span><br></pre></td></tr></table></figure>
@@ -280,24 +294,24 @@
 <p>Attributes 标签的属性</p>
 <p>NavigableString标签内非属性字符串</p>
 <p>Comment 标签内字符串的注释部分</p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107194824311.png" alt="image-20181107194824311"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107194824311.png" alt="image-20181107194824311"></p>
 <p>r = requests.get(url)</p>
 <p>Demo = r.text</p>
 <p>Soup = BeautifulSoup(demo, “html.parser”)</p>
 <p>遍历html内容：</p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195135042.png" alt="image-20181107195135042"></p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195434568.png" alt="image-20181107195434568"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195135042.png" alt="image-20181107195135042"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195434568.png" alt="image-20181107195434568"></p>
 <p>上行遍历：</p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195516453.png" alt="image-20181107195516453"></p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195634449.png" alt="image-20181107195634449"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195516453.png" alt="image-20181107195516453"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195634449.png" alt="image-20181107195634449"></p>
 <p>平行遍历：（发生在同一个父节点下的各节点）</p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195709969.png" alt="image-20181107195709969"></p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195958025.png" alt="image-20181107195958025"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195709969.png" alt="image-20181107195709969"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195958025.png" alt="image-20181107195958025"></p>
 <p>总结：</p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107200056033.png" alt="image-20181107200056033"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107200056033.png" alt="image-20181107200056033"></p>
 <p>如何让html内容更友好的显示：</p>
 <p>使用soup的prettify方法</p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107200602029.png" alt="image-20181107200602029"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107200602029.png" alt="image-20181107200602029"></p>
 <p>信息标记的三种形式：</p>
 <p>Xml，json，yaml</p>
 <p>eXtensible Markup Language 扩展标记语言 ，以标签为主表达信息。</p>
@@ -305,11 +319,11 @@
 <p>YAML Ain’t Markup Language 无类型的键值对。（用缩进表达所属关系， - 表达并列关系 | 表示整块数据，# 表示注释）</p>
 <p>实例：</p>
 <p>Xml：(可扩展性好，但繁琐)</p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107201718580.png" alt="image-20181107201718580"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107201718580.png" alt="image-20181107201718580"></p>
 <p>JSON:（信息有类型，适合程序处理，较xml简洁）</p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107201737660.png" alt="image-20181107201737660"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107201737660.png" alt="image-20181107201737660"></p>
 <p>YAML：（无类型，文本信息比例较高，可读性好）</p>
-<p> <img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107201754174.png" alt="image-20181107201754174"></p>
+<p> <img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107201754174.png" alt="image-20181107201754174"></p>
 <p>比较：</p>
 <p>XML:Internet上的信息交互与传递。</p>
 <p>JSON:移动应用云端和节点的信息通信，无注释（缺点）。（用在程序对接口处理的地方）</p>
@@ -328,9 +342,9 @@
 <p>思路：1）搜索所有的a标签</p>
 <p>​    2)解析a标签格式，提取href后的链接内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for link in soup.find_all(&apos;a&apos;):</span><br><span class="line">    print(link.get(&apos;href&apos;))</span><br></pre></td></tr></table></figure>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107210325892.png" alt="image-20181107210325892"></p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107210348818.png" alt="image-20181107210348818"></p>
-<p><img src="/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107210620715.png" alt="image-20181107210620715"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107210325892.png" alt="image-20181107210325892"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107210348818.png" alt="image-20181107210348818"></p>
+<p><img src="/2018/11/08/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107210620715.png" alt="image-20181107210620715"></p>
 <p>实战：</p>
 <p>定向爬虫（静态网页的爬取）</p>
 <p>爬取大学排名数据：<br>步骤1：从网络上获取大学排名网页内容</p>
@@ -386,6 +400,56 @@
 
     </main>
     <footer class="page-footer indigo darken-1">
+    
+    <div class="footer-container container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/1956184117" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/raytaylorlin" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="http://raytaylorlin.com/" target="_blank">raytaylorism主题作者的技术博客</a>
+                
+                    <a class="social-link" href="https://github.com/raytaylorlin" target="_blank">Github地址（测试友情链接）</a>
+                
+            </div>
+            
+        </div>
+    </div>
     
 
     <div class="footer-copyright pink-link-context">
@@ -487,6 +551,9 @@
             });
             $('.indicator').addClass('pink lighten-2');
 
+            
+            // 添加new标签
+            $('.menu-reading, .menu-about').append('<span class="new badge pink"></span>');
             
 
             // 搜索功能
