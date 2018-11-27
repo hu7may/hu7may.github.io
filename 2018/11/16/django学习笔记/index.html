@@ -1,0 +1,645 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>用django搭建个人博客 | 能就江楼消暑否，比君茅舍较清凉</title>
+    <meta name="author" content="Hu Qimei">
+    
+    <meta name="description" content="blog">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="用django搭建个人博客"/>
+    <meta property="og:site_name" content="胡其美的个人博客"/>
+
+    
+    <meta property="og:image" content=""/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="胡其美的个人博客" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">胡其美的个人博客</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="http://ww2.sinaimg.cn/small/74990035jw1f1rjkd681bj20rs0rsdhg.jpg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">胡其美</p>
+                        <p class="desc">python/data mining</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/programming/">
+                    programming <span class="right">5 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/dream/">
+                    dream <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/programing-notes/">
+                    programing-notes <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/programming/">programming</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>用django搭建个人博客</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2018-11-16T10:01:02.000Z"><a href="/2018/11/16/django学习笔记/">2018-11-16</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/django-博客/" class="chip pink lighten-1">django, 博客</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-建立项目"><span class="section table-of-contents-text">1.建立项目</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-1目标"><span class="section table-of-contents-text">1.1目标</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-2创建虚拟环境"><span class="section table-of-contents-text">1.2创建虚拟环境</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-3安装Django"><span class="section table-of-contents-text">1.3安装Django</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-4创建项目"><span class="section table-of-contents-text">1.4创建项目</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-5创建数据库"><span class="section table-of-contents-text">1.5创建数据库</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-6查看项目"><span class="section table-of-contents-text">1.6查看项目</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2创建引用程序"><span class="section table-of-contents-text">2创建引用程序</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-1定义模型"><span class="section table-of-contents-text">2.1定义模型</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-2激活模型"><span class="section table-of-contents-text">2.2激活模型</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-3管理网站"><span class="section table-of-contents-text">2.3管理网站</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#1-创建超级用户"><span class="section table-of-contents-text">1.创建超级用户</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-向管理网站注册模型"><span class="section table-of-contents-text">2.向管理网站注册模型</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#3-添加Topic"><span class="section table-of-contents-text">3.添加Topic</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-4定义模型Entry"><span class="section table-of-contents-text">2.4定义模型Entry</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-5迁移模型Entry"><span class="section table-of-contents-text">2.5迁移模型Entry</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-6向管理网站注册entry"><span class="section table-of-contents-text">2.6向管理网站注册entry</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-7Django-shell"><span class="section table-of-contents-text">2.7Django shell</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3创建网页：学习笔记的主页"><span class="section table-of-contents-text">3创建网页：学习笔记的主页</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-1映射url"><span class="section table-of-contents-text">3.1映射url</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-2编写视图"><span class="section table-of-contents-text">3.2编写视图</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-3编写模板"><span class="section table-of-contents-text">3.3编写模板</span></a></li></ol></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p><strong>说明</strong>：本系列文章系笔者学习Django(官方文档：<a href="https://docs.djangoproject.com/en/2.1/）所做笔记，内容基本来自《Python" target="_blank" rel="noopener">https://docs.djangoproject.com/en/2.1/）所做笔记，内容基本来自《Python</a> Crash Course》(链接：<a href="https://nostarch.com/pythoncrashcourse/)。" target="_blank" rel="noopener">https://nostarch.com/pythoncrashcourse/)。</a></p>
+<h3 id="1-建立项目"><a href="#1-建立项目" class="headerlink" title="1.建立项目"></a>1.建立项目</h3><h4 id="1-1目标"><a href="#1-1目标" class="headerlink" title="1.1目标"></a>1.1目标</h4><p>​    本系列文章编写一个“learning_log”的学习笔记web应用程序，让用户可以记录感兴趣的主题。并在每个学习主题的过程中添加日志条目。主页对这个网站进行描述，邀请用户注册登录，登陆之后可以创建新的主题，添加新的条目以及阅读现有条目。</p>
+<h4 id="1-2创建虚拟环境"><a href="#1-2创建虚拟环境" class="headerlink" title="1.2创建虚拟环境"></a>1.2创建虚拟环境</h4><p>​    为了将本项目的库与其他项目隔离，且为了以后部署到服务器，也是必须的。</p>
+<p>​    virtualenv，anaconda的conda工具等都可以管理环境。这里以python的venv模块为例。首先创建一个保存项目的文件夹，可以以项目名称为名learning_blog，进入该目录，运行下面的命令。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python -m venv ll_env	<span class="comment">#创建环境</span></span><br><span class="line">source ll_env/bin/activate	<span class="comment">#激活环境 mac和linux, win运行命令：ll_env\bin\activate</span></span><br><span class="line"><span class="comment">#停止使用虚拟环境命令：deactivate</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-3安装Django"><a href="#1-3安装Django" class="headerlink" title="1.3安装Django"></a>1.3安装Django</h4><p>​    在虚拟环境中安装django: <code>pip install Django</code></p>
+<h4 id="1-4创建项目"><a href="#1-4创建项目" class="headerlink" title="1.4创建项目"></a>1.4创建项目</h4><p>​    运行命令(注意命令中有个点号）: <code>diango-admin.py startproject learning_log .</code></p>
+<h4 id="1-5创建数据库"><a href="#1-5创建数据库" class="headerlink" title="1.5创建数据库"></a>1.5创建数据库</h4><p>​    通过 <code>python mange.py migrage</code>    迁移（修改）数据库，首先运行指令migrate使数据库与项目当前状态匹配，此时会看到目录中多了一个SQLite文件。</p>
+<h4 id="1-6查看项目"><a href="#1-6查看项目" class="headerlink" title="1.6查看项目"></a>1.6查看项目</h4><p>​    运行 <code>python manage.py runserver 8001</code>，然后在浏览器打开<a href="http://127.0.0.1:8001" target="_blank" rel="noopener">http://127.0.0.1:8001</a>, 即可看到效果。</p>
+<h3 id="2创建引用程序"><a href="#2创建引用程序" class="headerlink" title="2创建引用程序"></a>2创建引用程序</h3><p>​    Django由一系列应用程序组成，现在先创建一个，后面还会闯将一个管理用户账户的应用程序。在manage.py所在目录运行：<code>python manage.py startapp learning_logs</code>  新建一个learning_logs的app，里面包含了创建django应用所需的基础设施，models.py用来定义将在应用程序中管理的数据。</p>
+<h4 id="2-1定义模型"><a href="#2-1定义模型" class="headerlink" title="2.1定义模型"></a>2.1定义模型</h4><p>​    进入learning_logs目录，在models.py中创建自己的模型，模型告诉django如何存储应用程序中的数据。在代码上来看，模型就是一个类，包含属性和方法。下面这段插入models.py的代码创建用户将要存储的主题(Topic)模型,该模型继承自Model(django中的模型基本功能类)，拥有text和date_addede两个属性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Topic</span><span class="params">(models.Model)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="string">"""用户学习的主题"""</span> </span><br><span class="line"></span><br><span class="line">    text = models.CharField(max_length=<span class="number">200</span>) </span><br><span class="line"></span><br><span class="line">    date_added = models.DateTimeField(auto_now_add=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="string">"""返回模型的字符串表示"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> self.text</span><br></pre></td></tr></table></figure>
+<h4 id="2-2激活模型"><a href="#2-2激活模型" class="headerlink" title="2.2激活模型"></a>2.2激活模型</h4><p>​    要使用上一步创建的模型，先要将应用层程序包含到项目中，为此需要在settings.py(位于learning_log/learning_log/)中的INSTALLED_APPS字段中加入’learing_logs’。然后需要修改数据库，使其能够存储于模型Topic相关的信息，<code>python manage.py makemigrations learning_logs</code> 这条命令让django确定该如何修改数据库，使其能够存储于模型Topic相关的信息（将在数据库中为Topic建一张表）。然后要应用这种迁移：<code>python manage.py migrate</code>，让django来修改数据库。</p>
+<p>​    每当需要修改“学习笔记”管理的数据时，都采取如下三个步骤：修改models.py；对learning_logs 调用makemigrations ；让Django迁移项目。</p>
+<h4 id="2-3管理网站"><a href="#2-3管理网站" class="headerlink" title="2.3管理网站"></a>2.3管理网站</h4><h5 id="1-创建超级用户"><a href="#1-创建超级用户" class="headerlink" title="1.创建超级用户"></a>1.创建超级用户</h5><p>​    <code>python manage.py createsuperuser</code>，根据提示输入用户名、邮件和密码。</p>
+<h5 id="2-向管理网站注册模型"><a href="#2-向管理网站注册模型" class="headerlink" title="2.向管理网站注册模型"></a>2.向管理网站注册模型</h5><p>​    在应用程序所在目录的admin.py中注册Topic模型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from learning_logs.models import Topic</span><br><span class="line">admin.site.register(Topic)</span><br></pre></td></tr></table></figure>
+<p>​    此时用超级用户访问：<a href="http://localhost:8000/admin" target="_blank" rel="noopener">http://localhost:8000/admin</a>, 便可以看到刚定义的Topic模型。</p>
+<h5 id="3-添加Topic"><a href="#3-添加Topic" class="headerlink" title="3.添加Topic"></a>3.添加Topic</h5><p>​    进入第二部的网页后，可以自由添加Toipic。</p>
+<p><img src="/2018/11/16/django学习笔记/1.png" alt="image-20181117160821714"></p>
+<h4 id="2-4定义模型Entry"><a href="#2-4定义模型Entry" class="headerlink" title="2.4定义模型Entry"></a>2.4定义模型Entry</h4><p>​    在学习笔记中添加添加条目定义模型。每个条目与一个特定的主题相关联（多对一关系）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Entry(models.Model):</span><br><span class="line"></span><br><span class="line">    &quot;&quot;&quot;学到的有关某个主题的具体知识&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">    topic = models.ForeignKey(Topic)    #外键引用了数据库中的另一条记录。这里将每个条目关联到特定的主题。</span><br><span class="line"></span><br><span class="line">    text = models.TextField()</span><br><span class="line"></span><br><span class="line">    date_added = models.DateTimeField(auto_now_add=True)    #每个条目的时间戳</span><br><span class="line"></span><br><span class="line">    class Meta:     #在Entry中嵌套meta类，存储用于管理模型的额外信息</span><br><span class="line"></span><br><span class="line">        verbose_name_plural = &apos;entries&apos;</span><br><span class="line"></span><br><span class="line">    def __str__(self):</span><br><span class="line"></span><br><span class="line">        &quot;&quot;&quot;返回模型的字符串表示&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">        return self.text[:50] + &quot;...&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="2-5迁移模型Entry"><a href="#2-5迁移模型Entry" class="headerlink" title="2.5迁移模型Entry"></a>2.5迁移模型Entry</h4><p>​    现在添加了一个新模型，所以需要再次迁移数据库：修改models.py、执行python mange.py makemigrations app_name、再执行python manage.py migrate。</p>
+<h4 id="2-6向管理网站注册entry"><a href="#2-6向管理网站注册entry" class="headerlink" title="2.6向管理网站注册entry"></a>2.6向管理网站注册entry</h4><p>​    在admin.py中添加。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from learning_logs.models import Entry</span><br><span class="line">admin.site.register(Entry)</span><br></pre></td></tr></table></figure>
+<h4 id="2-7Django-shell"><a href="#2-7Django-shell" class="headerlink" title="2.7Django shell"></a>2.7Django shell</h4><p>​    输入一些数据之后，通过交互式终端可以查看这些数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(ll_env) QimeideAir:learning_log qimeihu$ python manage.py shell</span><br><span class="line">Python 3.7.0 (default, Jun 28 2018, 07:39:16)</span><br><span class="line">[Clang 4.0.1 (tags/RELEASE_401/final)] on darwin</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">(InteractiveConsole)</span><br><span class="line">from learning_logs.models import Topic</span><br><span class="line">Topic.objects.all()</span><br><span class="line">&lt;QuerySet [&lt;Topic: hust&gt;, &lt;Topic: whut&gt;, &lt;Topic: whu&gt;]&gt;</span><br></pre></td></tr></table></figure>
+<p>​    这里显示新建了whut,whu,hust三个Topic。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">topics = Topic.objects.all()</span><br><span class="line">for topic in topics:</span><br><span class="line">...     print(topic.id, topic)</span><br><span class="line">...</span><br><span class="line">5 hust</span><br><span class="line">6 whut</span><br><span class="line">7 whu</span><br></pre></td></tr></table></figure>
+<p>​    查看分配给每个主题对象的ID。查到了ID后，就可以获取该对象并查看其任何属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">t = Topic.objects.get(id=5)</span><br><span class="line">t.text</span><br><span class="line">&apos;hust&apos;</span><br><span class="line">t.date_added</span><br><span class="line">datetime.datetime(2018, 11, 17, 8, 6, 32, 685270, tzinfo=&lt;UTC&gt;)</span><br><span class="line">t.entry_set.all()</span><br><span class="line">&lt;QuerySet [&lt;Entry: The opening is the first part of the game, roughly...&gt;]&gt;</span><br></pre></td></tr></table></figure>
+<p>​    这里查看了id为5的hust主题对象的各种属性信息。</p>
+<p>​    <a href="https://docs.djangoproject.com/en/2.1/topics/db/queries/这里说明了怎么查询各种数据。" target="_blank" rel="noopener">https://docs.djangoproject.com/en/2.1/topics/db/queries/这里说明了怎么查询各种数据。</a></p>
+<h3 id="3创建网页：学习笔记的主页"><a href="#3创建网页：学习笔记的主页" class="headerlink" title="3创建网页：学习笔记的主页"></a>3创建网页：学习笔记的主页</h3><p>​    使用Django创建网页通常分为三部分：定义url，编写视图，编写模板。</p>
+<h4 id="3-1映射url"><a href="#3-1映射url" class="headerlink" title="3.1映射url"></a>3.1映射url</h4><p>​    首先要确定网站中需要哪些url。主页很重要，它是用户来访问项目的基础url，目前基础url(http:localhost:8001)默认返回django网站，让我们知道正确的建立了项目。然后我们要来修改，将它映射到”学习笔记“的主页。打开项目主文件夹learn_log中的urls.py，变量urlpatterns包含了项目中的应用程序的url。现在要包含learing_logs的url，在开头加上：<code>from django.conf.urls import include, url</code>，在urlpatterns列表中加入<code>url(r&#39;&#39;, include(&#39;learning_logs.urls&#39;)),</code></p>
+<p>​    然后在learning_logs文件夹中创建另一个urls.py。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""定义learning_logs的url模式"""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    <span class="comment"># home page</span></span><br><span class="line">    url(<span class="string">r'^$'</span>, views.index, name=<span class="string">'index'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="3-2编写视图"><a href="#3-2编写视图" class="headerlink" title="3.2编写视图"></a>3.2编写视图</h4><p>​    视图函数接受请求中的信息，准备好生成网页所需的数据，再将这些数据发送给浏览器。这通常是使用模板实现的，模板定义了网页是什么样的。learning_logs中的views.py：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="comment">#  create you code here</span></span><br></pre></td></tr></table></figure>
+<p>​    render方法会根据视图提供的数据渲染响应。在该文件中添加代码，为主页编写视图：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="string">"""学习笔记的主页"""</span></span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'learning_logs/index.html'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="3-3编写模板"><a href="#3-3编写模板" class="headerlink" title="3.3编写模板"></a>3.3编写模板</h4><p>​    模板定义了网页的结构。每当网页被请求时，django将填入相关的数据。模板让你能够访问视图提供的任何数据。</p>
+
+                
+<p class="pink-link-context">
+    <a href="/2018/11/26/考研经验/" rel="next" title="">
+    上一篇：
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/2018/11/11/网络爬虫与信息提取（二）/" rel="next" title="网络爬虫与信息提取（二）">
+    下一篇：网络爬虫与信息提取（二）
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="菜单"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="footer-container container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/5318891120/" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/hu7may" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="https://github.com/raytaylorlin" target="_blank">raytaylorism主题作者的github</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 example.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('.menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+</body>
+</html>
