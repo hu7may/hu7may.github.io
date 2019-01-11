@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="董沅鑫, yuanxin.me@gmail.com" />
+  
+  
+  
+  <title>用django搭建个人博客 | 胡其美的个人博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="programming,django, 博客," />
+  
+
+  <script>
+    console.log('\n%c Hexo-theme-bmw v4.0 ' + '%c 🎉 https://github.com/dongyuanxin/theme-bmw 🎉\n' + '\n%c View demo online ' + '%c 🔍 https://godbmw.com/ 🔍  \n' , 'color: #fadfa3; background: #030307; padding:3px 0;', '', 'color: #fadfa3; background: #030307; padding:3px 0;', '');
+  </script>
+
+  
+    <meta name="description" content="blog">
+  
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/icon/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+
+  <script src="/js/util.js"></script>
+<script src="/js/valine.min.js"></script>
+
+  
+
+  
+    <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" async></script>
+  
+
+  
+    <link href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css" rel="stylesheet">
+  
+  
+  <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js" async></script>
+  
+  
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
+  
+
+</head>
+
+  <body>
+
+    
+
+    <div id="app">
+
+      <div class="header-wrap">
+  <header>
+    <div class="site-brand">
+      <div class="site-title">
+        <a href="/">GODBMW.com</a>
+      </div>
+    </div>
+    <nav class="site-navigation">
+      <ul class="nav-menu">
+      
+        <li class="nav-item" data-path="/">
+          
+            <a 
+              href="/"
+              target="_self"
+            >
+              主页
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          
+            <a 
+              href="/archives/"
+              target="_self"
+            >
+              归档
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          
+            <a 
+              href="/categories/"
+              target="_self"
+            >
+              分类
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          
+            <a 
+              href="/tags/"
+              target="_self"
+            >
+              标签
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          
+            <a 
+              href="/friends/"
+              target="_self"
+            >
+              友链
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          
+            <a 
+              href="/about/"
+              target="_self"
+            >
+              关于
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="">
+          
+            <a href="javascript:void(0);" v-else>抓到我</a>
+            <ul class="nav-menu--dropdown">
+              
+                <li>
+                  <a 
+                    href="https://github.com/dongyuanxin" 
+                    target="_blank"
+                  >
+                    Github
+                  </a>
+                </li>
+              
+                <li>
+                  <a 
+                    href="https://www.zhihu.com/people/godbmw/activities" 
+                    target="_blank"
+                  >
+                    知乎
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+      
+      </ul>
+    </nav>
+    <i class="iconfont icon-menu"></i>
+  </header>
+</div>
+
+<script>
+  let links = document.querySelectorAll('.nav-item');
+  for(let link of links){
+    let childrenLink = link.querySelector('ul');
+    link.addEventListener('mouseenter', () => {
+      if(childrenLink) {
+        childrenLink.className = "nav-menu--dropdown active";
+      }
+    })
+    link.addEventListener('mouseleave', () => {
+      if(childrenLink) {
+        childrenLink.className = "nav-menu--dropdown";
+      }
+    })
+  }
+  let rootRealPath = getRealPath(window.location.pathname, true);
+  for(let link of links) {
+    let linkPath = link.getAttribute("data-path");
+    if(linkPath && getRealPath(linkPath, true) === rootRealPath) {
+      link.className = "nav-item hover";
+    }
+  }
+
+  let iconMenu = document.querySelector("i.iconfont.icon-menu"),
+    iconMenuClicked = false;
+  let navDOM = document.querySelector("nav.site-navigation");
+  iconMenu.addEventListener("click", () => {
+    iconMenuClicked 
+      ? navDOM.className = "site-navigation active"
+      : navDOM.className = "site-navigation";
+    iconMenuClicked = !iconMenuClicked;
+  })
+</script>
+
+      
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
+  
+
+<div class="post">
+  <h1 class="article-title">
+    <span>用django搭建个人博客</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2018-11-16
+    </span>
+    
+      <span>
+        分类 : 
+          <a href="/categories/programming/">
+            programming
+          </a>
+      </span>
+    
+    
+      <span>
+        浏览 : <span class="article-timer" data-identity="django学习笔记"></span>
+      </span>
+    
+  </div>
+
+  
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <p><strong>说明</strong>：本系列文章系笔者学习Django(官方文档：<a href="https://docs.djangoproject.com/en/2.1/）所做笔记，内容基本来自《Python" target="_blank" rel="noopener">https://docs.djangoproject.com/en/2.1/）所做笔记，内容基本来自《Python</a> Crash Course》(链接：<a href="https://nostarch.com/pythoncrashcourse/)。" target="_blank" rel="noopener">https://nostarch.com/pythoncrashcourse/)。</a></p>
+<h3 id="1-建立项目"><a href="#1-建立项目" class="headerlink" title="1.建立项目"></a>1.建立项目</h3><h4 id="1-1目标"><a href="#1-1目标" class="headerlink" title="1.1目标"></a>1.1目标</h4><p>​    本系列文章编写一个“learning_log”的学习笔记web应用程序，让用户可以记录感兴趣的主题。并在每个学习主题的过程中添加日志条目。主页对这个网站进行描述，邀请用户注册登录，登陆之后可以创建新的主题，添加新的条目以及阅读现有条目。</p>
+<h4 id="1-2创建虚拟环境"><a href="#1-2创建虚拟环境" class="headerlink" title="1.2创建虚拟环境"></a>1.2创建虚拟环境</h4><p>​    为了将本项目的库与其他项目隔离，且为了以后部署到服务器，也是必须的。</p>
+<p>​    virtualenv，anaconda的conda工具等都可以管理环境。这里以python的venv模块为例。首先创建一个保存项目的文件夹，可以以项目名称为名learning_blog，进入该目录，运行下面的命令。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python -m venv ll_env	<span class="comment">#创建环境</span></span><br><span class="line">source ll_env/bin/activate	<span class="comment">#激活环境 mac和linux, win运行命令：ll_env\bin\activate</span></span><br><span class="line"><span class="comment">#停止使用虚拟环境命令：deactivate</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-3安装Django"><a href="#1-3安装Django" class="headerlink" title="1.3安装Django"></a>1.3安装Django</h4><p>​    在虚拟环境中安装django: <code>pip install Django</code></p>
+<h4 id="1-4创建项目"><a href="#1-4创建项目" class="headerlink" title="1.4创建项目"></a>1.4创建项目</h4><p>​    运行命令(注意命令中有个点号）: <code>diango-admin.py startproject learning_log .</code></p>
+<h4 id="1-5创建数据库"><a href="#1-5创建数据库" class="headerlink" title="1.5创建数据库"></a>1.5创建数据库</h4><p>​    通过 <code>python mange.py migrage</code>    迁移（修改）数据库，首先运行指令migrate使数据库与项目当前状态匹配，此时会看到目录中多了一个SQLite文件。</p>
+<h4 id="1-6查看项目"><a href="#1-6查看项目" class="headerlink" title="1.6查看项目"></a>1.6查看项目</h4><p>​    运行 <code>python manage.py runserver 8001</code>，然后在浏览器打开<a href="http://127.0.0.1:8001" target="_blank" rel="noopener">http://127.0.0.1:8001</a>, 即可看到效果。</p>
+<h3 id="2创建引用程序"><a href="#2创建引用程序" class="headerlink" title="2创建引用程序"></a>2创建引用程序</h3><p>​    Django由一系列应用程序组成，现在先创建一个，后面还会闯将一个管理用户账户的应用程序。在manage.py所在目录运行：<code>python manage.py startapp learning_logs</code>  新建一个learning_logs的app，里面包含了创建django应用所需的基础设施，models.py用来定义将在应用程序中管理的数据。</p>
+<h4 id="2-1定义模型"><a href="#2-1定义模型" class="headerlink" title="2.1定义模型"></a>2.1定义模型</h4><p>​    进入learning_logs目录，在models.py中创建自己的模型，模型告诉django如何存储应用程序中的数据。在代码上来看，模型就是一个类，包含属性和方法。下面这段插入models.py的代码创建用户将要存储的主题(Topic)模型,该模型继承自Model(django中的模型基本功能类)，拥有text和date_addede两个属性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Topic</span><span class="params">(models.Model)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="string">"""用户学习的主题"""</span> </span><br><span class="line"></span><br><span class="line">    text = models.CharField(max_length=<span class="number">200</span>) </span><br><span class="line"></span><br><span class="line">    date_added = models.DateTimeField(auto_now_add=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="string">"""返回模型的字符串表示"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> self.text</span><br></pre></td></tr></table></figure>
+<h4 id="2-2激活模型"><a href="#2-2激活模型" class="headerlink" title="2.2激活模型"></a>2.2激活模型</h4><p>​    要使用上一步创建的模型，先要将应用层程序包含到项目中，为此需要在settings.py(位于learning_log/learning_log/)中的INSTALLED_APPS字段中加入’learing_logs’。然后需要修改数据库，使其能够存储于模型Topic相关的信息，<code>python manage.py makemigrations learning_logs</code> 这条命令让django确定该如何修改数据库，使其能够存储于模型Topic相关的信息（将在数据库中为Topic建一张表）。然后要应用这种迁移：<code>python manage.py migrate</code>，让django来修改数据库。</p>
+<p>​    每当需要修改“学习笔记”管理的数据时，都采取如下三个步骤：修改models.py；对learning_logs 调用makemigrations ；让Django迁移项目。</p>
+<h4 id="2-3管理网站"><a href="#2-3管理网站" class="headerlink" title="2.3管理网站"></a>2.3管理网站</h4><h5 id="1-创建超级用户"><a href="#1-创建超级用户" class="headerlink" title="1.创建超级用户"></a>1.创建超级用户</h5><p>​    <code>python manage.py createsuperuser</code>，根据提示输入用户名、邮件和密码。</p>
+<h5 id="2-向管理网站注册模型"><a href="#2-向管理网站注册模型" class="headerlink" title="2.向管理网站注册模型"></a>2.向管理网站注册模型</h5><p>​    在应用程序所在目录的admin.py中注册Topic模型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from learning_logs.models import Topic</span><br><span class="line">admin.site.register(Topic)</span><br></pre></td></tr></table></figure>
+<p>​    此时用超级用户访问：<a href="http://localhost:8000/admin" target="_blank" rel="noopener">http://localhost:8000/admin</a>, 便可以看到刚定义的Topic模型。</p>
+<h5 id="3-添加Topic"><a href="#3-添加Topic" class="headerlink" title="3.添加Topic"></a>3.添加Topic</h5><p>​    进入第二部的网页后，可以自由添加Toipic。</p>
+<p><img src="/passages/django学习笔记/1.png" alt="image-20181117160821714"></p>
+<h4 id="2-4定义模型Entry"><a href="#2-4定义模型Entry" class="headerlink" title="2.4定义模型Entry"></a>2.4定义模型Entry</h4><p>​    在学习笔记中添加添加条目定义模型。每个条目与一个特定的主题相关联（多对一关系）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Entry(models.Model):</span><br><span class="line"></span><br><span class="line">    &quot;&quot;&quot;学到的有关某个主题的具体知识&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">    topic = models.ForeignKey(Topic)    #外键引用了数据库中的另一条记录。这里将每个条目关联到特定的主题。</span><br><span class="line"></span><br><span class="line">    text = models.TextField()</span><br><span class="line"></span><br><span class="line">    date_added = models.DateTimeField(auto_now_add=True)    #每个条目的时间戳</span><br><span class="line"></span><br><span class="line">    class Meta:     #在Entry中嵌套meta类，存储用于管理模型的额外信息</span><br><span class="line"></span><br><span class="line">        verbose_name_plural = &apos;entries&apos;</span><br><span class="line"></span><br><span class="line">    def __str__(self):</span><br><span class="line"></span><br><span class="line">        &quot;&quot;&quot;返回模型的字符串表示&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">        return self.text[:50] + &quot;...&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="2-5迁移模型Entry"><a href="#2-5迁移模型Entry" class="headerlink" title="2.5迁移模型Entry"></a>2.5迁移模型Entry</h4><p>​    现在添加了一个新模型，所以需要再次迁移数据库：修改models.py、执行python mange.py makemigrations app_name、再执行python manage.py migrate。</p>
+<h4 id="2-6向管理网站注册entry"><a href="#2-6向管理网站注册entry" class="headerlink" title="2.6向管理网站注册entry"></a>2.6向管理网站注册entry</h4><p>​    在admin.py中添加。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from learning_logs.models import Entry</span><br><span class="line">admin.site.register(Entry)</span><br></pre></td></tr></table></figure>
+<h4 id="2-7Django-shell"><a href="#2-7Django-shell" class="headerlink" title="2.7Django shell"></a>2.7Django shell</h4><p>​    输入一些数据之后，通过交互式终端可以查看这些数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(ll_env) QimeideAir:learning_log qimeihu$ python manage.py shell</span><br><span class="line">Python 3.7.0 (default, Jun 28 2018, 07:39:16)</span><br><span class="line">[Clang 4.0.1 (tags/RELEASE_401/final)] on darwin</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">(InteractiveConsole)</span><br><span class="line">from learning_logs.models import Topic</span><br><span class="line">Topic.objects.all()</span><br><span class="line">&lt;QuerySet [&lt;Topic: hust&gt;, &lt;Topic: whut&gt;, &lt;Topic: whu&gt;]&gt;</span><br></pre></td></tr></table></figure>
+<p>​    这里显示新建了whut,whu,hust三个Topic。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">topics = Topic.objects.all()</span><br><span class="line">for topic in topics:</span><br><span class="line">...     print(topic.id, topic)</span><br><span class="line">...</span><br><span class="line">5 hust</span><br><span class="line">6 whut</span><br><span class="line">7 whu</span><br></pre></td></tr></table></figure>
+<p>​    查看分配给每个主题对象的ID。查到了ID后，就可以获取该对象并查看其任何属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">t = Topic.objects.get(id=5)</span><br><span class="line">t.text</span><br><span class="line">&apos;hust&apos;</span><br><span class="line">t.date_added</span><br><span class="line">datetime.datetime(2018, 11, 17, 8, 6, 32, 685270, tzinfo=&lt;UTC&gt;)</span><br><span class="line">t.entry_set.all()</span><br><span class="line">&lt;QuerySet [&lt;Entry: The opening is the first part of the game, roughly...&gt;]&gt;</span><br></pre></td></tr></table></figure>
+<p>​    这里查看了id为5的hust主题对象的各种属性信息。</p>
+<p>​    <a href="https://docs.djangoproject.com/en/2.1/topics/db/queries/这里说明了怎么查询各种数据。" target="_blank" rel="noopener">https://docs.djangoproject.com/en/2.1/topics/db/queries/这里说明了怎么查询各种数据。</a></p>
+<h3 id="3创建网页：学习笔记的主页"><a href="#3创建网页：学习笔记的主页" class="headerlink" title="3创建网页：学习笔记的主页"></a>3创建网页：学习笔记的主页</h3><p>​    使用Django创建网页通常分为三部分：定义url，编写视图，编写模板。</p>
+<h4 id="3-1映射url"><a href="#3-1映射url" class="headerlink" title="3.1映射url"></a>3.1映射url</h4><p>​    首先要确定网站中需要哪些url。主页很重要，它是用户来访问项目的基础url，目前基础url(http:localhost:8001)默认返回django网站，让我们知道正确的建立了项目。然后我们要来修改，将它映射到”学习笔记“的主页。打开项目主文件夹learn_log中的urls.py，变量urlpatterns包含了项目中的应用程序的url。现在要包含learing_logs的url，在开头加上：<code>from django.conf.urls import include, url</code>，在urlpatterns列表中加入<code>url(r&#39;&#39;, include(&#39;learning_logs.urls&#39;)),</code></p>
+<p>​    然后在learning_logs文件夹中创建另一个urls.py。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""定义learning_logs的url模式"""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    <span class="comment"># home page</span></span><br><span class="line">    url(<span class="string">r'^$'</span>, views.index, name=<span class="string">'index'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="3-2编写视图"><a href="#3-2编写视图" class="headerlink" title="3.2编写视图"></a>3.2编写视图</h4><p>​    视图函数接受请求中的信息，准备好生成网页所需的数据，再将这些数据发送给浏览器。这通常是使用模板实现的，模板定义了网页是什么样的。learning_logs中的views.py：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="comment">#  create you code here</span></span><br></pre></td></tr></table></figure>
+<p>​    render方法会根据视图提供的数据渲染响应。在该文件中添加代码，为主页编写视图：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="string">"""学习笔记的主页"""</span></span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'learning_logs/index.html'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="3-3编写模板"><a href="#3-3编写模板" class="headerlink" title="3.3编写模板"></a>3.3编写模板</h4><p>​    模板定义了网页的结构。每当网页被请求时，django将填入相关的数据。模板让你能够访问视图提供的任何数据。</p>
+
+    </div>
+  </div>
+  
+    <div class="copy-right">
+      <div class="markdown-body">
+        <blockquote>
+        
+        
+          本文作者 : GODBMW <br/>
+        
+        原文链接 : <a href="">http://yoursite.com/passages/django学习笔记/</a><br>
+        版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+        </blockquote>
+      </div>
+    </div>
+  
+  
+  
+    <div class="social-share"
+  style="margin-top: -2rem"
+  data-wechat-qrcode-title="<p>微信扫一扫</p>"
+  data-wechat-qrcode-helper="<p>微信右上角, 扫一扫分享</p>"
+   data-sites="qzone, qq, weibo, wechat, douban, google, facebook, twitter" 
+  
+>
+  <span style="color: #6b7487; font-size: 1.4rem;">分享到: </span>
+</div>
+<script src="https://cdn.bootcss.com/social-share.js/1.0.16/js/social-share.min.js" async>
+  
+
+  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/tags/django-博客/">
+              #django, 博客
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
+</div>
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
+    
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/passages/网络爬虫与信息提取（二）/" target="_self">网络爬虫与信息提取（二）</a>
+      </div>
+    
+    
+      <div class="nav-next">
+        下一篇:
+        <a href="/passages/精通一个领域/" target="_self"></a>
+        <i class="iconfont icon-next"></i>
+      </div>
+    
+  </nav>
+
+  
+    <a href="#comment" class="comment-anchor"></a>
+<div class="comment-title"><i class="iconfont icon-footprint"></i> 留下足迹 <i class="iconfont icon-footprint"></i></div>
+<div id="vcomments"></div>
+
+<script defer>
+  if( true ) {
+    let path = getRealPath()
+    new Valine({
+      el: "#vcomments",
+      appId: "Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz",
+      appKey: "WaR7nrzhliHj9aVwdQzkdlGd",
+      notify: false,
+      verify: false,
+      avatar: "robohash",
+      placeholder: "正确填写邮箱, 才能及时收到回复哦♪(^∇^*)",
+      path
+    });
+  }
+</script>
+   
+
+  
+    <script defer>
+const valineAPI = (() => {
+  try {
+    AV.init("Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz", "WaR7nrzhliHj9aVwdQzkdlGd");
+  } catch(error) {}
+  const isExist = (identity) => {
+    identity = identity || getRealPath();
+    let query = new AV.Query('Timer');
+    return new Promise((resolve, reject) => {
+      query.equalTo("identity", identity);
+      query.find().then(results => {
+        resolve(results.length > 0);
+      }, error => reject(error));
+    })
+  }
+
+  const _get = (identity) => {
+    let query = null;
+    if(identity && identity instanceof Array){
+      let querys = [];
+      for(let i = 0; i < identity.length; ++i) {
+        querys[i] = new AV.Query('Timer');
+        querys[i].equalTo('identity', identity[i]);
+      }
+      query = AV.Query.or.apply(null ,querys);
+    } else {
+      identity = identity || getRealPath();
+      query = new AV.Query("Timer");
+      query.equalTo("identity", identity);
+    }
+
+    return new Promise((resolve, reject) => {
+      query.find()
+      .then(results => resolve(results))
+      .catch(error => reject(error))
+    })
+  }
+
+  const create = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+      let Todo = AV.Object.extend('Timer');
+      let todo = new Todo();
+      todo.set("times", 1);
+      todo.set("identity", identity);
+      todo.save().then(res => resolve(true), error => reject(error));
+    })
+  }
+
+  const update = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+      let query = new AV.Query('Timer');
+      query.equalTo("identity", identity);
+      query.find().then(todos => {
+        todos.forEach(todo => {
+          todo.set("times", todo.attributes.times + 1);
+        });
+        return AV.Object.saveAll(todos);
+      }).then(todos => resolve(true), error => reject(error));
+    })
+  }
+
+  return {
+    isExist,
+    _get,
+    update,
+    create
+  }
+})()
+
+const calcAndWriteTimes = () => {
+  let isPost = true;
+
+  let timerAllDOM = document.querySelectorAll(".article-timer");
+
+  if(isPost) {
+    let identity = timerAllDOM[0].getAttribute("data-identity");
+    valineAPI.isExist(identity)
+    .then(exist => {
+      if(exist) {
+        return valineAPI.update(identity);
+      }
+      return new Promise(resolve => resolve(true));
+    })
+    .then( succuess => valineAPI._get(identity))
+    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
+    .catch(error => console.log(error.message))
+    return ;
+  }
+
+  let timerDOMCache = {};
+
+  for(let timerDOM of timerAllDOM) {
+    let identity = timerDOM.getAttribute("data-identity");
+    if(timerDOMCache.hasOwnProperty(identity)){
+      timerDOMCache[identity].dom.push(timerDOM);
+    }else{
+      timerDOMCache[identity] = {
+        dom: [timerDOM],
+        times: undefined
+      };
+    }
+  }
+
+  let identities = Object.keys(timerDOMCache);
+  valineAPI._get(identities).then(results => {
+    for(let result of results) {
+      let {identity, times} = result.attributes;
+      timerDOMCache[identity].times = times;
+      timerDOMCache[identity].dom.map(item => item.innerText = times);
+    }
+    for(let identity of identities) {
+      if(timerDOMCache[identity].times){
+        continue;
+      }
+      timerDOMCache[identity].dom.map(item => item.innerText = 1);
+      valineAPI.create(identity);
+    }
+  }).catch(error => console.log(error.message))
+}
+
+if(true){
+  calcAndWriteTimes();
+}
+</script>
+   
+
+</div>
+
+
+      <footer>
+  <p class="site-info">
+    博客已萌萌哒运行<span id="time-to-now"></span><span class="my-face">(●'◡'●)ﾉ♥</span>
+    <br>
+    Theme - <a href="https://github.com/dongyuanxin/theme-bmw">BMW</a> | Made With 💗 | Powered by <a href="https://godbmw.com/">GodBMW</a>
+    <br>
+    
+  </p>
+</footer>
+
+
+
+<script>
+const timeToNowDOM = document.querySelector("#time-to-now");
+const startTimestamp = new Date(2018, 1, 10).getTime();
+
+const updateTimeStr = () => {
+  let offset = parseInt(
+      (new Date().getTime() - startTimestamp) / 1000,
+      10
+    ),
+    day = Math.floor(offset / 86400),
+    hour = Math.floor((offset % 86400) / 3600),
+    minute = Math.floor(((offset % 86400) % 3600) / 60),
+    second = Math.floor(((offset % 86400) % 3600) % 60);
+  timeToNowDOM.innerHTML =
+    day + "天" + hour + "小时" + minute + "分钟" + second + "秒";
+  setTimeout(updateTimeStr, 500);
+}
+
+setTimeout(updateTimeStr, 500);
+</script>
+
+
+      <div class="back-to-top hidden">
+  <span>
+    <i class="iconfont icon-60"></i><span></span>%
+  </span>
+</div>
+
+<script>
+const updateIconToTop = percent => {
+  let dom = document.querySelector(".back-to-top span span");
+  dom.innerText = percent;
+  if(percent < 1) {
+    document.querySelector(".back-to-top").className = "back-to-top hidden";
+  } else {
+    document.querySelector(".back-to-top").className = "back-to-top";
+  }
+}
+
+const handleScoll = () => {
+  let isRunning = false;
+  return () => {
+    if (isRunning) return;
+    isRunning = true;
+    window.requestAnimationFrame(timestamp => {
+      let scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop,
+        scrollHeight =
+          document.documentElement.scrollHeight ||
+          document.body.scrollHeight,
+        clientHeight =
+          document.documentElement.clientHeight ||
+          document.body.clientHeight;
+      isRunning = false;
+      if (scrollTop <= 1) {
+        updateIconToTop(0);
+        return;
+      }
+      if (scrollTop + clientHeight >= scrollHeight) {
+        updateIconToTop(100);
+      } else {
+        updateIconToTop(parseInt(
+          100 * scrollTop / (scrollHeight - clientHeight),
+          10
+        ));
+      }
+    });
+  };
+}
+
+const backToTop = () => {
+  let scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop,
+    delay = 10,
+    time = 200;
+  if (scrollTop <= 20) {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    return;
+  }
+  let step = Math.ceil(scrollTop * delay / time);
+  let timer = setInterval(() => {
+    scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollTop - step <= 0) {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      clearInterval(timer);
+    } else {
+      document.documentElement.scrollTop = scrollTop - step;
+      document.body.scrollTop = scrollTop - step;
+    }
+  }, delay);
+}
+
+document.addEventListener("scroll", handleScoll(), false);
+
+document.querySelector(".back-to-top").addEventListener("click", backToTop, false);
+
+</script>
+
+    </div>
+
+    
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<script>
+  (() => {
+    const mathjaxConfig = {
+      showProcessingMessages: false, //关闭js加载过程信息
+      messageStyle: "none", //不显示信息
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]], //行内公式选择符
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]], //段内公式选择符
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"] //避开某些标签
+      },
+      "HTML-CSS": {
+        availableFonts: ["STIX", "TeX"], //可选字体
+        showMathMenu: false //关闭右击菜单显示
+      }
+    }
+
+    let mathjaxInterval = setInterval(() => {
+      if(!window.MathJax){
+        return;
+      }
+      window.MathJax.Hub.Config(mathjaxConfig)
+      window.MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('app')])
+
+      clearInterval(mathjaxInterval)
+    }, 10)    
+  })()
+</script>
+    
+
+    <script src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script>
+<script async>
+  let fancyTimer = setInterval(function(){
+    if(!window.$){
+      return;
+    }
+    $(document).ready(function() {
+      $(".post img").each(function () {
+        if($(this).parent().get(0).tagName.toLowerCase() === "a") {
+          return;
+        }
+        // $(this).attr("data-fancybox", "gallery"); // if you add 'data-fancybox', img will display after showed
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "gallery");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      });
+      
+      clearInterval(fancyTimer);
+    });
+  }, 10);
+</script>
+
+    
+  </body>
+
+</html>
