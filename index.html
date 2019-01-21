@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/SpringBoot/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/SpringBoot笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu Qimei">
@@ -312,7 +312,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/passages/SpringBoot/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/passages/SpringBoot笔记/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -718,242 +718,6 @@
 <p>2.维护索引</p>
 <p>3.维护表结构</p>
 <p>4.在适当的时候对表进行水平拆分或垂直拆分</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/java知识点/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu Qimei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="胡其美的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/passages/java知识点/" itemprop="url">java知识点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-11T10:10:51+08:00">
-                2019-01-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>本文来自作者学习Core Java Volume 1的部分笔记</p>
-<h1 id="类与对象："><a href="#类与对象：" class="headerlink" title="类与对象："></a>类与对象：</h1><p>默认域初始化：如果在构造器中没有显式地赋值，则：数值为0，布尔值为false，对象值为null。但不建议这样做，最好显式地赋值。</p>
-<p>当类没有提供任何构造器的时候，系统会自动提供一个构造器。</p>
-<p>this两个用途：1.引用隐式参数；2.调用该类其他的构造器。</p>
-<p>类的设计技巧：</p>
-<p>一定要保证数据私有</p>
-<p>一定要保证对数据初始化</p>
-<p>不要在类中使用过多的基本数据类型（如用一个新的Address类代替String street；String city;String state;</p>
-<p>不是所有的域都需要独立的域访问器和域更改器（一些不希望别人获得或更改的实例域</p>
-<p>将职责过多的类进行分解</p>
-<p>类名和方法名要能够体现其职责</p>
-<h1 id="继承（inheritance）"><a href="#继承（inheritance）" class="headerlink" title="继承（inheritance）"></a>继承（inheritance）</h1><p>Manager is Employee: manager 继承了employee。继承关系的明显特征：b继承a：b <strong>is a</strong>。同时是判断类是否应设计为继承关系的规则</p>
-<p>在子类中调用超类中而不是子类自己的同名方法：super.method()</p>
-<p>调用超类的构造器：super()</p>
-<p><strong>一个对象变量可以指示多种实际类型的现象称为多态（polymorphism）</strong></p>
-<p><strong>在运行时能够自动地选择调用那个方法的现象称为动态绑定（dynamic binding）</strong></p>
-<p>（不需要像C++一样声明为虚函数，动态绑定是默认的处理方式）</p>
-<p>可以将一个子类对象赋值给超类变量。一个 Employee 变量既可以引用一个 Employee 类对象 也可以引用一个 Employee 类的任何一个子类的对象 （ 例如 Manager ， Executive 、 Secretary 等 ）</p>
-<p>但不能将超类的引用赋值给子类。</p>
-<h4 id="方法调用："><a href="#方法调用：" class="headerlink" title="方法调用："></a>方法调用：</h4><p>private 方法 、 static 方法 、 final 方法：静态绑定。</p>
-<p>当采用动态绑定调用方法时，虚拟机一定调用与变量所引用对象的实际类型最合适的那个类的方法。</p>
-<h4 id="阻止继承：final类和方法"><a href="#阻止继承：final类和方法" class="headerlink" title="阻止继承：final类和方法"></a>阻止继承：final类和方法</h4><p>不允许扩展的类称为final类，类的特定方法如果被声明为final则其子类不能覆盖这个方法（final类中的所有方法自动称为final方法）。</p>
-<p>强制类型转换：</p>
-<p>只能在继承层次类进行转换</p>
-<p>在将超类转换成子类之前，应该使用instanceof进行检查。</p>
-<p>类不含抽象方法也可以声明为抽象类</p>
-<p>抽象类不能被实例化</p>
-<p>可以定义一个抽象类的对象变量，但是他只能应用非抽象子类的对象。</p>
-<p>可见性控制：</p>
-<p>访问修饰符：</p>
-<p>1.仅对本类课件——private</p>
-<p>2.对所有类课件——public</p>
-<p>3.对本包和所有子类课件——protected</p>
-<p>4.对本包可见——默认，不需要修饰符</p>
-<p>所有类的超类：Object类</p>
-<p>可以使用Object类型的变量应用任何类型的对象：</p>
-<p>Object obj = new Employee(“Harry Hacker”, 35000);</p>
-<p>Object类中的equals方法：用于检测一个一个对象是否等于另外一个对象</p>
-<p>首相将判断两个对象是否具有相同的引用，如果两个对象具有相同的引用，则他们一定是相等的。</p>
-<p>如何编写一个完美的equals方法的建议：</p>
-<p><img src="/passages/java知识点/Users/qimeihu/Library/Application Support/typora-user-images/image-20190111101044636.png" alt="image-20190111101044636"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一个完美的equals函数：</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object otherObject)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == otherObject) &#123;<span class="keyword">return</span> <span class="keyword">true</span>;&#125;</span><br><span class="line">        <span class="keyword">if</span> (otherObject == <span class="keyword">null</span>) &#123;<span class="keyword">return</span> <span class="keyword">false</span>;&#125;</span><br><span class="line">        <span class="keyword">if</span> (!(otherObject <span class="keyword">instanceof</span> Employee)) &#123;<span class="keyword">return</span> <span class="keyword">false</span>;&#125;</span><br><span class="line">        Employee other = (Employee)otherObject;</span><br><span class="line">        <span class="keyword">return</span> name.equals(other.name)</span><br><span class="line">                &amp;&amp; salary==other.salary</span><br><span class="line">                &amp;&amp; hireDay.equals(other.hireDay);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Java.util.Arrays 1.2</p>
-<p>static Boolearn equals(type[] a, type[] b)</p>
-<p>Java.util.Objects</p>
-<p>static boolearn equals(Object a, Object b):如果ab都为null返回true,如果一个为null返回false,否则范湖a.equals(b)</p>
-<p>hashCode方法：</p>
-<p>散列码（hash code ）是由对象到处的一个没有规律的整型值。</p>
-<p><strong>hashCode方法定义在Object类中，所以每一个对象都有一个默认的散列码，其值为对象的存储地址。</strong></p>
-<p>equals与hashCode的定义必须一致：如果x.equals(y)返回true，那么x.hashCode()就必须与y.hashCode()具有相同的值。</p>
-<p>String类使用下列算法计算散列码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> hash = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length();i++) &#123;</span><br><span class="line">	hash = <span class="number">31</span> * hash + charAt(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>具有相同的字面值的字符串拥有相同的散列码，如上字符串的散列码是由内容导出的</strong>；字符串缓冲（StringBuilder)与字符串却有着不同的散列码，应为StringBuilder没有定义ashCode方法，它的散列码由Object类默认的hashCode方法导出对性的存储地址。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Objects.hashCode(name, salary, hireDay);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果存在数组类型的域，可以使用静态的Arrays.hashCode()</p>
-<p>Java.util.Object 1.0</p>
-<p>Int hashCode()返回对象的散列码，任意正负整数。</p>
-<p>Java.util.Objects 7</p>
-<p>static int hash(Object…objects)返回一个散列码，由所提供的所有对象的散列码组合而得到。</p>
-<p>static int hashCode(Object a)如果a为null则返回0，否则返回a.hashCode()</p>
-<p>Java.lang.(Ing=teger|Long|Short|Byte|Double|Float|Character|Boolearn) 1.0</p>
-<p>static int hahsCode((int|long|short|byte|double|float|char|boolearn) value) 8</p>
-<p> 返回给定值的散列码</p>
-<p>java.util.Arrays 1.2</p>
-<p>static int hashCode(type[] a) 5.0</p>
-<p>toString()方法，返回表示对象值得字符串。</p>
-<p>只要对象与一个字符串通过操作符“+”连接起来，java编译就会自动调用toString方法以便获得这个对象的字符串描述。</p>
-<p>Java.lang.Object</p>
-<p>Class getClass()返回包含对象信息的类对象</p>
-<p>boolearn equals(Object otherObejct)比较两个对象是否相等，如果两个对象指向同一块存储区域，则返回true，否则返回false。在自定义的类中，应该覆盖这个方法。</p>
-<p>String toString()返回描述该对象值得字符串。</p>
-<p>java.lang.Class</p>
-<p>String getName()返回类的名字</p>
-<p>Class getSuperClass()以Class对象的形式返回超类的信息</p>
-<h2 id="泛型数组列表"><a href="#泛型数组列表" class="headerlink" title="泛型数组列表"></a>泛型数组列表</h2><p>ArrayList<employee> staff = new ArrayList&lt;&gt;()</employee></p>
-<p>数组列表的容量域数组的大小，两者不同：</p>
-<p>Employee[100]：有一百个位置可以使用</p>
-<p>ArrayList<employee> staff = new ArrayList&lt;&gt;(100):有保存100个元素的潜力</employee></p>
-<p>staff.size()将返回数组列表包含的实际元素数目，等价于数组a的a.length</p>
-<p>一旦能够确认数组的大小不在变化，可以用trimToSize调整数组列表的大小</p>
-<p>java.util.ArrayList<e> 1.2</e></p>
-<p>ArrayList<e> ()构造一个空数组列表</e></p>
-<p>ArrayList<e>(int initialCapacity)用指定容量构造一个空数组列表</e></p>
-<p>boolearn add(E obj)在尾部添加一个元素，永远返回true</p>
-<p>int size()返回当前的元素数量</p>
-<p>void ensureCapacity(int Capacity)确保数组列表在不重新分配存储空间的情况下就能够保存给定数量的元素</p>
-<p>void trimToSize()消减存储容量到当前尺寸</p>
-<p>要设置第i个元素：staff.set(i,harry)，等价于a[i]=harry</p>
-<p>只有i 小于或等于数组列表的大小时 ，才能够调用 list.set ( i,x)</p>
-<p>错误实例：ArrayList &lt; Employee &gt; list = new ArrayListo list . set ( 0 , x ) ; // no element 0 yet</p>
-<p>使用 add方法为数组添加新元素 ，而不要使用 set 方法 ，它只能替换数组中已经存在的元素内容 。</p>
-<p>void set(int index, E obj)设置数组列表指定位置的元素值 ，这个操作将覆盖这个位置的原有内容</p>
-<p>E get(int index)</p>
-<p>void add(int index, E obj)向后移动元素 以便插入元素</p>
-<p>E remove(int index) 删除一个元素 并将后面的元素向前移动 被删除的元素由返回值返回</p>
-<p>自动装箱（AutoBoxing）：</p>
-<p>ArrayList<integer> list = new ArrayList&lt;&gt;()</integer></p>
-<p>List.add(3)将自动转换成list.add(Integer.valueOf(3))</p>
-<p>将一个Integer对象赋给一个Int值时：将会自动拆箱：int n = list.get(i) 翻译成：int n = list.get(i).intValue();</p>
-<p><img src="/passages/java知识点/Users/qimeihu/Library/Application Support/typora-user-images/image-20190119212222910.png" alt="image-20190119212222910"></p>
-<p>数值对象包装器的另一个好处：讲一个数字字符串转换成数值：int x = Integer.parseInt(s)</p>
-<p>参数数量可变的方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> PrintStream &#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> PrintStream <span class="title">printf</span><span class="params">(String fmt, Object... args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> format(fmt,args)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里的省略号 是 Java 代码的一部分 ，它表明这个方法可以接收任意数量的对象 （ 除 fmt参数之外 )。</p>
-<p>计算若干个数值的最大值:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">max</span><span class="params">(<span class="keyword">double</span>... values)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> largest = Double.NEGATIVE_INFINITY;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">double</span> d : values) &#123;</span><br><span class="line">        <span class="keyword">if</span> (d&gt;largest) &#123; largest = d; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> largest;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>枚举类：</p>
-<p>定义一个枚举类型：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Size &#123; SMALL, MEDIUM, LARGE, EXTRA_LARGE &#125;;</span><br></pre></td></tr></table></figure>
-<p>比较两个枚举类型的值时，直接用==</p>
-<p><img src="/passages/java知识点/Users/qimeihu/Library/Application Support/typora-user-images/image-20190119214440249.png" alt="image-20190119214440249"></p>
-<h2 id="反射Reflection"><a href="#反射Reflection" class="headerlink" title="反射Reflection"></a>反射Reflection</h2><p>能够分析类能力的程序称为反射（reflective）</p>
-<p>反射机制可以用来：</p>
-<p>在运行时分析类的能力；</p>
-<p>在运行时查看对象；（例如，编写一个toString方法供所有类使用）</p>
-<p>实现通用的数组操作代码；</p>
-<p>利用Method对象（很想C++的函数指针）</p>
 
           
         
@@ -1965,6 +1729,150 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/古诗摘抄/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu Qimei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="胡其美的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/passages/古诗摘抄/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-31T22:25:30+08:00">
+                2018-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>白居易 琵琶行</p>
+<p>夜深忽梦少年事，梦里妆泪红阑干</p>
+<p>白居易写给被贬官的元稹：</p>
+<p>晨起临风一惆怅，通川湓水断相间</p>
+<p>不知忆我因何事，作业三更梦见君</p>
+<p>元稹回复：</p>
+<p>山水万重书断绝，念君怜我梦相闻</p>
+<p>我今因病魂颠倒，唯梦闲人不梦君</p>
+<p>一句古诗证明地名：</p>
+<p>四面荷花三面柳，一城山色半城湖   ——济南 </p>
+<p>崔涂《夷陵夜泊》</p>
+<p>家衣楚塞穷秋别，身逐孤舟万里行</p>
+<p>一曲巴歌半江月，便应消得二毛生</p>
+<p>李清照《题八咏楼》——浙江金华</p>
+<p>千古风流八咏楼，江山留与后人愁</p>
+<p>水通南国三千里，气压江城十四洲</p>
+<p>题临安邸    -宋- 林升</p>
+<p>山外青山楼外楼，西湖歌舞几时休</p>
+<p>暖风吹的游人醉，直把杭州作汴州</p>
+<p>（这也是写在我家墙上的诗句)</p>
+<p>夜宿泸山 - 明- 杨慎   ——四川省凉山州</p>
+<p>老夫今夜宿泸山，惊破天门叶未关</p>
+<p>谁把太空敲粉碎，满天星斗落人间</p>
+<p>王维《少年行》</p>
+<p>新风美酒斗十千，咸阳游侠多少年——西安</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -2026,7 +1934,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 
               </div>
