@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -80,16 +80,16 @@
 
 
 <meta name="description" content="一、基础知识：1、JVM、JRE和JDK的区别：    JVM(Java Virtual Machine):java虚拟机，用于保证java的跨平台的特性。                  java语言是跨平台，jvm不是跨平台的。    JRE(Java Runtime Environment):java的运行环境,包括jvm+java的核心类库。    JDK(Java Developmen">
-<meta name="keywords" content="python,javaweb,后台">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="胡其美的个人博客">
+<meta property="og:title" content="java基础知识总结">
 <meta property="og:url" content="http://yoursite.com/passages/java基础知识总结/index.html">
 <meta property="og:site_name" content="胡其美的个人博客">
 <meta property="og:description" content="一、基础知识：1、JVM、JRE和JDK的区别：    JVM(Java Virtual Machine):java虚拟机，用于保证java的跨平台的特性。                  java语言是跨平台，jvm不是跨平台的。    JRE(Java Runtime Environment):java的运行环境,包括jvm+java的核心类库。    JDK(Java Developmen">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-27T09:12:20.140Z">
+<meta property="og:updated_time" content="2019-02-28T16:22:00.048Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="胡其美的个人博客">
+<meta name="twitter:title" content="java基础知识总结">
 <meta name="twitter:description" content="一、基础知识：1、JVM、JRE和JDK的区别：    JVM(Java Virtual Machine):java虚拟机，用于保证java的跨平台的特性。                  java语言是跨平台，jvm不是跨平台的。    JRE(Java Runtime Environment):java的运行环境,包括jvm+java的核心类库。    JDK(Java Developmen">
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title> | 胡其美的个人博客</title>
+  <title>java基础知识总结 | 胡其美的个人博客</title>
   
 
 
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">java基础知识总结</h1>
         
 
         <div class="post-meta">
@@ -322,8 +322,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-27T17:12:20+08:00">
-                2019-02-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-25T09:16:00+08:00">
+                2019-02-25
               </time>
             
 
@@ -332,6 +332,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programing-notes/" itemprop="url" rel="index">
+                    <span itemprop="name">programing notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -970,21 +992,8 @@ C:简化书写
          }
       }
 </code></pre><p>​<br>​<br>​                 基本数据类型或字符串对象均实现了Comparable接口，故同种类型基本数据间具备比较性，即自然顺序。</p>
-<p>​<br>​    *<em>Map:顶层接口,该集合存储的是键值对,而且键是唯一的,Map和Set很像,Set集合底层就是使用了Map集合。<br>​        Map集合没有迭代器，要取出元素必须先将Map集合转换成Set集合才能遍历元素<br>​       |—&gt;HashTable(JDK1.0):<br>​        底层是哈希表数据结构；<br>​        不可以使用null键和null值；<br>​        用作键的对象必须实现hashCode和equals方法来保证键的唯一性<br>​        线程同步，效率低<br>​       |—&gt;HashMap(JDK1.2):<br>​        底层是哈希表数据结构；<br>​        允许使用null键和null值；<br>​        线程不同步，效率高；<br>​        保证元素唯一性的:<br>​             原理：先判断元素的hashCode值是否相同，再判断两元素的equals方法是否为true<br>​             (往HashSet里面存的自定义元素要复写hashCode和equals方法，<br>​             以保证元素的唯一性！)<br>​        class Student {<br>​            private String name;<br>​            private int age;<br>​            public Student(String name, int age) {<br>​                super();<br>​                this.name = name;<br>​                this.age = age;<br>​            }<br>​            public int getAge() {<br>​                return age;<br>​            }<br>​            public void setAge(int age) {<br>​                this.age = age;<br>​            }<br>​            public String getName() {<br>​                return name;<br>​            }<br>​            public void setName(String name) {<br>​                this.name = name;<br>​            }<br>​<br>            @Override<br>            public int hashCode(){<br>                return name.hashCode()+age</em>34;<br>            }<br>            @Override<br>            public boolean equals(Object obj){</p>
-<pre><code>            if(!(obj instanceof Student))
-                return false;
-            Student stu = (Student)obj;
-            return this.name.equals(stu.name)&amp;&amp;this.age==stu.age;
-        }
-    public class HashMapDemo1 {
-        public static void main(String[] args) {
-            Map&lt;Student , String&gt; hmap = new HashMap&lt;Student , String&gt;();
-            hmap.put(new Student(&quot;001&quot;,20), &quot;beijing&quot;);
-            hmap.put(new Student(&quot;002&quot;,25), &quot;hebei&quot;);
-            hmap.put(new Student(&quot;003&quot;,50), &quot;hainan&quot;);
-            hmap.put(new Student(&quot;001&quot;,20), &quot;beijing&quot;);
-
-            System.out.println(hmap.size());
+<p>​<br>​    *<em>Map:顶层接口,该集合存储的是键值对,而且键是唯一的,Map和Set很像,Set集合底层就是使用了Map集合。<br>​        Map集合没有迭代器，要取出元素必须先将Map集合转换成Set集合才能遍历元素<br>​       |—&gt;HashTable(JDK1.0):<br>​        底层是哈希表数据结构；<br>​        不可以使用null键和null值；<br>​        用作键的对象必须实现hashCode和equals方法来保证键的唯一性<br>​        线程同步，效率低<br>​       |—&gt;HashMap(JDK1.2):<br>​        底层是哈希表数据结构；<br>​        允许使用null键和null值；<br>​        线程不同步，效率高；<br>​        保证元素唯一性的:<br>​             原理：先判断元素的hashCode值是否相同，再判断两元素的equals方法是否为true<br>​             (往HashSet里面存的自定义元素要复写hashCode和equals方法，<br>​             以保证元素的唯一性！)<br>​        class Student {<br>​            private String name;<br>​            private int age;<br>​            public Student(String name, int age) {<br>​                super();<br>​                this.name = name;<br>​                this.age = age;<br>​            }<br>​            public int getAge() {<br>​                return age;<br>​            }<br>​            public void setAge(int age) {<br>​                this.age = age;<br>​            }<br>​            public String getName() {<br>​                return name;<br>​            }<br>​            public void setName(String name) {<br>​                this.name = name;<br>​            }<br>​<br>​            @Override<br>​            public int hashCode(){<br>​                return name.hashCode()+age</em>34;<br>​            }<br>​            @Override<br>​            public boolean equals(Object obj){<br>​<br>                if(!(obj instanceof Student))<br>                    return false;<br>                Student stu = (Student)obj;<br>                return this.name.equals(stu.name)&amp;&amp;this.age==stu.age;<br>            }<br>        public class HashMapDemo1 {<br>            public static void main(String[] args) {<br>                Map<student ,="" string=""> hmap = new HashMap<student ,="" string="">();<br>                hmap.put(new Student(“001”,20), “beijing”);<br>                hmap.put(new Student(“002”,25), “hebei”);<br>                hmap.put(new Student(“003”,50), “hainan”);<br>                hmap.put(new Student(“001”,20), “beijing”);</student></student></p>
+<pre><code>            System.out.println(hmap.size());
             Set&lt;Student&gt; keySet = hmap.keySet();
             Iterator&lt;Student&gt; it = keySet.iterator();
             while(it.hasNext()){
@@ -1482,16 +1491,8 @@ static &lt;T&gt; SortedSet&lt;T&gt;  synchronizedSortedSet(SortedSet&lt;T&gt; s)
         //编码解码2：指定编码
         String str2 = &quot;你好&quot;;
         byte[] buf2 = str2.getBytes(&quot;UTF-8&quot;);//指定解码：UTF-8,六个字节
-</code></pre><p>​<br>​            //编码解码3：编码正确解码错误<br>​            String str3 = “你好”;<br>​            byte[] buf3 = str3.getBytes(“GBK”);//指定编码：GBK,四个字节<br>​            String str3 = new String(buf3,”ISO8859-1”);//错误解码<br>​<br>            //编码解码4：错误编码正确解码<br>            String str4 = “你好”;<br>            byte[] buf4 = str4.getBytes(“ISO8859-1”);//错误编码<br>            String str4 = new String(buf4,”GBK”);//正确解码，读不出来</p>
-<pre><code>    //编码解码5：编码对了，但是解码错误了，怎么办呢？
-    //此时可以将错误的解码再错编回去，载用正确编码解码
-    String str5 = &quot;你好&quot;;
-    byte[] buf5 = str5.getBytes(&quot;GBK&quot;);//正确编码
-    String str6 = new String(buf5,&quot;ISO8859-1&quot;);//错误解码，读不出来
-    byte[] buf6 = str6.getBytes(&quot;ISO8859-1&quot;);//再错误编码
-    String str7 = new String(buf6,&quot;GBK&quot;);//再正确解码，这样就可以读出来了
-}
-</code></pre><p>六、网络编程：<br>1、网络编程概述<br>    (1)网络模型<br>        OSI参考模型<br>        TCP/IP参考模型<br>    (2)网络通讯要素<br>        IP地址<br>        端口号<br>        传输协议<br>    (3)网络通讯前提：<br>        <strong>找到对方IP
+</code></pre><p>​<br>​            //编码解码3：编码正确解码错误<br>​            String str3 = “你好”;<br>​            byte[] buf3 = str3.getBytes(“GBK”);//指定编码：GBK,四个字节<br>​            String str3 = new String(buf3,”ISO8859-1”);//错误解码<br>​<br>​            //编码解码4：错误编码正确解码<br>​            String str4 = “你好”;<br>​            byte[] buf4 = str4.getBytes(“ISO8859-1”);//错误编码<br>​            String str4 = new String(buf4,”GBK”);//正确解码，读不出来<br>​<br>            //编码解码5：编码对了，但是解码错误了，怎么办呢？<br>            //此时可以将错误的解码再错编回去，载用正确编码解码<br>            String str5 = “你好”;<br>            byte[] buf5 = str5.getBytes(“GBK”);//正确编码<br>            String str6 = new String(buf5,”ISO8859-1”);//错误解码，读不出来<br>            byte[] buf6 = str6.getBytes(“ISO8859-1”);//再错误编码<br>            String str7 = new String(buf6,”GBK”);//再正确解码，这样就可以读出来了<br>        }</p>
+<p>六、网络编程：<br>1、网络编程概述<br>    (1)网络模型<br>        OSI参考模型<br>        TCP/IP参考模型<br>    (2)网络通讯要素<br>        IP地址<br>        端口号<br>        传输协议<br>    (3)网络通讯前提：<br>        <strong>找到对方IP
         </strong>数据要发送到指定端口。为了标示不同的应用程序，所以给这些网络应用程序都用数字进行标示<br>          。这个表示就叫端口。<br>        **定义通信规则。这个规则称为通信协议，国际组织定义了通用协议TCP/IP<br>    (4)计算机网络：<br>        是指将地理位置不同的具有独立功能的多台计算机及其外部设备，<br>        通过通信线路连接起来，在网络操作系统，网络管理软件及网络通信协议的管理和协调下，<br>        实现资源共享和信息传递的计算机系统。<br>    (5)IP地址：<br>        IP地址 = 网络号码+主机地址</p>
 <pre><code>    A类IP地址:第一段号码为网络号码，剩下的三段号码为本地计算机的号码
     B类IP地址:前二段号码为网络号码，剩下的二段号码为本地计算机的号码
@@ -2051,6 +2052,12 @@ static &lt;T&gt; SortedSet&lt;T&gt;  synchronizedSortedSet(SortedSet&lt;T&gt; s)
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
 
       
       
@@ -2060,7 +2067,7 @@ static &lt;T&gt; SortedSet&lt;T&gt;  synchronizedSortedSet(SortedSet&lt;T&gt; s)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/passages/jvm相关知识/" rel="next" title="">
+              <a href="/passages/如何学习/" rel="next" title="">
                 <i class="fa fa-chevron-left"></i> 
               </a>
             
@@ -2070,7 +2077,7 @@ static &lt;T&gt; SortedSet&lt;T&gt;  synchronizedSortedSet(SortedSet&lt;T&gt; s)
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/passages/jre包含jvm和java核心类库，jdk包含了jre和一系列开发、诊断工具/" rel="prev" title="">
+              <a href="/passages/maven打包运行/" rel="prev" title="">
                  <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -2151,7 +2158,7 @@ static &lt;T&gt; SortedSet&lt;T&gt;  synchronizedSortedSet(SortedSet&lt;T&gt; s)
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 
               </div>
@@ -2162,7 +2169,7 @@ static &lt;T&gt; SortedSet&lt;T&gt;  synchronizedSortedSet(SortedSet&lt;T&gt; s)
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
