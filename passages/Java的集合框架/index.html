@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="blog">
-<meta name="keywords" content="python,javaweb,后台">
-<meta property="og:type" content="website">
-<meta property="og:title" content="胡其美的个人博客">
-<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+<meta name="description" content="Java的集合框架提供了很多基础数据结构，提高了开发者的生产力。 Collection接口是所有集合的基本接口 1234public interface Collections&amp;lt;E&amp;gt; &amp;#123;    boolearn add(E elements);    Iteraor&amp;lt;E&amp;gt; iterator();&amp;#125; 在此基础上扩展了三类： List：有序集合，提供访问、插">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java集合框架总结">
+<meta property="og:url" content="http://yoursite.com/passages/Java的集合框架/index.html">
 <meta property="og:site_name" content="胡其美的个人博客">
-<meta property="og:description" content="blog">
+<meta property="og:description" content="Java的集合框架提供了很多基础数据结构，提高了开发者的生产力。 Collection接口是所有集合的基本接口 1234public interface Collections&amp;lt;E&amp;gt; &amp;#123;    boolearn add(E elements);    Iteraor&amp;lt;E&amp;gt; iterator();&amp;#125; 在此基础上扩展了三类： List：有序集合，提供访问、插">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-01T12:46:56.573Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="胡其美的个人博客">
-<meta name="twitter:description" content="blog">
+<meta name="twitter:title" content="Java集合框架总结">
+<meta name="twitter:description" content="Java的集合框架提供了很多基础数据结构，提高了开发者的生产力。 Collection接口是所有集合的基本接口 1234public interface Collections&amp;lt;E&amp;gt; &amp;#123;    boolearn add(E elements);    Iteraor&amp;lt;E&amp;gt; iterator();&amp;#125; 在此基础上扩展了三类： List：有序集合，提供访问、插">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/4/"/>
+  <link rel="canonical" href="http://yoursite.com/passages/Java的集合框架/"/>
 
 
 
 
 
-  <title>胡其美的个人博客</title>
+  <title>Java集合框架总结 | 胡其美的个人博客</title>
   
 
 
@@ -144,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -278,9 +278,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/深入理解计算机系统-笔记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/Java的集合框架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu Qimei">
@@ -310,9 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/passages/深入理解计算机系统-笔记/" itemprop="url">深入理解计算机系统 笔记</a></h1>
+          <h1 class="post-title" itemprop="name headline">Java集合框架总结</h1>
         
 
         <div class="post-meta">
@@ -324,8 +322,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-19T09:16:00+08:00">
-                2018-06-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-25T09:16:00+08:00">
+                2019-01-25
               </time>
             
 
@@ -384,15 +382,24 @@
       
 
       
-        
-          
-            <p>第八章 </p>
-<p>8.2进程 </p>
-<p>进程的定义：<strong>一个执行中的程序的实例</strong></p>
-<p>系统中的每个程序都运行在某个进程的<strong>上下文</strong>（context）中。上下文由程序正确运行所需要的状态组成，包括存放在内存中的代码和数据，它的栈、通用目的寄存器的内容、程序计数器、环境变量以及打开文件描述符的集合。</p>
+        <p>Java的集合框架提供了很多基础数据结构，提高了开发者的生产力。</p>
+<h4 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h4><p>是所有集合的基本接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface Collections&lt;E&gt; &#123;</span><br><span class="line">    boolearn add(E elements);</span><br><span class="line">    Iteraor&lt;E&gt; iterator();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在此基础上扩展了三类：</p>
+<p>List：有序集合，提供访问、插入、删除等操作；-&gt;抽象类：AbstractList</p>
+<p>Set：不允许重复元素存在；</p>
+<p>Queue/Deque：队列，支持先入先出（FIFO）、后入先出（LIFO）</p>
+<h4 id="List-Vector-ArrayList-LinkedList"><a href="#List-Vector-ArrayList-LinkedList" class="headerlink" title="List: Vector, ArrayList, LinkedList"></a>List: Vector, ArrayList, LinkedList</h4><p>Vector是早期提供的动态数组，线程安全。内部用对象数组来保存数据，根据需要自动增加容量，当数组满时，会创建新的数组(容量提高一倍)，并拷贝原数组数据。</p>
+<p>ArrayList是动态数组，线程不安全，性能比Vector好。扩容时数组容量增加50%。</p>
+<p>LinkedList时双向链表，线程不安全，不需要调整容量。</p>
+<p>在应用开发中，应该预先估计对数据的操作是插入删除较多（使用LinkedList）还是随机访问较多(使用ArrayList)</p>
+<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><p>TreeSet：自然顺序访问，添加、删除、包含等操作低效（logN)。</p>
+<p>HashSet：哈希算法实现，常数时间添加删除包含操作，但不保证数据有序。</p>
+<p>LinkedHashSet，内部构建了记录插入顺序的双向链表，提供了按照插入顺序遍历的能力，性能略低于HashSet。</p>
+<h4 id="Java提供的默认排序算法"><a href="#Java提供的默认排序算法" class="headerlink" title="Java提供的默认排序算法"></a>Java提供的默认排序算法</h4><p>原始数据类型：双轴快速排序（Dual-Pivot QuickSort）</p>
+<p>对象数据类型：TimSort（归并和二分插入排序结合）</p>
+<p>Java8引入了并行排序算法（parallelSort），以默认方法实现在Collection接口（Java8允许接口实现默认方法）</p>
 
-          
-        
       
     </div>
     
@@ -407,163 +414,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/Git常用的命令/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu Qimei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="胡其美的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/passages/Git常用的命令/" itemprop="url">git 常用命令</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-19T09:16:00+08:00">
-                2018-06-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programing-notes/" itemprop="url" rel="index">
-                    <span itemprop="name">programing notes</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h1><p>初始化仓库：<code>git init</code></p>
-<p>添加：<code>git add readme.txt</code></p>
-<p>提交：<code>git commit -m &quot;description&quot;</code></p>
-<p>创建同名远程仓库</p>
-<p>关联远程库：<code>git remote add origin git@github.com:michaelliao/learngit.git</code></p>
-<p>或者从远程库克隆 ： <code>git clone https://......</code></p>
-<p>将本地库的全部内容推到远程库：<code>git push -u origin master</code></p>
-<p>从现在起，只要本地作了提交，就可以通过命令：<code>git push origin master</code></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/passages/如何设计一个类/" rel="next" title="如何设计一个类">
+                <i class="fa fa-chevron-left"></i> 如何设计一个类
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/passages/恩施游记之初见/" rel="prev" title="恩施游记之初见">
+                恩施游记之初见 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -573,14 +457,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -588,6 +469,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -608,8 +493,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -669,6 +563,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Collection接口"><span class="nav-number">1.</span> <span class="nav-text">Collection接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#List-Vector-ArrayList-LinkedList"><span class="nav-number">2.</span> <span class="nav-text">List: Vector, ArrayList, LinkedList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set"><span class="nav-number">3.</span> <span class="nav-text">Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java提供的默认排序算法"><span class="nav-number">4.</span> <span class="nav-text">Java提供的默认排序算法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -809,6 +719,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

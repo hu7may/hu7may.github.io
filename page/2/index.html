@@ -569,6 +569,164 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/Java的集合框架/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu Qimei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="胡其美的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/passages/Java的集合框架/" itemprop="url">Java集合框架总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-25T09:16:00+08:00">
+                2019-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programing-notes/" itemprop="url" rel="index">
+                    <span itemprop="name">programing notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Java的集合框架提供了很多基础数据结构，提高了开发者的生产力。</p>
+<h4 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h4><p>是所有集合的基本接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface Collections&lt;E&gt; &#123;</span><br><span class="line">    boolearn add(E elements);</span><br><span class="line">    Iteraor&lt;E&gt; iterator();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在此基础上扩展了三类：</p>
+<p>List：有序集合，提供访问、插入、删除等操作；-&gt;抽象类：AbstractList</p>
+<p>Set：不允许重复元素存在；</p>
+<p>Queue/Deque：队列，支持先入先出（FIFO）、后入先出（LIFO）</p>
+<h4 id="List-Vector-ArrayList-LinkedList"><a href="#List-Vector-ArrayList-LinkedList" class="headerlink" title="List: Vector, ArrayList, LinkedList"></a>List: Vector, ArrayList, LinkedList</h4><p>Vector是早期提供的动态数组，线程安全。内部用对象数组来保存数据，根据需要自动增加容量，当数组满时，会创建新的数组(容量提高一倍)，并拷贝原数组数据。</p>
+<p>ArrayList是动态数组，线程不安全，性能比Vector好。扩容时数组容量增加50%。</p>
+<p>LinkedList时双向链表，线程不安全，不需要调整容量。</p>
+<p>在应用开发中，应该预先估计对数据的操作是插入删除较多（使用LinkedList）还是随机访问较多(使用ArrayList)</p>
+<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><p>TreeSet：自然顺序访问，添加、删除、包含等操作低效（logN)。</p>
+<p>HashSet：哈希算法实现，常数时间添加删除包含操作，但不保证数据有序。</p>
+<p>LinkedHashSet，内部构建了记录插入顺序的双向链表，提供了按照插入顺序遍历的能力，性能略低于HashSet。</p>
+<h4 id="Java提供的默认排序算法"><a href="#Java提供的默认排序算法" class="headerlink" title="Java提供的默认排序算法"></a>Java提供的默认排序算法</h4><p>原始数据类型：双轴快速排序（Dual-Pivot QuickSort）</p>
+<p>对象数据类型：TimSort（归并和二分插入排序结合）</p>
+<p>Java8引入了并行排序算法（parallelSort），以默认方法实现在Collection接口（Java8允许接口实现默认方法）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/如何设计一个类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1810,151 +1968,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/精通一个领域/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu Qimei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="胡其美的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/passages/精通一个领域/" itemprop="url">网络爬虫与信息提取</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-08T00:39:16+08:00">
-                2018-11-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书/" itemprop="url" rel="index">
-                    <span itemprop="name">读书</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="精通一个领域"><a href="#精通一个领域" class="headerlink" title="精通一个领域"></a>精通一个领域</h1><p>Chunk it up切碎知识点</p>
-<p>！Deliberate practiving刻意练习</p>
-<p>feed it back反馈</p>
-<p><img src="/passages/精通一个领域/Users/qimeihu/Library/Application Support/typora-user-images/image-20181230123027336.png" alt="image-20181230123027336"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2005,7 +2018,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2027,7 +2040,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
