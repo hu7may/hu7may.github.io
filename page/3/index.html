@@ -293,6 +293,135 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/mac环境变量/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu Qimei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="胡其美的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/passages/mac环境变量/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-10T16:57:20+08:00">
+                2019-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<hr>
+<p>mac环境变量</p>
+<p>当写在/bashrc不管用时，配置在全局变量中更有效：.bash_profile</p>
+<p>例如：追加：PATH=$PATH:/usr/local/bin/</p>
+<p>##或者用重定向: echo ‘PATH=$PATH:/usr/local/bin’ &gt;&gt; $HOME/.bash_profie</p>
+<p>配置java_home:</p>
+<p>sudo vi /etc/profile</p>
+<p>….</p>
+<p>source /etc/profile</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/SpringBoot笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1433,161 +1562,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/正则表达式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu Qimei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="胡其美的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/passages/正则表达式/" itemprop="url">正则表达式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-19T00:39:16+08:00">
-                2018-10-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programing-notes/" itemprop="url" rel="index">
-                    <span itemprop="name">programing notes</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>特殊符号与字符：</p>
-<p>r1|r2    匹配r1或者r2        foo|bar</p>
-<p>.    匹配任何字符（\n除外）    b.b</p>
-<p>^    匹配字符串起始部分    ^Dear</p>
-<p>$    匹配字符串终止部分    /bin/*sh$    ^subject:hi$    任何有单独的字符串subject:hi构成的字符串。</p>
-<p><em>匹配0次或多次前面出现的正则表达式    [A-Za-z0-9] </em></p>
-<p>+一次或多次    [a-z]+\ .com</p>
-<p>? 0次或一次</p>
-<p>{N}匹配n次前面出现的表达式    [0-9]{3}</p>
-<p>{M,N}匹配m-n次前面出现的表达式</p>
-<p>[…]匹配来自字符集的任意单一字符</p>
-<p>[.x-y..]  【】 [0-9],[A-Za-z]</p>
-<p>\d任何十进制字符，与[0-9]一致，（\D不匹配任何数字）data\d+.txt</p>
-<p>\w任何字母以及数字，与[A-Zz-z0-9]相同。（\W与之相反）</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/conda 环境管理常用命令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1737,7 +1711,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/和时间成为朋友/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/正则表达式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu Qimei">
@@ -1756,7 +1730,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/passages/和时间成为朋友/" itemprop="url">和时间成为朋友</a></h1>
+                <a class="post-title-link" href="/passages/正则表达式/" itemprop="url">正则表达式</a></h1>
         
 
         <div class="post-meta">
@@ -1791,8 +1765,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书/" itemprop="url" rel="index">
-                    <span itemprop="name">读书</span>
+                  <a href="/categories/programing-notes/" itemprop="url" rel="index">
+                    <span itemprop="name">programing notes</span>
                   </a>
                 </span>
 
@@ -1830,9 +1804,20 @@
       
         
           
-            <p>李笑来-和时间成为朋友</p>
-<p>1.学习过程中接受一部分未知，忍受，继续往下看，坚持住</p>
-<p>2.记录这些问题，后面找答案。养成记录的习惯。</p>
+            <p>特殊符号与字符：</p>
+<p>r1|r2    匹配r1或者r2        foo|bar</p>
+<p>.    匹配任何字符（\n除外）    b.b</p>
+<p>^    匹配字符串起始部分    ^Dear</p>
+<p>$    匹配字符串终止部分    /bin/*sh$    ^subject:hi$    任何有单独的字符串subject:hi构成的字符串。</p>
+<p><em>匹配0次或多次前面出现的正则表达式    [A-Za-z0-9] </em></p>
+<p>+一次或多次    [a-z]+\ .com</p>
+<p>? 0次或一次</p>
+<p>{N}匹配n次前面出现的表达式    [0-9]{3}</p>
+<p>{M,N}匹配m-n次前面出现的表达式</p>
+<p>[…]匹配来自字符集的任意单一字符</p>
+<p>[.x-y..]  【】 [0-9],[A-Za-z]</p>
+<p>\d任何十进制字符，与[0-9]一致，（\D不匹配任何数字）data\d+.txt</p>
+<p>\w任何字母以及数字，与[A-Zz-z0-9]相同。（\W与之相反）</p>
 
           
         
@@ -2065,7 +2050,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
