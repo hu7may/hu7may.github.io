@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://hu7may.github.io">
   <title>java基础知识总结 | 胡其美的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、基础知识：1、JVM、JRE和JDK的区别：    JVM(Java Virtual Machine):java虚拟机，用于保证java的跨平台的特性。                  java语言是跨平台，jvm不是跨平台的。    JRE(Java Runtime Environment):java的运行环境,包括jvm+java的核心类库。    JDK(Java Developme">
+  <meta name="description" content="本文是java基础知识的一个全面梳理。">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java基础知识总结">
 <meta property="og:url" content="http://hu7may.github.io/passages/java基础知识总结/index.html">
 <meta property="og:site_name" content="胡其美的个人博客">
-<meta property="og:description" content="一、基础知识：1、JVM、JRE和JDK的区别：    JVM(Java Virtual Machine):java虚拟机，用于保证java的跨平台的特性。                  java语言是跨平台，jvm不是跨平台的。    JRE(Java Runtime Environment):java的运行环境,包括jvm+java的核心类库。    JDK(Java Developme">
+<meta property="og:description" content="本文是java基础知识的一个全面梳理。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-19T04:36:18.756Z">
+<meta property="og:updated_time" content="2019-03-19T05:03:09.162Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础知识总结">
-<meta name="twitter:description" content="一、基础知识：1、JVM、JRE和JDK的区别：    JVM(Java Virtual Machine):java虚拟机，用于保证java的跨平台的特性。                  java语言是跨平台，jvm不是跨平台的。    JRE(Java Runtime Environment):java的运行环境,包括jvm+java的核心类库。    JDK(Java Developme">
+<meta name="twitter:description" content="本文是java基础知识的一个全面梳理。">
   
     <link rel="alternative" href="/atom.xml" title="胡其美的个人博客" type="application/atom+xml">
   
@@ -60,7 +60,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/archives">所有文章</a></li>
+				<li><a href="/archives">归档</a></li>
 	        
 				<li><a href="/categories/programming">笔记</a></li>
 	        
@@ -72,6 +72,10 @@
 		</nav>
 		<nav class="header-smart-menu">
     		
+    			
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			
+            
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
@@ -142,7 +146,7 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/archives">所有文章</a></li>
+					<li style="width: 25%"><a href="/archives">归档</a></li>
 		        
 					<li style="width: 25%"><a href="/categories/programming">笔记</a></li>
 		        
@@ -183,9 +187,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>一、基础知识：<br>1、JVM、JRE和JDK的区别：<br>    JVM(Java Virtual Machine):java虚拟机，用于保证java的跨平台的特性。<br>                  java语言是跨平台，jvm不是跨平台的。<br>    JRE(Java Runtime Environment):java的运行环境,包括jvm+java的核心类库。<br>    JDK(Java Development Kit):java的开发工具,包括jre+开发工具<br>2、环境变量path和classpath的作用是什么？<br>    (1)path是配置Windows可执行文件的搜索路径，即扩展名为.exe的程序文件所在的目录，<br>       用于指定DOS窗口命令的路径。<br>    (2)Classpath是配置class文件所在的目录，用于指定类搜索路径，JVM就是通过它来寻找该类的class类文件的。<br>3、变量有什么用？为什么要定义变量？什么时候用？<br>    答：变量的作用：用来存储数据。<br>        为什么要定义变量：用来不断的存放同一类型的常量，并可以重复使用<br>4、&amp;和&amp;&amp;的区别?<br>    答：（1）&amp;&amp;会出现短路，如果可以通过第一个表达式判断出整个表达式的结果，则不继续后面表达式的运算；<br>         只能操作boolean类型数据；<br>        （2）&amp;不会出现短路，将整个表达式都运算。既可以操作boolean数据还可以操作数。<br>5、标示符命名规则：<br>    由数字(0-9)，大小写英文字母，以及_和$组成。<br>    不能以数字开头。<br>    不能使用关键字来自定义命名。<br>6、数据类型：<br>    (1)基本数据类型(4类8种)：<br>        整数类型：byte、short、int、long<br>        浮点数类型：float、double<br>        字符类型：char<br>        布尔类型：boolean(ture false)<br>    (2)引用数据类型：<br>        类<br>        接口<br>        数组<br>7、类型转换<br>    精度从高到低  double  float  long  int  short(char)  byte<br>    (1)自动类型转换  将一个低精度—高精度<br>    (2)强制类型转换  将一个高精度—低精度(精度会下降)<br>8、java语言的三种技术架构<br>    J2EE：企业版<br>    是为开发企业环境下的应用程序提供的一套解决方案。<br>    该技术体系中包含的技术如 Servlet、Jsp等，主要针对于Web应用程序开发。<br>    J2SE：标准版<br>    是为开发普通桌面和商务应用程序提供的解决方案。<br>    该技术体系是其他两者的基础，可以完成一些桌面应用程序的开发。<br>    比如Java版的扫雷。<br>    J2ME：小型版<br>    是为开发电子消费产品和嵌入式设备提供的解决方案。<br>    该技术体系主要应用于小型电子消费类产品，如手机中的应用程序等。<br>9、java的跨平台性：<br>    通过Java语言编写的应用程序在不同的系统平台上都可以运行。<br>    跨平台的原因：<br>    只要在需要运行java应用程序的操作系统上，先安装一个Java虚拟机(JVM Java Virtual Machine)即可。<br>    由JVM来负责Java程序在该系统中的运行。<br>10、有符号数据的表示法(次重点)<br>    原码，反码(原码取反)，补码(反码+1)。<br>11、函数<br>    定义：函数就是定义在类中的具有特定功能的一段独立小程序。<br>    特点：<br>        定义函数可以将功能代码进行封装<br>        便于对该功能进行复用<br>        函数只有被调用才会被执行<br>        函数的出现提高了代码的复用性<br>        对于函数没有具体返回值的情况，返回值类型用关键字void表示，<br>        那么该函数中的return语句如果在最后一行可以省略不写。<br>    函数的应用两个明确：<br>        明确要定义的功能最后的结果是什么？<br>        明确在定义该功能的过程中，是否需要未知内容参与运算<br>12、重载：<br>    概念：在同一个类中，允许存在一个以上的同名函数，只要它们的参数个数或者参数类型不同即可。<br>    特点：与返回值类型无关，只看参数列表(参数类型以及参数个数)。<br>    好处：方便于阅读，优化了程序设计。<br>13、数组：<br>    概念：同一种数据类型的集合。<br>    好处：可以自动给数组中的元素从0开始编号，方便操作这些元素。<br>14、内存结构：<br>    栈内存：用于存储局部变量，当数据使用完，所占空间会自动释放。<br>    堆内存：数组和对象，通过new建立的实例都存放在堆内存中。<br>    方法区：静态成员、构造函数、常量池、线程池<br>    本地方法区：window系统占用<br>    寄存器：</p>
-<p>二、面向对象<br>1、面向对象思想：<br>    (1)概述：面向对象是相对于面向过程而言的，面向过程强调的是功能，面向对象强调的是将功能封装进对象，<br>         强调具备功能的对象；<br>    (2)思想特点：<br>         A:是符合人们思考习惯的一种思想；<br>         B:将复杂的事情简单化了；<br>         C:将程序员从执行者变成了指挥者；</p>
+        <p>本文是java基础知识的一个全面梳理。</p>
+<a id="more"></a>
+<h3 id="一、基础知识："><a href="#一、基础知识：" class="headerlink" title="一、基础知识："></a>一、基础知识：</h3><p>1、JVM、JRE和JDK的区别：<br>    JVM(Java Virtual Machine):java虚拟机，用于保证java的跨平台的特性。<br>                  java语言是跨平台，jvm不是跨平台的。<br>    JRE(Java Runtime Environment):java的运行环境,包括jvm+java的核心类库。<br>    JDK(Java Development Kit):java的开发工具,包括jre+开发工具<br>2、环境变量path和classpath的作用是什么？<br>    (1)path是配置Windows可执行文件的搜索路径，即扩展名为.exe的程序文件所在的目录，<br>       用于指定DOS窗口命令的路径。<br>    (2)Classpath是配置class文件所在的目录，用于指定类搜索路径，JVM就是通过它来寻找该类的class类文件的。<br>3、变量有什么用？为什么要定义变量？什么时候用？<br>    答：变量的作用：用来存储数据。<br>        为什么要定义变量：用来不断的存放同一类型的常量，并可以重复使用<br>4、&amp;和&amp;&amp;的区别?<br>    答：（1）&amp;&amp;会出现短路，如果可以通过第一个表达式判断出整个表达式的结果，则不继续后面表达式的运算；<br>         只能操作boolean类型数据；<br>        （2）&amp;不会出现短路，将整个表达式都运算。既可以操作boolean数据还可以操作数。<br>5、标示符命名规则：<br>    由数字(0-9)，大小写英文字母，以及_和$组成。<br>    不能以数字开头。<br>    不能使用关键字来自定义命名。<br>6、数据类型：<br>    (1)基本数据类型(4类8种)：<br>        整数类型：byte、short、int、long<br>        浮点数类型：float、double<br>        字符类型：char<br>        布尔类型：boolean(ture false)<br>    (2)引用数据类型：<br>        类<br>        接口<br>        数组<br>7、类型转换<br>    精度从高到低  double  float  long  int  short(char)  byte<br>    (1)自动类型转换  将一个低精度—高精度<br>    (2)强制类型转换  将一个高精度—低精度(精度会下降)<br>8、java语言的三种技术架构<br>    J2EE：企业版<br>    是为开发企业环境下的应用程序提供的一套解决方案。<br>    该技术体系中包含的技术如 Servlet、Jsp等，主要针对于Web应用程序开发。<br>    J2SE：标准版<br>    是为开发普通桌面和商务应用程序提供的解决方案。<br>    该技术体系是其他两者的基础，可以完成一些桌面应用程序的开发。<br>    比如Java版的扫雷。<br>    J2ME：小型版<br>    是为开发电子消费产品和嵌入式设备提供的解决方案。<br>    该技术体系主要应用于小型电子消费类产品，如手机中的应用程序等。<br>9、java的跨平台性：<br>    通过Java语言编写的应用程序在不同的系统平台上都可以运行。<br>    跨平台的原因：<br>    只要在需要运行java应用程序的操作系统上，先安装一个Java虚拟机(JVM Java Virtual Machine)即可。<br>    由JVM来负责Java程序在该系统中的运行。<br>10、有符号数据的表示法(次重点)<br>    原码，反码(原码取反)，补码(反码+1)。<br>11、函数<br>    定义：函数就是定义在类中的具有特定功能的一段独立小程序。<br>    特点：<br>        定义函数可以将功能代码进行封装<br>        便于对该功能进行复用<br>        函数只有被调用才会被执行<br>        函数的出现提高了代码的复用性<br>        对于函数没有具体返回值的情况，返回值类型用关键字void表示，<br>        那么该函数中的return语句如果在最后一行可以省略不写。<br>    函数的应用两个明确：<br>        明确要定义的功能最后的结果是什么？<br>        明确在定义该功能的过程中，是否需要未知内容参与运算<br>12、重载：<br>    概念：在同一个类中，允许存在一个以上的同名函数，只要它们的参数个数或者参数类型不同即可。<br>    特点：与返回值类型无关，只看参数列表(参数类型以及参数个数)。<br>    好处：方便于阅读，优化了程序设计。<br>13、数组：<br>    概念：同一种数据类型的集合。<br>    好处：可以自动给数组中的元素从0开始编号，方便操作这些元素。<br>14、内存结构：<br>    栈内存：用于存储局部变量，当数据使用完，所占空间会自动释放。<br>    堆内存：数组和对象，通过new建立的实例都存放在堆内存中。<br>    方法区：静态成员、构造函数、常量池、线程池<br>    本地方法区：window系统占用<br>    寄存器：</p>
+<h3 id="二、面向对象"><a href="#二、面向对象" class="headerlink" title="二、面向对象"></a>二、面向对象</h3><p>1、面向对象思想：<br>    (1)概述：面向对象是相对于面向过程而言的，面向过程强调的是功能，面向对象强调的是将功能封装进对象，<br>         强调具备功能的对象；<br>    (2)思想特点：<br>         A:是符合人们思考习惯的一种思想；<br>         B:将复杂的事情简单化了；<br>         C:将程序员从执行者变成了指挥者；</p>
 <pre><code>     比如我要达到某种结果，我就寻找能帮我达到该结果的功能的对象，如我要洗衣服我就买洗衣机，
      至于怎么洗我不管。
 (3)特征：
@@ -419,7 +424,7 @@ abstract    Ok                    OK
        有throw的时候，如果throw抛的异常是Exception体系，那么必须有throws在方法上声明。
     B：throws用于方法的声明上，其后跟的是异常类名，后面可以跟多个异常类，之间用逗号隔开
        throw用于方法体中，其后跟的是一个异常对象名
-</code></pre><p>三、多线程：<br>1、进程和线程：<br>    进程：正在进行的程序。每一个进程执行都有一个执行顺序，该顺序是一个执行路径，或者叫一个控制单元。<br>    线程：进程内部的一条执行路径或者一个控制单元。<br>    两者的区别：<br>        一个进程至少有一个线程<br>        进程在执行过程中拥有独立的内存单元，而多个线程共享内存；<br>2、jvm多线程的启动是多线程吗？<br>    java的虚拟机jvm启动的是单线程，就有发生内存泄露的可能，而我们使用java程序没出现这样的问题，<br>    也就是jvm启动至少有两个线程，一个执行java程序，一个执行垃圾回收。所以是多线程。<br>2、多线程的优势：<br>    解决了多部分同时运行的问题，提高效率<br>3、线程的弊端：<br>    线程太多会导致效率的降低，因为线程的执行依靠的是CPU的来回切换。<br>4、什么叫多线程：<br>    一个进程中有多个线程，称为多线程。<br>5、实现多线程的方法：<br>    实现多线程可以通过继承Thread类和实现Runnable接口。<br>    (1)继承Thread<br>        定义一个类继承Thread类<br>        复写Thread类中的public void run()方法，将线程的任务代码封装到run方法中<br>        直接创建Thread的子类对象，创建线程<br>        调用start()方法，开启线程(调用线程的任务run方法)<br>        //另外可以通过Thread的getName()获取线程的名称。</p>
+</code></pre><h3 id="三、多线程："><a href="#三、多线程：" class="headerlink" title="三、多线程："></a>三、多线程：</h3><p>1、进程和线程：<br>    进程：正在进行的程序。每一个进程执行都有一个执行顺序，该顺序是一个执行路径，或者叫一个控制单元。<br>    线程：进程内部的一条执行路径或者一个控制单元。<br>    两者的区别：<br>        一个进程至少有一个线程<br>        进程在执行过程中拥有独立的内存单元，而多个线程共享内存；<br>2、jvm多线程的启动是多线程吗？<br>    java的虚拟机jvm启动的是单线程，就有发生内存泄露的可能，而我们使用java程序没出现这样的问题，<br>    也就是jvm启动至少有两个线程，一个执行java程序，一个执行垃圾回收。所以是多线程。<br>2、多线程的优势：<br>    解决了多部分同时运行的问题，提高效率<br>3、线程的弊端：<br>    线程太多会导致效率的降低，因为线程的执行依靠的是CPU的来回切换。<br>4、什么叫多线程：<br>    一个进程中有多个线程，称为多线程。<br>5、实现多线程的方法：<br>    实现多线程可以通过继承Thread类和实现Runnable接口。<br>    (1)继承Thread<br>        定义一个类继承Thread类<br>        复写Thread类中的public void run()方法，将线程的任务代码封装到run方法中<br>        直接创建Thread的子类对象，创建线程<br>        调用start()方法，开启线程(调用线程的任务run方法)<br>        //另外可以通过Thread的getName()获取线程的名称。</p>
 <pre><code>(2)实现Runnable接口；
     定义一个类，实现Runnable接口；
     覆盖接口的public void run()的方法，将线程的任务代码封装到run方法中；
@@ -492,7 +497,7 @@ Condition方法摘要：
     常用的使用可在 DAO 模式中见到，当 DAO 类作为一个单例类时，
     数据库链接(connection)被每一个线程独立的维护，互不影响。(基于线程的单例)
 </code></pre><p>26、什么时候抛出InvalidMonitorStateException异常?为什么？<br>    调用 wait ()/notify ()/notifyAll ()中的任何一个方法时，如果当前线程没有获得该对象的锁，<br>    那么就会抛出 IllegalMonitorStateException 的异常<br>    也就是说程序在没有执行对象的任何同步块或者同步方法时，<br>    仍然尝试调用 wait ()/notify ()/notifyAll ()时。由于该异常是 RuntimeExcpetion 的子类，<br>    所以该异常不一定要捕获(尽管你可以捕获只要你愿意<br>    作为 RuntimeException，此类异常不会在 wait (),notify (),notifyAll ()的方法签名提及。<br>27、在静态方法上使用同步时会发生什么事？<br>    同步静态方法时会获取该类的“Class”对象，所以当一个线程进入同步的静态方法中时，<br>    线程监视器获取类本身的对象锁，其它线程不能进入这个类的任何静态同步方法。<br>    它不像实例方法，因为多个线程可以同时访问不同实例同步实例方法。<br>28、当一个同步方法已经执行，线程能够调用对象上的非同步实例方法吗？<br>    可以，一个非同步方法总是可以被调用而不会有任何问题。<br>    实际上，Java 没有为非同步方法做任何检查，锁对象仅仅在同步方法或者同步代码块中检查。<br>    如果一个方法没有声明为同步，即使你在使用共享数据Java照样会调用，而不会做检查是否安全，<br>    所以在这种情况下要特别小心。一个方法是否声明为同步取决于临界区访问(critial section access)，<br>    如果方法不访问临界区(共享资源或者数据结构)就没必要声明为同步的。<br>29、在一个对象上两个线程可以调用两个不同的同步实例方法吗？<br>    不能，因为一个对象已经同步了实例方法，线程获取了对象的对象锁。<br>    所以只有执行完该方法释放对象锁后才能执行其它同步方法。<br>30、什么是线程饿死，什么是活锁？<br>    线程饿死和活锁虽然不像死锁一样是常见的问题，但是对于并发编程的设计者来说就像一次邂逅一样。<br>    当所有线程阻塞，或者由于需要的资源无效而不能处理，不存在非阻塞线程使资源可用。<br>    JavaAPI 中线程活锁可能发生在以下情形：<br>    当所有线程在程序中执行 Object.wait (0)，参数为 0 的 wait 方法。<br>    程序将发生活锁直到在相应的对象上有线程调用 Object.notify ()或者 Object.notifyAll ()。<br>    当所有线程卡在无限循环中。</p>
-<p>四、集合框架<br>1：String类：字符串(重点)<br>    (1)多个字符组成的一个序列，叫字符串。<br>       生活中很多数据的描述都采用的是字符串的。而且我们还会对其进行操作。<br>       所以，java就提供了这样的一个类供我们使用。<br>    (2)创建字符串对象<br>        A:String():无参构造<br>            <strong>举例：<br>              String s = new String();<br>              s = “hello”;<br>              sop(s);<br>        B:String(byte[] bys):传一个字节数组作为参数 ***</strong><br>            <strong>举例<br>              byte[] bys = {97,98,99,100,101};<br>              String s = new String(bys);<br>              sop(s);<br>        C:String(byte[] bys,int index,int length):把字节数组的一部分转换成一个字符串 ***</strong><br>            <strong>举例<br>              byte[] bys = {97,98,99,100,101};<br>              String s = new String(bys,1,2);<br>              sop(s);<br>        D:String(char[] chs):传一个字符数组作为参数 ***</strong><br>            <strong>举例<br>              char[] chs = {‘a’,’b’,’c’,’d’,’e’};<br>              String s = new String(chs);<br>              sop(s);<br>        E:String(char[] chs,int index,int length):把字符数组的一部分转换成一个字符串 ***</strong><br>            <strong>举例<br>              char[] chs = {‘a’,’b’,’c’,’d’,’e’};<br>              String s = new String(chs,1,2);<br>              sop(s);<br>        F:String(String str):把一个字符串传递过来作为参数<br>              char[] chs = {‘a’,’b’,’c’,’d’,’e’};<br>              String ss = new String(s);<br>              sop(ss);<br>        G:直接把字符串常量赋值给字符串引用对象(最常用) ***</strong><br>            **举例<br>              String s = “hello”;<br>              sop(s);<br>    (3)面试题<br>        A:请问String s = new String(“hello”);创建了几个对象。<br>          两个。一个”hello”字符串对象，在方法区的常量池；一个s对象，在栈内存。</p>
+<h3 id="四、集合框架"><a href="#四、集合框架" class="headerlink" title="四、集合框架"></a>四、集合框架</h3><p>1：String类：字符串(重点)<br>    (1)多个字符组成的一个序列，叫字符串。<br>       生活中很多数据的描述都采用的是字符串的。而且我们还会对其进行操作。<br>       所以，java就提供了这样的一个类供我们使用。<br>    (2)创建字符串对象<br>        A:String():无参构造<br>            <strong>举例：<br>              String s = new String();<br>              s = “hello”;<br>              sop(s);<br>        B:String(byte[] bys):传一个字节数组作为参数 ***</strong><br>            <strong>举例<br>              byte[] bys = {97,98,99,100,101};<br>              String s = new String(bys);<br>              sop(s);<br>        C:String(byte[] bys,int index,int length):把字节数组的一部分转换成一个字符串 ***</strong><br>            <strong>举例<br>              byte[] bys = {97,98,99,100,101};<br>              String s = new String(bys,1,2);<br>              sop(s);<br>        D:String(char[] chs):传一个字符数组作为参数 ***</strong><br>            <strong>举例<br>              char[] chs = {‘a’,’b’,’c’,’d’,’e’};<br>              String s = new String(chs);<br>              sop(s);<br>        E:String(char[] chs,int index,int length):把字符数组的一部分转换成一个字符串 ***</strong><br>            <strong>举例<br>              char[] chs = {‘a’,’b’,’c’,’d’,’e’};<br>              String s = new String(chs,1,2);<br>              sop(s);<br>        F:String(String str):把一个字符串传递过来作为参数<br>              char[] chs = {‘a’,’b’,’c’,’d’,’e’};<br>              String ss = new String(s);<br>              sop(ss);<br>        G:直接把字符串常量赋值给字符串引用对象(最常用) ***</strong><br>            **举例<br>              String s = “hello”;<br>              sop(s);<br>    (3)面试题<br>        A:请问String s = new String(“hello”);创建了几个对象。<br>          两个。一个”hello”字符串对象，在方法区的常量池；一个s对象，在栈内存。</p>
 <pre><code>    B:请写出下面的结果
         String s1 = new String(&quot;abc&quot;);
         Strign s2 = new String(&quot;abc&quot;);
@@ -980,7 +985,7 @@ static &lt;T&gt; SortedSet&lt;T&gt;  synchronizedSortedSet(SortedSet&lt;T&gt; s)
             Vector&lt;Number&gt; x = y;
             上面的代码错误，原理与Vector&lt;Object &gt; x11 = new Vector&lt;String&gt;();相似，
             只能通过强制类型转换方式来赋值。
-</code></pre><p>五、IO流<br>1、IO流概述<br>    (1)用来处理设备(硬盘，控制台，内存)间的数据。<br>    (2)java中对数据的操作都是通过流的方式。<br>    (3)java用于操作流的类都在io包中。<br>    (4)按照流操作的数据的类型不同：分为字节流和字符流。字符流是为了方便中文的操作而来的。<br>    (5)按照流的流向不同分为：输入流，输出流<br>2、IO流常用基类：<br>    (1)字节流<br>        输出字节流：OutputStream：字节写入流抽象类<br>                |—&gt;FileOutputStream：<br>                            字节写入流<br>                |—&gt;BufferedOutputStream：<br>                            字节写入流缓冲区<br>                |—&gt;PrintStream：<br>                            打印流<br>        输入字节流：InputStream：字节读取流抽象类<br>                |—&gt;FileInputStream：<br>                            字节读取流<br>                |—&gt;BufferedInputStream：<br>                            字节读取流缓冲区<br>    (2)字符流<br>        输出字符流：Writer：字符写入流的抽象<br>                |—&gt;FileWriter：<br>                            字符写入流<br>                |—&gt;BufferedWriter：<br>                            字符写入流缓冲区<br>                |—&gt;OutputStreamWriter：<br>                            字符通向字节的转换流(涉及键盘录入时用)<br>                |—&gt;OutputStreamWriter：<br>                            打印流，可处理各种类型的数据<br>        输入字符流：Reader: 字符读取流的抽象类<br>                |—&gt;FileReader：<br>                            字符读取流<br>                    |—&gt;LineNumberReader：<br>                                跟踪行号的缓冲字符读取流<br>                |—&gt;BufferedReader：<br>                            字符读取流缓冲区<br>                |—&gt;InputStreamReader：<br>                            字节通向字符的转换流(涉及键盘录入时用)<br>    (3)IO流常用基类方法摘要：<br>        <strong>字节写入流：OutputStream：<br>            void close() 关闭此输出流并释放与此流有关的所有系统资源。<br>            void flush()刷新此输出流并强制写出所有缓冲的输出字节。<br>            abstract  void write(int b)  将指定的字节写入此输出流。<br>            void write(byte[] b) 将 b.length 个字节从指定的 byte 数组写入此输出流。<br>            void write(byte[] b, int off, int len)<br>                    将指定 byte 数组中从偏移量 off 开始的 len 个字节写入此输出流。 
+</code></pre><h3 id="五、IO流"><a href="#五、IO流" class="headerlink" title="五、IO流"></a>五、IO流</h3><p>1、IO流概述<br>    (1)用来处理设备(硬盘，控制台，内存)间的数据。<br>    (2)java中对数据的操作都是通过流的方式。<br>    (3)java用于操作流的类都在io包中。<br>    (4)按照流操作的数据的类型不同：分为字节流和字符流。字符流是为了方便中文的操作而来的。<br>    (5)按照流的流向不同分为：输入流，输出流<br>2、IO流常用基类：<br>    (1)字节流<br>        输出字节流：OutputStream：字节写入流抽象类<br>                |—&gt;FileOutputStream：<br>                            字节写入流<br>                |—&gt;BufferedOutputStream：<br>                            字节写入流缓冲区<br>                |—&gt;PrintStream：<br>                            打印流<br>        输入字节流：InputStream：字节读取流抽象类<br>                |—&gt;FileInputStream：<br>                            字节读取流<br>                |—&gt;BufferedInputStream：<br>                            字节读取流缓冲区<br>    (2)字符流<br>        输出字符流：Writer：字符写入流的抽象<br>                |—&gt;FileWriter：<br>                            字符写入流<br>                |—&gt;BufferedWriter：<br>                            字符写入流缓冲区<br>                |—&gt;OutputStreamWriter：<br>                            字符通向字节的转换流(涉及键盘录入时用)<br>                |—&gt;OutputStreamWriter：<br>                            打印流，可处理各种类型的数据<br>        输入字符流：Reader: 字符读取流的抽象类<br>                |—&gt;FileReader：<br>                            字符读取流<br>                    |—&gt;LineNumberReader：<br>                                跟踪行号的缓冲字符读取流<br>                |—&gt;BufferedReader：<br>                            字符读取流缓冲区<br>                |—&gt;InputStreamReader：<br>                            字节通向字符的转换流(涉及键盘录入时用)<br>    (3)IO流常用基类方法摘要：<br>        <strong>字节写入流：OutputStream：<br>            void close() 关闭此输出流并释放与此流有关的所有系统资源。<br>            void flush()刷新此输出流并强制写出所有缓冲的输出字节。<br>            abstract  void write(int b)  将指定的字节写入此输出流。<br>            void write(byte[] b) 将 b.length 个字节从指定的 byte 数组写入此输出流。<br>            void write(byte[] b, int off, int len)<br>                    将指定 byte 数组中从偏移量 off 开始的 len 个字节写入此输出流。 
         </strong>字节读取流：InputStream：<br>            void close() 关闭此输入流并释放与该流关联的所有系统资源。<br>            int available() (特有方法！！)<br>                返回此输入流下一个方法调用可以不受阻塞地从此输入流读取（或跳过）的估计字节数。<br>            abstract  int read() 从输入流中读取数据的下一个字节。<br>            int read(byte[] b) 从输入流中读取一定数量的字节，并将其存储在缓冲区数组 b 中。<br>            int read(byte[] b, int off, int len)  将输入流中最多 len 个数据字节读入 byte 数组。<br>            long skip(long n) 跳过和丢弃此输入流中数据的 n 个字节。</p>
 <pre><code>**字符写入流：Writer：
     abstract  void close() 关闭此流，但要先刷新它。
@@ -1241,7 +1246,7 @@ static &lt;T&gt; SortedSet&lt;T&gt;  synchronizedSortedSet(SortedSet&lt;T&gt; s)
         String str2 = &quot;你好&quot;;
         byte[] buf2 = str2.getBytes(&quot;UTF-8&quot;);//指定解码：UTF-8,六个字节
 </code></pre><p>​<br>​            //编码解码3：编码正确解码错误<br>​            String str3 = “你好”;<br>​            byte[] buf3 = str3.getBytes(“GBK”);//指定编码：GBK,四个字节<br>​            String str3 = new String(buf3,”ISO8859-1”);//错误解码<br>​<br>​            //编码解码4：错误编码正确解码<br>​            String str4 = “你好”;<br>​            byte[] buf4 = str4.getBytes(“ISO8859-1”);//错误编码<br>​            String str4 = new String(buf4,”GBK”);//正确解码，读不出来<br>​<br>​            //编码解码5：编码对了，但是解码错误了，怎么办呢？<br>​            //此时可以将错误的解码再错编回去，载用正确编码解码<br>​            String str5 = “你好”;<br>​            byte[] buf5 = str5.getBytes(“GBK”);//正确编码<br>​            String str6 = new String(buf5,”ISO8859-1”);//错误解码，读不出来<br>​            byte[] buf6 = str6.getBytes(“ISO8859-1”);//再错误编码<br>​            String str7 = new String(buf6,”GBK”);//再正确解码，这样就可以读出来了<br>​        }</p>
-<p>六、网络编程：<br>1、网络编程概述<br>    (1)网络模型<br>        OSI参考模型<br>        TCP/IP参考模型<br>    (2)网络通讯要素<br>        IP地址<br>        端口号<br>        传输协议<br>    (3)网络通讯前提：<br>        <strong>找到对方IP
+<h3 id="六、网络编程："><a href="#六、网络编程：" class="headerlink" title="六、网络编程："></a>六、网络编程：</h3><p>1、网络编程概述<br>    (1)网络模型<br>        OSI参考模型<br>        TCP/IP参考模型<br>    (2)网络通讯要素<br>        IP地址<br>        端口号<br>        传输协议<br>    (3)网络通讯前提：<br>        <strong>找到对方IP
         </strong>数据要发送到指定端口。为了标示不同的应用程序，所以给这些网络应用程序都用数字进行标示<br>          。这个表示就叫端口。<br>        **定义通信规则。这个规则称为通信协议，国际组织定义了通用协议TCP/IP<br>    (4)计算机网络：<br>        是指将地理位置不同的具有独立功能的多台计算机及其外部设备，<br>        通过通信线路连接起来，在网络操作系统，网络管理软件及网络通信协议的管理和协调下，<br>        实现资源共享和信息传递的计算机系统。<br>    (5)IP地址：<br>        IP地址 = 网络号码+主机地址</p>
 <pre><code>    A类IP地址:第一段号码为网络号码，剩下的三段号码为本地计算机的号码
     B类IP地址:前二段号码为网络号码，剩下的二段号码为本地计算机的号码
@@ -1918,7 +1923,7 @@ static &lt;T&gt; SortedSet&lt;T&gt;  synchronizedSortedSet(SortedSet&lt;T&gt; s)
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、基础知识："><span class="toc-number">1.</span> <span class="toc-text">一、基础知识：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、面向对象"><span class="toc-number">2.</span> <span class="toc-text">二、面向对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、多线程："><span class="toc-number">3.</span> <span class="toc-text">三、多线程：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、集合框架"><span class="toc-number">4.</span> <span class="toc-text">四、集合框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、IO流"><span class="toc-number">5.</span> <span class="toc-text">五、IO流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、网络编程："><span class="toc-number">6.</span> <span class="toc-text">六、网络编程：</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -1993,7 +1998,7 @@ static &lt;T&gt; SortedSet&lt;T&gt;  synchronizedSortedSet(SortedSet&lt;T&gt; s)
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
-		innerArchive: false,
+		innerArchive: true,
 		showTags: true
 	}
 </script>
@@ -2034,18 +2039,133 @@ MathJax.Hub.Queue(function() {
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      
+        
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
   </div>
   <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">tag:</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">django, 博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">诗</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自律</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">知识图谱</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+            
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            3、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
+    	</section>
     
 
     
