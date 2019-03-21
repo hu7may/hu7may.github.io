@@ -5,45 +5,45 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://hu7may.github.io">
+  <link rel="dns-prefetch" href="http://huqimei.com">
   <title>数据库基础知识 | 胡其美的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="数据库学习笔记本文是学习数据库设计那些事课程的笔记 需求分析（了解数据的存储特点、生命周期）-&amp;gt;逻辑设计（ER图对数据库进行逻辑建模）-&amp;gt;物理设计（考虑到具体数据库的特点）-&amp;gt;维护优化（新的需求、索引优化、大表拆分） 名词解释：关系：一个关系对应所说的一张表 元组：表中的一行即为一个元祖 属性：表中的一列即为一个属性，每一个属性都有一个属性名 候选码：表中的某个属性组，它可以唯一">
 <meta name="keywords" content="数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库基础知识">
-<meta property="og:url" content="http://hu7may.github.io/passages/数据库基础知识/index.html">
+<meta property="og:url" content="http://huqimei.com/passages/数据库基础知识/index.html">
 <meta property="og:site_name" content="胡其美的博客">
 <meta property="og:description" content="数据库学习笔记本文是学习数据库设计那些事课程的笔记 需求分析（了解数据的存储特点、生命周期）-&amp;gt;逻辑设计（ER图对数据库进行逻辑建模）-&amp;gt;物理设计（考虑到具体数据库的特点）-&amp;gt;维护优化（新的需求、索引优化、大表拆分） 名词解释：关系：一个关系对应所说的一张表 元组：表中的一行即为一个元祖 属性：表中的一列即为一个属性，每一个属性都有一个属性名 候选码：表中的某个属性组，它可以唯一">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113001643584.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113002247927.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113003015905.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113003111574.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113003416453.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113003734531.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113004441445.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113004408037.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113010645728.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113011706240.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113012039130.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113012219102.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113012256909.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113012542532.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113012719157.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113012742362.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113012852183.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113013135855.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113013157673.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113013310202.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113013408858.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113013442191.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113013530935.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113001643584.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113002247927.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113003015905.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113003111574.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113003416453.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113003734531.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113004441445.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113004408037.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113010645728.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113011706240.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113012039130.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113012219102.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113012256909.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113012542532.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113012719157.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113012742362.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113012852183.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113013135855.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113013157673.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113013310202.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113013408858.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113013442191.png">
+<meta property="og:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113013530935.png">
 <meta property="og:updated_time" content="2019-03-19T03:09:10.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库基础知识">
 <meta name="twitter:description" content="数据库学习笔记本文是学习数据库设计那些事课程的笔记 需求分析（了解数据的存储特点、生命周期）-&amp;gt;逻辑设计（ER图对数据库进行逻辑建模）-&amp;gt;物理设计（考虑到具体数据库的特点）-&amp;gt;维护优化（新的需求、索引优化、大表拆分） 名词解释：关系：一个关系对应所说的一张表 元组：表中的一行即为一个元祖 属性：表中的一列即为一个属性，每一个属性都有一个属性名 候选码：表中的某个属性组，它可以唯一">
-<meta name="twitter:image" content="http://hu7may.github.io/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113001643584.png">
+<meta name="twitter:image" content="http://huqimei.com/passages/数据库基础知识/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20190113001643584.png">
   
     <link rel="alternative" href="/atom.xml" title="胡其美的博客" type="application/atom+xml">
   
@@ -378,7 +378,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://hu7may.github.io/passages/数据库基础知识/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://huqimei.com/passages/数据库基础知识/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -585,6 +585,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -613,11 +621,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">

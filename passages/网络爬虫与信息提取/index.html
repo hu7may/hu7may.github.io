@@ -5,40 +5,40 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://hu7may.github.io">
+  <link rel="dns-prefetch" href="http://huqimei.com">
   <title>网络爬虫与信息提取 | 胡其美的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="网络爬虫与信息提取之一：规则(requests库)官方文档：http://docs.python-requests.org/en/master/    查看网站robots协议：一般在网站根目录下，如：http://www.baidu.com/robots.txt，除非是类人行为，一般要遵守该协议。 对于禁止虫爬取的网站，通过设置user-agent来爬取，以亚马逊网站为例： 1234567891">
 <meta name="keywords" content="爬虫">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络爬虫与信息提取">
-<meta property="og:url" content="http://hu7may.github.io/passages/网络爬虫与信息提取/index.html">
+<meta property="og:url" content="http://huqimei.com/passages/网络爬虫与信息提取/index.html">
 <meta property="og:site_name" content="胡其美的博客">
 <meta property="og:description" content="网络爬虫与信息提取之一：规则(requests库)官方文档：http://docs.python-requests.org/en/master/    查看网站robots协议：一般在网站根目录下，如：http://www.baidu.com/robots.txt，除非是类人行为，一般要遵守该协议。 对于禁止虫爬取的网站，通过设置user-agent来爬取，以亚马逊网站为例： 1234567891">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/1.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181106200422305.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181106200525161.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107194824311.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107195135042.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107195434568.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107195516453.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107195634449.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107195709969.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107195958025.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107200056033.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107200602029.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107201718580.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107201737660.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107201754174.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107210325892.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107210348818.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107210620715.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/1.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181106200422305.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181106200525161.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107194824311.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107195135042.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107195434568.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107195516453.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107195634449.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107195709969.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107195958025.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107200056033.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107200602029.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107201718580.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107201737660.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107201754174.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107210325892.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107210348818.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181107210620715.png">
 <meta property="og:updated_time" content="2018-11-13T08:41:51.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络爬虫与信息提取">
 <meta name="twitter:description" content="网络爬虫与信息提取之一：规则(requests库)官方文档：http://docs.python-requests.org/en/master/    查看网站robots协议：一般在网站根目录下，如：http://www.baidu.com/robots.txt，除非是类人行为，一般要遵守该协议。 对于禁止虫爬取的网站，通过设置user-agent来爬取，以亚马逊网站为例： 1234567891">
-<meta name="twitter:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取/1.png">
+<meta name="twitter:image" content="http://huqimei.com/passages/网络爬虫与信息提取/1.png">
   
     <link rel="alternative" href="/atom.xml" title="胡其美的博客" type="application/atom+xml">
   
@@ -377,7 +377,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://hu7may.github.io/passages/网络爬虫与信息提取/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://huqimei.com/passages/网络爬虫与信息提取/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -391,18 +391,18 @@
   
 <nav id="article-nav">
   
-    <a href="/passages/网络爬虫与信息提取（二）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/passages/精通一个领域/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          网络爬虫与信息提取（二）
+          网络爬虫与信息提取
         
       </div>
     </a>
   
   
-    <a href="/passages/精通一个领域/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">网络爬虫与信息提取</div>
+    <a href="/passages/conda 环境管理常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">和时间成为朋友</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -584,6 +584,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -612,11 +620,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">

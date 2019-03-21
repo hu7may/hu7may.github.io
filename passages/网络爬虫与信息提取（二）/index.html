@@ -5,41 +5,41 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://hu7may.github.io">
+  <link rel="dns-prefetch" href="http://huqimei.com">
   <title>网络爬虫与信息提取（二） | 胡其美的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="什么是正则表达式： ​    通用的字符串表达框架 ​    简洁表达一组字符串的表达式 ​    针对字符串表达“简洁”和“特征”思想的工具 ​    判断某字符串的特征归属 在文本处理中非常常用： ​    表达文本类型的特征（病毒、入侵等） ​    同时查找或替换一组字符串 ​    匹配字符串的全部或部分 常用操作符:    ip地址：  re库的基本使用正则表达式的表示类型 re库采用">
 <meta name="keywords" content="爬虫">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络爬虫与信息提取（二）">
-<meta property="og:url" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/index.html">
+<meta property="og:url" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/index.html">
 <meta property="og:site_name" content="胡其美的博客">
 <meta property="og:description" content="什么是正则表达式： ​    通用的字符串表达框架 ​    简洁表达一组字符串的表达式 ​    针对字符串表达“简洁”和“特征”思想的工具 ​    判断某字符串的特征归属 在文本处理中非常常用： ​    表达文本类型的特征（病毒、入侵等） ​    同时查找或替换一组字符串 ​    匹配字符串的全部或部分 常用操作符:    ip地址：  re库的基本使用正则表达式的表示类型 re库采用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108184401581.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108184457242.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108184901207.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108185106845.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108191122057.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108191154777.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108191215745.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108191601551.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108191850962.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108193300791.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108193626742.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108194613804.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108195450251.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108195528358.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108195604714.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108200351062.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108235635114.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181109200044589.png">
-<meta property="og:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181109200119474.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108184401581.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108184457242.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108184901207.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108185106845.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108191122057.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108191154777.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108191215745.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108191601551.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108191850962.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108193300791.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108193626742.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108194613804.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108195450251.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108195528358.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108195604714.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108200351062.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108235635114.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181109200044589.png">
+<meta property="og:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181109200119474.png">
 <meta property="og:updated_time" content="2018-11-11T06:54:38.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络爬虫与信息提取（二）">
 <meta name="twitter:description" content="什么是正则表达式： ​    通用的字符串表达框架 ​    简洁表达一组字符串的表达式 ​    针对字符串表达“简洁”和“特征”思想的工具 ​    判断某字符串的特征归属 在文本处理中非常常用： ​    表达文本类型的特征（病毒、入侵等） ​    同时查找或替换一组字符串 ​    匹配字符串的全部或部分 常用操作符:    ip地址：  re库的基本使用正则表达式的表示类型 re库采用">
-<meta name="twitter:image" content="http://hu7may.github.io/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108184401581.png">
+<meta name="twitter:image" content="http://huqimei.com/passages/网络爬虫与信息提取（二）/Users/qimeihu/Library/Application%20Support/typora-user-images/image-20181108184401581.png">
   
     <link rel="alternative" href="/atom.xml" title="胡其美的博客" type="application/atom+xml">
   
@@ -334,7 +334,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://hu7may.github.io/passages/网络爬虫与信息提取（二）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://huqimei.com/passages/网络爬虫与信息提取（二）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -358,7 +358,7 @@
     </a>
   
   
-    <a href="/passages/网络爬虫与信息提取/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/passages/精通一个领域/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">网络爬虫与信息提取</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -541,6 +541,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -569,11 +577,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
