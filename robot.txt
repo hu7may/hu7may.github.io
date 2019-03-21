@@ -5,12 +5,6 @@ Allow: /archives/
 Allow: /categories/
 Allow: /tags/
 
-Disallow: /vendors/
-Disallow: /js/
-Disallow: /css/
-Disallow: /fonts/
-Disallow: /vendors/
-Disallow: /fancybox/
 
 Sitemap: http://hu7may.github.io/sitemap.xml
 Sitemap: http://hu7may.github.io/baidusitemap.xml
