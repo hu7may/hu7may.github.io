@@ -172,19 +172,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-ARTS第1周" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2019-03-21-腾讯测试开发面试问题记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/passages/ARTS第1周/">ARTS第1周</a>
+      <a class="article-title" href="/passages/2019-03-21-腾讯测试开发面试问题记录/">腾讯测试开发面试问题记录</a>
     </h1>
   
 
         
-        <a href="/passages/ARTS第1周/" class="archive-article-date">
+        <a href="/passages/2019-03-21-腾讯测试开发面试问题记录/" class="archive-article-date">
   	<time datetime="2019-03-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
 </a>
         
@@ -192,22 +192,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h4><h4 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h4><p>这是一篇关于react和vue比较的文章</p>
-<p>原文链接：<a href="https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences-e9a1ae8077fd" target="_blank" rel="noopener">https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences-e9a1ae8077fd</a></p>
-<p>作者记录了用这两种框架写一个相同待办清单app的过程，比较了二者的异同。</p>
-<p>1.mutate data</p>
-<p>vue的data object：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    list: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">'tofo'</span>: <span class="string">'clean the room'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">'todo'</span>: <span class="string">'buy milk'</span></span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p>react的state object:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(pros) &#123;</span><br><span class="line">  <span class="keyword">super</span>(pros);</span><br><span class="line">  <span class="keyword">this</span>.state = &#123;</span><br><span class="line">    list: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">'todo'</span>: <span class="string">'clean the house'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">'todo'</span>: <span class="string">'buy milk'</span></span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>对一个数据：name:”Sunil”，</p>
-<p>vue:引用：this.name;改变： this.name = ‘John’；</p>
-<p>react: 引用：this.state.name, 改变：this.setState({name: ‘John’})</p>
-<p>可以看出react在书写上要麻烦一些，这里有一段解释：</p>
-<blockquote>
-<p><em>This is because React wants to re-run certain life cycle hooks, [such as] componentWillReceiveProps, shouldComponentUpdate, componentWillUpdate, render, componentDidUpdate, whenever state changes. It would know that the state has changed when you call the setState function. If you directly mutated state, React would have to do a lot more work to keep track of changes and what lifecycle hooks to run etc. So to make it simple React uses setState.</em></p>
-</blockquote>
-
+        <p>今天面试了腾讯的测试岗，感觉有的问题没有回答好，在这里做一个梳理。</p>
+<h4 id="1-对测试开发岗位的理解"><a href="#1-对测试开发岗位的理解" class="headerlink" title="1.对测试开发岗位的理解"></a>1.对测试开发岗位的理解</h4><h4 id="2-python多线程"><a href="#2-python多线程" class="headerlink" title="2.python多线程"></a>2.python多线程</h4><p>python的解释器在执行多线程代码时，一个线程要执行，需要先获得GIL(global interpretator lock全局解释器锁)，</p>
+<h4 id="3-java创建对象有哪几种方式"><a href="#3-java创建对象有哪几种方式" class="headerlink" title="3.java创建对象有哪几种方式"></a>3.java创建对象有哪几种方式</h4><h4 id="4-如何判断一个对象是否可回收"><a href="#4-如何判断一个对象是否可回收" class="headerlink" title="4.如何判断一个对象是否可回收"></a>4.如何判断一个对象是否可回收</h4><h4 id="5-java的四种引用"><a href="#5-java的四种引用" class="headerlink" title="5.java的四种引用"></a>5.java的四种引用</h4><h4 id="6-项目中的问题"><a href="#6-项目中的问题" class="headerlink" title="6.项目中的问题"></a>6.项目中的问题</h4>
       
 
       
@@ -215,6 +202,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -230,7 +228,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/passages/ARTS第1周/">展开全文 >></a>
+          <a class="article-more-a" href="/passages/2019-03-21-腾讯测试开发面试问题记录/">展开全文 >></a>
         </p>
       
 
@@ -407,19 +405,19 @@
   </section>
 
   
-    <article id="post-2019-03-21-腾讯测试开发面试问题记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ARTS第1周" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/passages/2019-03-21-腾讯测试开发面试问题记录/">腾讯测试开发面试问题记录</a>
+      <a class="article-title" href="/passages/ARTS第1周/">ARTS第1周</a>
     </h1>
   
 
         
-        <a href="/passages/2019-03-21-腾讯测试开发面试问题记录/" class="archive-article-date">
+        <a href="/passages/ARTS第1周/" class="archive-article-date">
   	<time datetime="2019-03-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
 </a>
         
@@ -427,14 +425,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天面试了腾讯的测试岗，感觉有的问题没有回答好，在这里做一个梳理。</p>
-<p>1.对测试开发岗位的理解</p>
-<p>2.python多线程</p>
-<p>3.java创建对象有哪几种方式</p>
-<p>4.如何判断一个对象是否可回收</p>
-<p>5.java的四种引用</p>
-<p>6.项目中的问题</p>
-
+        <h4 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h4>
+        
       
 
       
@@ -442,17 +434,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -468,7 +449,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/passages/2019-03-21-腾讯测试开发面试问题记录/">展开全文 >></a>
+          <a class="article-more-a" href="/passages/ARTS第1周/">展开全文 >></a>
         </p>
       
 
@@ -1391,11 +1372,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1427,11 +1408,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1439,11 +1420,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">知识图谱</a>
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+                <a href="javascript:void(0)" class="js-tag color5">知识图谱</a>
               </li>
              
               <li class="article-tag-list-item">
