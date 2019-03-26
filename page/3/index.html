@@ -172,239 +172,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-mac环境变量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/passages/mac环境变量/">mac环境变量的设置</a>
-    </h1>
-  
-
-        
-        <a href="/passages/mac环境变量/" class="archive-article-date">
-  	<time datetime="2019-01-10T08:57:20.539Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>mac环境变量</p>
-<p>当写在/bashrc不管用时，配置在全局变量中更有效：.bash_profile</p>
-<p>例如：追加：PATH=$PATH:/usr/local/bin/</p>
-<p>##或者用重定向: echo ‘PATH=$PATH:/usr/local/bin’ &gt;&gt; $HOME/.bash_profie</p>
-<p>配置java_home:</p>
-<p>sudo vi /etc/profile</p>
-<p>….</p>
-<p>source /etc/profile</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/passages/mac环境变量/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
-            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
-            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-    <article id="post-SpringBoot笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/passages/SpringBoot笔记/">Spring学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/passages/SpringBoot笔记/" class="archive-article-date">
-  	<time datetime="2019-01-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>资源列表：</p>
-<p>开源中国：oschina.net</p>
-<p>Spring官网：<a href="http://spring.io/projects/" target="_blank" rel="noopener">http://spring.io/projects/</a></p>
-<p>IT视线：<a href="https://www.iteye.com/" target="_blank" rel="noopener">https://www.iteye.com/</a></p>
-<p>官方手册：</p>
-<p>SpringBoot</p>
-<p>优点：</p>
-<p>1.敏捷开发（整合框架）弊端：不灵活</p>
-<p>2.无需TomCat(java应用程序，实际jar包，内置tomcat)</p>
-<p>3.减少xml配置，配置文件</p>
-<p>4.微服务：SpringCloud + SpringBoot</p>
-<p>微服务：目前来说springcloud(http接口+ rest)，基于SpringBoot web组件封装SpringMVC</p>
-<p>互联网项目服务架构：面向服务架构（SOA）转变成微服务架构。</p>
-<p>springdata(操作持久层框架)</p>
-<p>springboot封装jar依赖原理：</p>
-<p>Maven依赖</p>
-<p>所有jar全部都在parent依赖里面</p>
-<p>模板引擎：伪html，格式，动态html实现。（有利于SEO优化）</p>
-<p>动态页面静态化: freemark、velocity、thymeleaf</p>
-<p>springjpa对hiberate进行了封装</p>
-<p>同一个项目整合jdbc框架，jpa，mybatis不会有冲突</p>
-<p>SpringBootApplication作用：</p>
-<p>启动项目，整合常用注解，扫包（只在当前同级包下）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring boot</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程笔记//" class="article-tag-list-link color5">编程笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/passages/SpringBoot笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
-            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
-            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
     <article id="post-数据库基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -870,6 +637,120 @@
   </section>
 
   
+    <article id="post-精通一个领域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/passages/精通一个领域/">网络爬虫与信息提取</a>
+    </h1>
+  
+
+        
+        <a href="/passages/精通一个领域/" class="archive-article-date">
+  	<time datetime="2018-11-07T16:39:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="精通一个领域"><a href="#精通一个领域" class="headerlink" title="精通一个领域"></a>精通一个领域</h1><p>Chunk it up切碎知识点</p>
+<p>！Deliberate practiving刻意练习</p>
+<p>feed it back反馈</p>
+<p><img src="/passages/精通一个领域/Users/qimeihu/Library/Application Support/typora-user-images/image-20181230123027336.png" alt="image-20181230123027336"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/读书//" class="article-tag-list-link color3">读书</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/passages/精通一个领域/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
+            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
+            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
     <article id="post-网络爬虫与信息提取" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1071,30 +952,34 @@
   </section>
 
   
-    <article id="post-精通一个领域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-conda 环境管理常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/passages/精通一个领域/">网络爬虫与信息提取</a>
+      <a class="article-title" href="/passages/conda 环境管理常用命令/">和时间成为朋友</a>
     </h1>
   
 
         
-        <a href="/passages/精通一个领域/" class="archive-article-date">
-  	<time datetime="2018-11-07T16:39:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-08</time>
+        <a href="/passages/conda 环境管理常用命令/" class="archive-article-date">
+  	<time datetime="2018-10-18T16:39:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="精通一个领域"><a href="#精通一个领域" class="headerlink" title="精通一个领域"></a>精通一个领域</h1><p>Chunk it up切碎知识点</p>
-<p>！Deliberate practiving刻意练习</p>
-<p>feed it back反馈</p>
-<p><img src="/passages/精通一个领域/Users/qimeihu/Library/Application Support/typora-user-images/image-20181230123027336.png" alt="image-20181230123027336"></p>
+        <h1 id="conda-环境管理常用命令"><a href="#conda-环境管理常用命令" class="headerlink" title="conda 环境管理常用命令"></a>conda 环境管理常用命令</h1><p>从文件导入环境：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>激活环境：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate</span><br></pre></td></tr></table></figure>
+<p>回到默认环境：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disactivate</span><br></pre></td></tr></table></figure>
+<p>删除一个环境：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
 
@@ -1103,24 +988,13 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/读书//" class="article-tag-list-link color3">读书</a>
+        			<a href="/categories/dream//" class="article-tag-list-link color1">dream</a>
         		</li>
       		
 		</ul>
@@ -1129,7 +1003,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/passages/精通一个领域/">展开全文 >></a>
+          <a class="article-more-a" href="/passages/conda 环境管理常用命令/">展开全文 >></a>
         </p>
       
 
@@ -1298,19 +1172,19 @@
   </section>
 
   
-    <article id="post-conda 环境管理常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-正则表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/passages/conda 环境管理常用命令/">和时间成为朋友</a>
+      <a class="article-title" href="/passages/正则表达式/">正则表达式</a>
     </h1>
   
 
         
-        <a href="/passages/conda 环境管理常用命令/" class="archive-article-date">
+        <a href="/passages/正则表达式/" class="archive-article-date">
   	<time datetime="2018-10-18T16:39:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-19</time>
 </a>
         
@@ -1318,14 +1192,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="conda-环境管理常用命令"><a href="#conda-环境管理常用命令" class="headerlink" title="conda 环境管理常用命令"></a>conda 环境管理常用命令</h1><p>从文件导入环境：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>激活环境：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate</span><br></pre></td></tr></table></figure>
-<p>回到默认环境：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disactivate</span><br></pre></td></tr></table></figure>
-<p>删除一个环境：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p>特殊符号与字符：</p>
+<p>r1|r2    匹配r1或者r2        foo|bar</p>
+<p>.    匹配任何字符（\n除外）    b.b</p>
+<p>^    匹配字符串起始部分    ^Dear</p>
+<p>$    匹配字符串终止部分    /bin/*sh$    ^subject:hi$    任何有单独的字符串subject:hi构成的字符串。</p>
+<p><em>匹配0次或多次前面出现的正则表达式    [A-Za-z0-9] </em></p>
+<p>+一次或多次    [a-z]+\ .com</p>
+<p>? 0次或一次</p>
+<p>{N}匹配n次前面出现的表达式    [0-9]{3}</p>
+<p>{M,N}匹配m-n次前面出现的表达式</p>
+<p>[…]匹配来自字符集的任意单一字符</p>
+<p>[.x-y..]  【】 [0-9],[A-Za-z]</p>
+<p>\d任何十进制字符，与[0-9]一致，（\D不匹配任何数字）data\d+.txt</p>
+<p>\w任何字母以及数字，与[A-Zz-z0-9]相同。（\W与之相反）</p>
 
       
 
@@ -1334,13 +1214,24 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">正则</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/dream//" class="article-tag-list-link color1">dream</a>
+        			<a href="/categories/programming//" class="article-tag-list-link color2">programming</a>
         		</li>
       		
 		</ul>
@@ -1349,7 +1240,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/passages/conda 环境管理常用命令/">展开全文 >></a>
+          <a class="article-more-a" href="/passages/正则表达式/">展开全文 >></a>
         </p>
       
 
@@ -1455,6 +1346,117 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/passages/mac配置python版本/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
+            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
+            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+    <article id="post-java知识点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/passages/java知识点/">java知识点</a>
+    </h1>
+  
+
+        
+        <a href="/passages/java知识点/" class="archive-article-date">
+  	<time datetime="2018-09-30T05:24:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文来自作者学习Core Java Volume 1的部分笔记。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/programming//" class="article-tag-list-link color2">programming</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/passages/java知识点/">展开全文 >></a>
         </p>
       
 
@@ -1648,10 +1650,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
@@ -1676,11 +1674,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">知识图谱</a>
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color5">知识图谱</a>
               </li>
             
             <div class="clearfix"></div>
