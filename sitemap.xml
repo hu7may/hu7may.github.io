@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://huqimei.com/passages/leetcode-101-%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
+    
+    <lastmod>2019-03-26T10:43:26.078Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://huqimei.com/passages/ARTS%E7%AC%AC1%E5%91%A8/</loc>
     
     <lastmod>2019-03-23T17:18:25.135Z</lastmod>
@@ -16,13 +23,6 @@
   </url>
   
   <url>
-    <loc>http://huqimei.com/passages/2019-03-21-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-101-%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
-    
-    <lastmod>2019-03-21T14:56:54.143Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://huqimei.com/passages/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</loc>
     
     <lastmod>2019-03-19T05:03:09.162Z</lastmod>
@@ -33,13 +33,6 @@
     <loc>http://huqimei.com/passages/ARTS%E7%AC%AC0%E5%91%A8/</loc>
     
     <lastmod>2019-03-19T04:50:18.055Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://huqimei.com/passages/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/</loc>
-    
-    <lastmod>2019-03-19T04:42:19.208Z</lastmod>
     
   </url>
   
@@ -93,7 +86,7 @@
   </url>
   
   <url>
-    <loc>http://huqimei.com/passages/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%20142%20linked-list-cycle-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/</loc>
+    <loc>http://huqimei.com/passages/leetcode-142%20linked-list-cycle-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/</loc>
     
     <lastmod>2019-03-19T04:32:23.296Z</lastmod>
     
@@ -177,7 +170,7 @@
   </url>
   
   <url>
-    <loc>http://huqimei.com/passages/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%2061%20rotate%20list/</loc>
+    <loc>http://huqimei.com/passages/leetcode-61%20rotate%20list/</loc>
     
     <lastmod>2019-03-14T12:45:48.550Z</lastmod>
     
@@ -191,7 +184,7 @@
   </url>
   
   <url>
-    <loc>http://huqimei.com/passages/2018-10-19-HashTable%E3%80%81HashMap%E3%80%81TreeMap%E7%9A%84%E6%AF%94%E8%BE%83/</loc>
+    <loc>http://huqimei.com/passages/HashTable%E3%80%81HashMap%E3%80%81TreeMap%E7%9A%84%E6%AF%94%E8%BE%83/</loc>
     
     <lastmod>2019-03-01T14:54:24.047Z</lastmod>
     
@@ -236,13 +229,6 @@
     <loc>http://huqimei.com/passages/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0/</loc>
     
     <lastmod>2019-02-24T16:35:07.430Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://huqimei.com/passages/http%E5%8D%8F%E8%AE%AE/</loc>
-    
-    <lastmod>2019-02-13T13:09:32.139Z</lastmod>
     
   </url>
   
