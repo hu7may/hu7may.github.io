@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://huqimei.com">
   <title>ARTS第2周 | 胡其美的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="algorithm回溯法的应用 机器人的运动范围 地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，每一次只能向左，右，上，下四个方向移动一格，但是不能进入行坐标和列坐标的数位之和大于k的格子。 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。但是，它不能进入方格（35,38），因为3+5+3+8 = 19。请问该机器人能够达到多少个格子？ 解法">
+  <meta name="description" content="algorithm回溯法的应用">
 <meta name="keywords" content="胡其美">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARTS第2周">
 <meta property="og:url" content="http://huqimei.com/passages/ARTS第2周/index.html">
 <meta property="og:site_name" content="胡其美的博客">
-<meta property="og:description" content="algorithm回溯法的应用 机器人的运动范围 地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，每一次只能向左，右，上，下四个方向移动一格，但是不能进入行坐标和列坐标的数位之和大于k的格子。 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。但是，它不能进入方格（35,38），因为3+5+3+8 = 19。请问该机器人能够达到多少个格子？ 解法">
+<meta property="og:description" content="algorithm回溯法的应用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-31T03:30:55.319Z">
+<meta property="og:updated_time" content="2019-03-31T03:40:04.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ARTS第2周">
-<meta name="twitter:description" content="algorithm回溯法的应用 机器人的运动范围 地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，每一次只能向左，右，上，下四个方向移动一格，但是不能进入行坐标和列坐标的数位之和大于k的格子。 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。但是，它不能进入方格（35,38），因为3+5+3+8 = 19。请问该机器人能够达到多少个格子？ 解法">
+<meta name="twitter:description" content="algorithm回溯法的应用">
   
     <link rel="alternative" href="/atom.xml" title="胡其美的博客" type="application/atom+xml">
   
@@ -192,6 +192,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="algorithm"><a href="#algorithm" class="headerlink" title="algorithm"></a>algorithm</h4><p>回溯法的应用</p>
+<a id="more"></a>
 <p>机器人的运动范围</p>
 <p>地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，每一次只能向左，右，上，下四个方向移动一格，但是不能进入行坐标和列坐标的数位之和大于k的格子。 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。但是，它不能进入方格（35,38），因为3+5+3+8 = 19。请问该机器人能够达到多少个格子？</p>
 <p>解法：</p>
@@ -199,6 +200,7 @@
 <p>代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">movingCount</span><span class="params">(<span class="keyword">int</span> threshold, <span class="keyword">int</span> rows, <span class="keyword">int</span> cols)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span>[][] visited = <span class="keyword">new</span> <span class="keyword">boolean</span>[rows][cols];</span><br><span class="line">        <span class="keyword">return</span> countingSteps(threshold,rows,cols,<span class="number">0</span>,<span class="number">0</span>,visited);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">countingSteps</span><span class="params">(<span class="keyword">int</span> limit,<span class="keyword">int</span> rows,<span class="keyword">int</span> cols,<span class="keyword">int</span> r,<span class="keyword">int</span> c,<span class="keyword">boolean</span>[][] visited)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (r &lt; <span class="number">0</span> || r &gt;= rows || c &lt; <span class="number">0</span> || c &gt;= cols</span><br><span class="line">                || visited[r][c] || bitSum(r) + bitSum(c) &gt; limit)  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        visited[r][c] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">return</span> countingSteps(limit,rows,cols,r - <span class="number">1</span>,c,visited)</span><br><span class="line">                + countingSteps(limit,rows,cols,r,c - <span class="number">1</span>,visited)</span><br><span class="line">                + countingSteps(limit,rows,cols,r + <span class="number">1</span>,c,visited)</span><br><span class="line">                + countingSteps(limit,rows,cols,r,c + <span class="number">1</span>,visited)</span><br><span class="line">                + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">bitSum</span><span class="params">(<span class="keyword">int</span> t)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (t != <span class="number">0</span>)&#123;</span><br><span class="line">            count += t % <span class="number">10</span>;</span><br><span class="line">            t /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>  count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="review"><a href="#review" class="headerlink" title="review"></a>review</h4><p>Spring bean的生命周期等内容 。</p>
+<p><a href="https://huqimei.com/passages/Spring%E4%B9%8Bbean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">https://huqimei.com/passages/Spring%E4%B9%8Bbean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</a></p>
 <h4 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h4><p>实验室建设有多个项目，之前老板买了一个域名。前段时间还在想我们做的各自不同的东西，难道到时候要组合到一个网站上吗，还是用的各自不同的前后台。从我室友那里知道了只要设置一个二级域名就可以了。就比如网易，主站是163.com，音乐的二级域名是music.163.com，邮件的二级域名是mail.163.com。这样就充分利用了域名资源。</p>
 <h4 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h4><p>谈一谈最近的一点学习方法感悟。</p>
 <p>开始手上的项目有快一个月了，最开始的时候一直是在网上找类似的例子，经常还没完整的将别人的案例看完就开始对着代码抄，好不容易抄完发现不能运行，有时到一半的时候放弃。另外开始的时候在网上开了一些方法论，知道了当前做这个事情的”最佳实践”是什么，自己找到的案列往往是局部符合自己的要求或者功能上很契合但不是最佳实践，好的案例又要么很难自己不能一时半会儿就完全看懂。这就造成了进度一直停滞不前，自己也没学到什么东西。</p>

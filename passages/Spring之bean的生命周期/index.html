@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="http://huqimei.com">
   <title>Spring学习之bean的生命周期、依赖注入 | 胡其美的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近做的项目要用spring，在这里记点笔记，也是梳理一下重要的知识点。  BeanFactory与ApplicationContextspring容器是spring框架的核心组件，容器会创建、绑定、配置对象，并且管理他们从创建到销毁整个生命周期。Spring容器使用DI(依赖注入)来管理组成应用的组件，这些对象被称为spring beans。  spring提供了两种不同类型的容器 1，Bean">
+  <meta name="description" content="最近做的项目要用spring，在这里记点笔记，也是梳理一下重要的知识点。">
 <meta name="keywords" content="spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring学习之bean的生命周期、依赖注入">
 <meta property="og:url" content="http://huqimei.com/passages/Spring之bean的生命周期/index.html">
 <meta property="og:site_name" content="胡其美的博客">
-<meta property="og:description" content="最近做的项目要用spring，在这里记点笔记，也是梳理一下重要的知识点。  BeanFactory与ApplicationContextspring容器是spring框架的核心组件，容器会创建、绑定、配置对象，并且管理他们从创建到销毁整个生命周期。Spring容器使用DI(依赖注入)来管理组成应用的组件，这些对象被称为spring beans。  spring提供了两种不同类型的容器 1，Bean">
+<meta property="og:description" content="最近做的项目要用spring，在这里记点笔记，也是梳理一下重要的知识点。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://huqimei.com/passages/Spring之bean的生命周期/Users/qimeihu/myblog/blog/source/_posts/ARTS第2周/spring_architecture.png">
-<meta property="og:image" content="http://huqimei.com/passages/Spring之bean的生命周期/Users/qimeihu/myblog/blog/source/_posts/ARTS第2周/spring_ioc_container.png">
-<meta property="og:updated_time" content="2019-03-31T03:32:30.348Z">
+<meta property="og:image" content="http://huqimei.com/passages/Spring之bean的生命周期/Users/qimeihu/myblog/blog/source/_posts/Spring学习之bean的生命周期/spring_architecture.png">
+<meta property="og:image" content="http://huqimei.com/passages/Spring之bean的生命周期/Users/qimeihu/myblog/blog/source/_posts/Spring学习之bean的生命周期/spring_ioc_container.png">
+<meta property="og:updated_time" content="2019-03-31T03:42:06.658Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring学习之bean的生命周期、依赖注入">
-<meta name="twitter:description" content="最近做的项目要用spring，在这里记点笔记，也是梳理一下重要的知识点。  BeanFactory与ApplicationContextspring容器是spring框架的核心组件，容器会创建、绑定、配置对象，并且管理他们从创建到销毁整个生命周期。Spring容器使用DI(依赖注入)来管理组成应用的组件，这些对象被称为spring beans。  spring提供了两种不同类型的容器 1，Bean">
-<meta name="twitter:image" content="http://huqimei.com/passages/Spring之bean的生命周期/Users/qimeihu/myblog/blog/source/_posts/ARTS第2周/spring_architecture.png">
+<meta name="twitter:description" content="最近做的项目要用spring，在这里记点笔记，也是梳理一下重要的知识点。">
+<meta name="twitter:image" content="http://huqimei.com/passages/Spring之bean的生命周期/Users/qimeihu/myblog/blog/source/_posts/Spring学习之bean的生命周期/spring_architecture.png">
   
     <link rel="alternative" href="/atom.xml" title="胡其美的博客" type="application/atom+xml">
   
@@ -195,9 +195,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近做的项目要用spring，在这里记点笔记，也是梳理一下重要的知识点。</p>
-<p><img src="/passages/Spring之bean的生命周期/Users/qimeihu/myblog/blog/source/_posts/ARTS第2周/spring_architecture.png" alt="Spring Framework Architecture"></p>
+<a id="more"></a>
+<p><img src="/passages/Spring之bean的生命周期/Users/qimeihu/myblog/blog/source/_posts/Spring学习之bean的生命周期/spring_architecture.png" alt="Spring Framework Architecture"></p>
 <h4 id="BeanFactory与ApplicationContext"><a href="#BeanFactory与ApplicationContext" class="headerlink" title="BeanFactory与ApplicationContext"></a>BeanFactory与ApplicationContext</h4><p>spring容器是spring框架的核心组件，容器会创建、绑定、配置对象，并且管理他们从创建到销毁整个生命周期。Spring容器使用DI(依赖注入)来管理组成应用的组件，这些对象被称为spring beans。</p>
-<p><img src="/passages/Spring之bean的生命周期/Users/qimeihu/myblog/blog/source/_posts/ARTS第2周/spring_ioc_container.png" alt="Spring IoC Container"></p>
+<p><img src="/passages/Spring之bean的生命周期/Users/qimeihu/myblog/blog/source/_posts/Spring学习之bean的生命周期/spring_ioc_container.png" alt="Spring IoC Container"></p>
 <p>spring提供了两种不同类型的容器</p>
 <p>1，BeanFactory Container</p>
 <p>最核心的容器，提供依赖注入支持，由org.springframeword.beans.factory.BearnFactory接口定义。</p>
