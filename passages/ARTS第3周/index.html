@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://huqimei.com">
-  <title>mac环境变量的设置 | 胡其美的博客</title>
+  <title>ARTS第3周 | 胡其美的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="mac环境变量 当写在/bashrc不管用时，配置在全局变量中更有效：.bash_profile 例如：追加：PATH=$PATH:/usr/local/bin/ ##或者用重定向: echo ‘PATH=$PATH:/usr/local/bin’ &amp;gt;&amp;gt; $HOME/.bash_profie 配置java_home: sudo vi /etc/profile …. source /et">
+  <meta name="description" content="algorithm动态规划  Can Place Flowers题目：Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete">
 <meta name="keywords" content="胡其美">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mac环境变量的设置">
-<meta property="og:url" content="http://huqimei.com/passages/mac环境变量/index.html">
+<meta property="og:title" content="ARTS第3周">
+<meta property="og:url" content="http://huqimei.com/passages/ARTS第3周/index.html">
 <meta property="og:site_name" content="胡其美的博客">
-<meta property="og:description" content="mac环境变量 当写在/bashrc不管用时，配置在全局变量中更有效：.bash_profile 例如：追加：PATH=$PATH:/usr/local/bin/ ##或者用重定向: echo ‘PATH=$PATH:/usr/local/bin’ &amp;gt;&amp;gt; $HOME/.bash_profie 配置java_home: sudo vi /etc/profile …. source /et">
+<meta property="og:description" content="algorithm动态规划  Can Place Flowers题目：Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-19T03:15:45.565Z">
+<meta property="og:updated_time" content="2019-04-07T15:40:18.285Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mac环境变量的设置">
-<meta name="twitter:description" content="mac环境变量 当写在/bashrc不管用时，配置在全局变量中更有效：.bash_profile 例如：追加：PATH=$PATH:/usr/local/bin/ ##或者用重定向: echo ‘PATH=$PATH:/usr/local/bin’ &amp;gt;&amp;gt; $HOME/.bash_profie 配置java_home: sudo vi /etc/profile …. source /et">
+<meta name="twitter:title" content="ARTS第3周">
+<meta name="twitter:description" content="algorithm动态规划  Can Place Flowers题目：Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete">
   
     <link rel="alternative" href="/atom.xml" title="胡其美的博客" type="application/atom+xml">
   
@@ -171,34 +171,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mac环境变量" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ARTS第3周" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      mac环境变量的设置
+      ARTS第3周
     </h1>
   
 
         
-        <a href="/passages/mac环境变量/" class="archive-article-date">
-  	<time datetime="2019-01-10T08:57:20.539Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-10</time>
+        <a href="/passages/ARTS第3周/" class="archive-article-date">
+  	<time datetime="2019-04-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>mac环境变量</p>
-<p>当写在/bashrc不管用时，配置在全局变量中更有效：.bash_profile</p>
-<p>例如：追加：PATH=$PATH:/usr/local/bin/</p>
-<p>##或者用重定向: echo ‘PATH=$PATH:/usr/local/bin’ &gt;&gt; $HOME/.bash_profie</p>
-<p>配置java_home:</p>
-<p>sudo vi /etc/profile</p>
-<p>….</p>
-<p>source /etc/profile</p>
+        <h1 id="algorithm"><a href="#algorithm" class="headerlink" title="algorithm"></a>algorithm</h1><p>动态规划</p>
+<ol start="605">
+<li>Can Place Flowers<br>题目：<br>Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.</li>
+</ol>
+<p>Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number n, return if n new flowers can be planted in it without violating the no-adjacent-flowers rule.</p>
+<p>解答：<br>思路：对每一个位置，查看它的前后位置是不是都是0，如果是0并且自身也是0，则可以种一朵花，种下去将0-&gt;1。再接着判断下一个位置的情况，注意在首尾的地方其前后的特殊值的处理。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canPlaceFlowers</span><span class="params">(<span class="keyword">int</span>[] flowerbed, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;flowerbed.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(canPlaceFlower(flowerbed, i))&#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count&gt;=n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">canPlaceFlower</span><span class="params">(<span class="keyword">int</span>[] flowerbed, <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> prev,next;</span><br><span class="line">        prev = (i==<span class="number">0</span>)?<span class="number">0</span>:flowerbed[i-<span class="number">1</span>];</span><br><span class="line">        next = (i==(flowerbed.length-<span class="number">1</span>))?<span class="number">0</span>:flowerbed[i+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span>(prev == <span class="number">0</span> &amp;&amp; next == <span class="number">0</span> &amp;&amp; flowerbed[i]==<span class="number">0</span>)&#123;</span><br><span class="line">            flowerbed[i]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p><a href="[https://medium.freecodecamp.org/typescript-javascript-with-super-powers-a333b0fcabc9](https://medium.freecodecamp.org/typescript-javascript-with-super-powers-a333b0fcabc9">TypeScript — JavaScript with superpowers</a>)<br>本文介绍了TypeScript。</p>
+<h2 id="什么是typescript？"><a href="#什么是typescript？" class="headerlink" title="什么是typescript？"></a>什么是typescript？</h2><p>由微软在2012年推出，完全开源，是JavaScript的超集，经编译生成JavaScript。提供了类型检查，使JavaScript变得安全。</p>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p>mac如何下载美区和国区的应用？<br>有时候想要下载的软件只在美区有，而大部分时候要下载的软件还是国内的，这就需要在两个地区之间切换。<br>注册两个账号，来回切换，这是目前比较方便的方法了， apple账号也是可以不用填写行用卡更该地区的，在官网去改即可。</p>
+<h1 id="Shares"><a href="#Shares" class="headerlink" title="Shares"></a>Shares</h1><p>最近在看小窗幽记，作为即将走出校门的人，读一读古人交给我们的修生处世的道理，若能做到其中一二，就算是颇有收获了。<br>看得很慢，文言功底差，还只看了一点，这里摘录两句印象深的。</p>
+<ul>
+<li>市恩不如报德之为厚，要誉不如逃名之为适，矫情不如直节之为真</li>
+<li>真廉无名，立名者，所以为贪，大巧无术，用术者，所以为拙</li>
+<li>居不必无恶邻，会不必无损友，为在自持者两得之</li>
+<li>先淡后浓，先疏后亲，先达后近，交友道也</li>
+<li></li>
+</ul>
 
       
 
@@ -257,7 +266,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://huqimei.com/passages/mac环境变量/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://huqimei.com/passages/ARTS第3周/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -271,18 +280,9 @@
   
 <nav id="article-nav">
   
-    <a href="/passages/如何设计一个类/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          如何设计一个类
-        
-      </div>
-    </a>
   
-  
-    <a href="/passages/SpringBoot笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Spring学习笔记</div>
+    <a href="/passages/ARTS第2周/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ARTS第2周</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -309,7 +309,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#algorithm"><span class="toc-number">1.</span> <span class="toc-text">algorithm</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Review"><span class="toc-number">2.</span> <span class="toc-text">Review</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是typescript？"><span class="toc-number">2.1.</span> <span class="toc-text">什么是typescript？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Tips"><span class="toc-number">3.</span> <span class="toc-text">Tips</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shares"><span class="toc-number">4.</span> <span class="toc-text">Shares</span></a></li></ol>
                     </div>
                 </span>
             </div>

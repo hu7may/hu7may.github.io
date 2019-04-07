@@ -172,6 +172,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ARTS第3周" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/passages/ARTS第3周/">ARTS第3周</a>
+    </h1>
+  
+
+        
+        <a href="/passages/ARTS第3周/" class="archive-article-date">
+  	<time datetime="2019-04-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="algorithm"><a href="#algorithm" class="headerlink" title="algorithm"></a>algorithm</h1><p>动态规划</p>
+<ol start="605">
+<li>Can Place Flowers<br>题目：<br>Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.</li>
+</ol>
+<p>Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number n, return if n new flowers can be planted in it without violating the no-adjacent-flowers rule.</p>
+<p>解答：<br>思路：对每一个位置，查看它的前后位置是不是都是0，如果是0并且自身也是0，则可以种一朵花，种下去将0-&gt;1。再接着判断下一个位置的情况，注意在首尾的地方其前后的特殊值的处理。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canPlaceFlowers</span><span class="params">(<span class="keyword">int</span>[] flowerbed, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;flowerbed.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(canPlaceFlower(flowerbed, i))&#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count&gt;=n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">canPlaceFlower</span><span class="params">(<span class="keyword">int</span>[] flowerbed, <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> prev,next;</span><br><span class="line">        prev = (i==<span class="number">0</span>)?<span class="number">0</span>:flowerbed[i-<span class="number">1</span>];</span><br><span class="line">        next = (i==(flowerbed.length-<span class="number">1</span>))?<span class="number">0</span>:flowerbed[i+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span>(prev == <span class="number">0</span> &amp;&amp; next == <span class="number">0</span> &amp;&amp; flowerbed[i]==<span class="number">0</span>)&#123;</span><br><span class="line">            flowerbed[i]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p><a href="[https://medium.freecodecamp.org/typescript-javascript-with-super-powers-a333b0fcabc9](https://medium.freecodecamp.org/typescript-javascript-with-super-powers-a333b0fcabc9">TypeScript — JavaScript with superpowers</a>)<br>本文介绍了TypeScript。</p>
+<h2 id="什么是typescript？"><a href="#什么是typescript？" class="headerlink" title="什么是typescript？"></a>什么是typescript？</h2><p>由微软在2012年推出，完全开源，是JavaScript的超集，经编译生成JavaScript。提供了类型检查，使JavaScript变得安全。</p>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p>mac如何下载美区和国区的应用？<br>有时候想要下载的软件只在美区有，而大部分时候要下载的软件还是国内的，这就需要在两个地区之间切换。<br>注册两个账号，来回切换，这是目前比较方便的方法了， apple账号也是可以不用填写行用卡更该地区的，在官网去改即可。</p>
+<h1 id="Shares"><a href="#Shares" class="headerlink" title="Shares"></a>Shares</h1><p>最近在看小窗幽记，作为即将走出校门的人，读一读古人交给我们的修生处世的道理，若能做到其中一二，就算是颇有收获了。<br>看得很慢，文言功底差，还只看了一点，这里摘录两句印象深的。</p>
+<ul>
+<li>市恩不如报德之为厚，要誉不如逃名之为适，矫情不如直节之为真</li>
+<li>真廉无名，立名者，所以为贪，大巧无术，用术者，所以为拙</li>
+<li>居不必无恶邻，会不必无损友，为在自持者两得之</li>
+<li>先淡后浓，先疏后亲，先达后近，交友道也</li>
+<li></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/passages/ARTS第3周/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
+            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
+            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
     <article id="post-ARTS第2周" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1059,117 +1164,6 @@
   </section>
 
   
-    <article id="post-java基础知识总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/passages/java基础知识总结/">java基础知识总结</a>
-    </h1>
-  
-
-        
-        <a href="/passages/java基础知识总结/" class="archive-article-date">
-  	<time datetime="2019-02-25T01:16:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文是java基础知识的一个全面梳理。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/programing//" class="article-tag-list-link color1">programing</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/passages/java基础知识总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
-            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
-            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1316,11 +1310,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
