@@ -172,6 +172,579 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-恩施游记之大峡谷" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/passages/恩施游记之大峡谷/">恩施游记之大峡谷</a>
+    </h1>
+  
+
+        
+        <a href="/passages/恩施游记之大峡谷/" class="archive-article-date">
+  	<time datetime="2019-01-27T14:16:31.369Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天去了大峡谷。</p>
+<p>早上睡到八点多起床，准备去航空路做班车去大峡谷，打那边一问才知道现在都只能在火车站做大巴去。还是之前调研没做好，网上看了一个不错的攻略就没管了，殊不知现在情况有变。于是又坐上了去火车站的车，在火车站坐上了去大峡谷的班车，一路上山路蜿蜒，大雾弥漫，到大峡谷售票处时已是一点半，匆匆买了门票又是被班车载去七星寨。走了一段路坐索道上行，可以浓雾太厚，能见度只有几米，一路惊心动魄的场景都显得一点也不可怕。到山上之后便是遍布满山的漫长台阶，走了将近一万步。由于大雾弥漫，这次游览不得不说是大打折扣，很多料想应是雄伟壮观的地方都啥也看不见。包括一炷香页只能隐隐约约的看见一点，其他的更是显得平淡无奇。</p>
+<p>走下来已是精疲力尽，然后还是勉强去云龙地缝走了一圈，这一段路程不长，走到谷底时所见差不多是一条有点流水的山沟，两边高高的绝壁。</p>
+<p>之后便乘车回到恩施市区。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/其他//" class="article-tag-list-link color3">其他</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/passages/恩施游记之大峡谷/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
+            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
+            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+    <article id="post-java内存空间的划分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/passages/java内存空间的划分/">java内存空间的划分</a>
+    </h1>
+  
+
+        
+        <a href="/passages/java内存空间的划分/" class="archive-article-date">
+  	<time datetime="2019-01-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>五部分：栈、堆、方法区、本地方法区、寄存器。</p>
+<p>栈内存：存储局部变量（方法中定义的变量），一旦变量的生命周期结束该变量就被释放。</p>
+<p>堆内存：存储的都是实体（对象（通过new创建的都是）），</p>
+<p>每个实体都有一个首地址值，堆内存的变量部都有默认初始化值（int 0,double 0.0,boolearn false,char ‘\u0000’）</p>
+<p>当实体不再使用时，就会被垃圾回收机制处理。（c++里面使用析构方法来清楚）</p>
+<p>三种引用类型：数组、类、接口</p>
+<p>方法区：分为：静态区：静态变量</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/programming//" class="article-tag-list-link color2">programming</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/passages/java内存空间的划分/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
+            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
+            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+    <article id="post-恩施游记之初见" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/passages/恩施游记之初见/">恩施游记之初见</a>
+    </h1>
+  
+
+        
+        <a href="/passages/恩施游记之初见/" class="archive-article-date">
+  	<time datetime="2019-01-26T11:44:36.760Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天起了个大早，踏上了到恩施的🚄，动车经过宜昌、巴东、建始到达恩施。</p>
+<p>初下火车，坐上去往市区的公交，车上放着多年前的流行歌曲，给人一种悠闲而遗世独立之感。</p>
+<p>到酒店放下行李，已过了中午，出门觅食，看到地图上推荐的有附近的张关合渣不错，就去了。</p>
+<p>问有什么特色，答腊肉。平时在家吃得多，就没点，合渣端上桌才知道是平时吃的懒豆腐。</p>
+<p>下午去女儿城转了转，地方不大，建筑比较有土家特色，屋檐上的花纹装饰精致而漂亮。</p>
+<p>里面卖的东西除了外面小吃街常有的东西外还有一些富有恩施特色的各种腊肉、竹筒酒等等。</p>
+<p>大概是因为同属湖北，整体上给我的感觉根宜昌相差不大，可能因为是土家族苗族自治区的缘故，在对民族特色的宣传上显得多一些，街上随处可见土家**开头的店名，另外在很多地方也能看见宣传本地旅游景区的巨幕广告，应该也是跟这几年恩施的旅游比较火有关。</p>
+<p>明天准备去大峡谷看看。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/其他//" class="article-tag-list-link color3">其他</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/passages/恩施游记之初见/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
+            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
+            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+    <article id="post-Java的集合框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/passages/Java的集合框架/">Java集合框架总结</a>
+    </h1>
+  
+
+        
+        <a href="/passages/Java的集合框架/" class="archive-article-date">
+  	<time datetime="2019-01-25T01:16:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Java的集合框架提供了很多基础数据结构，提高了开发者的生产力。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/programing//" class="article-tag-list-link color1">programing</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/passages/Java的集合框架/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
+            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
+            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+    <article id="post-如何设计一个类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/passages/如何设计一个类/">如何设计一个类</a>
+    </h1>
+  
+
+        
+        <a href="/passages/如何设计一个类/" class="archive-article-date">
+  	<time datetime="2019-01-15T02:42:26.233Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如何设计一个类</p>
+<p>不要编写返回引用可变对象的访问器方法（比如应使用LocalDate而不是Date）</p>
+<p>所有的对象都是在堆内存中构造的</p>
+<p>final实例域：构造对象时必须初始化这样的域，在后面的操作中不能再修改。</p>
+<p>final修饰符大都用于基本（primitive）类型域或不可变（immutable）类的域。</p>
+<p>静态域：static类域</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Employee &#123;</span><br><span class="line">    private static int nextId = 1;</span><br><span class="line">    private int id</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>每个雇员对象都有一个自己的id域，但这个类所有的实例将共享一个nextId域。</p>
+<p>即：如果有一千个对象，则有一千个实例域ID，但是只有一个静态域nextId。<strong>即使没有一个雇员对象，静态域nextId也存在。它属于类不属于任何独立的对象。</strong></p>
+<p>静态常量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public class Math &#123;</span><br><span class="line">    ...</span><br><span class="line">    public static final double PI = 3.1415926535897...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>构造函数的initialization list： :re(r),im(i)</li>
+<li>函数是否要加const</li>
+<li>参数的传递尽量考虑pass by reference 传引用（以及要不要加const）</li>
+<li>return时是value还是reference</li>
+<li>数据放在private</li>
+<li>函数主要放在public</li>
+</ol>
+<p>   防卫式声明：</p>
+<p>class with pointer member </p>
+<p>只要设计的类带着指针，就一定要设计拷贝构造，赋值构造两个函数。（string类为例）还要设计析构函数删除指针释放内存，防止内存泄漏。</p>
+<p>Class with pointer member 必须要有copy for constructors 和copy assignment operator</p>
+<p>如果没有写，就会使用默认的：</p>
+<p>Char<em> a = “hello”;char</em> b = “world”;b = a;  -&gt; ab都指向hello，world内存泄漏。</p>
+<p>拷贝构造，拷贝赋值，析构函数</p>
+<p>拷贝构造：</p>
+<ol>
+<li>检测自我赋值</li>
+<li>删除原来的</li>
+<li>确定新的长度</li>
+<li>赋值</li>
+</ol>
+<p>return by reference 语法分析</p>
+<p>传递者无需知道接收者是以何种形式（by value ,by reference）接收。</p>
+<p>一些地方不可以return by reference: 因为其返回的必定是个local object</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/passages/如何设计一个类/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
+            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
+            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
     <article id="post-mac环境变量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -870,660 +1443,9 @@
   </section>
 
   
-    <article id="post-精通一个领域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/passages/精通一个领域/">网络爬虫与信息提取</a>
-    </h1>
-  
-
-        
-        <a href="/passages/精通一个领域/" class="archive-article-date">
-  	<time datetime="2018-11-07T16:39:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="精通一个领域"><a href="#精通一个领域" class="headerlink" title="精通一个领域"></a>精通一个领域</h1><p>Chunk it up切碎知识点</p>
-<p>！Deliberate practiving刻意练习</p>
-<p>feed it back反馈</p>
-<p><img src="/passages/精通一个领域/Users/qimeihu/Library/Application Support/typora-user-images/image-20181230123027336.png" alt="image-20181230123027336"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/读书//" class="article-tag-list-link color3">读书</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/passages/精通一个领域/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
-            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
-            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-    <article id="post-网络爬虫与信息提取" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/passages/网络爬虫与信息提取/">网络爬虫与信息提取</a>
-    </h1>
-  
-
-        
-        <a href="/passages/网络爬虫与信息提取/" class="archive-article-date">
-  	<time datetime="2018-11-07T16:39:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="网络爬虫与信息提取之一：规则-requests库"><a href="#网络爬虫与信息提取之一：规则-requests库" class="headerlink" title="网络爬虫与信息提取之一：规则(requests库)"></a>网络爬虫与信息提取之一：规则(requests库)</h2><p>官方文档：<a href="http://docs.python-requests.org/en/master/" target="_blank" rel="noopener">http://docs.python-requests.org/en/master/</a></p>
-<p><img src="/passages/网络爬虫与信息提取/1.png" alt="image-20181106194612284"></p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181106200422305.png" alt="image-20181106200422305"></p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181106200525161.png" alt="image-20181106200525161"></p>
-<p>查看网站robots协议：一般在网站根目录下，如：<a href="http://www.baidu.com/robots.txt，除非是类人行为，一般要遵守该协议。" target="_blank" rel="noopener">http://www.baidu.com/robots.txt，除非是类人行为，一般要遵守该协议。</a></p>
-<p>对于禁止虫爬取的网站，通过设置user-agent来爬取，以亚马逊网站为例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">kv = &#123;<span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0'</span>&#125;</span><br><span class="line"><span class="comment">#亚马逊商品链接</span></span><br><span class="line">url = <span class="string">"https://www.amazon.cn/dp/B078FFX8B6/ref=cngwdyfloorv2_recs_0?pf_rd_p=d2aa3428-dc2b-4cfe-bca6-5e3a33f2342e&amp;pf_rd_s=desktop-2&amp;pf_rd_t=36701&amp;pf_rd_i=desktop&amp;pf_rd_m=A1AJ19PSB66TGU&amp;pf_rd_r=E719K47QZ9Q399T6QCEC&amp;pf_rd_r=E719K47QZ9Q399T6QCEC&amp;pf_rd_p=d2aa3428-dc2b-4cfe-bca6-5e3a33f2342e"</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    r = requests.get(url, headers=kv)</span><br><span class="line"><span class="comment">#     r.status_code</span></span><br><span class="line"><span class="comment">#     r.requests.headers</span></span><br><span class="line">    r.raise_for_status</span><br><span class="line">    r.encoding = r.apparent_encoding</span><br><span class="line">    print(r.text[<span class="number">1000</span>:<span class="number">2000</span>])</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">"爬取失败"</span>)</span><br></pre></td></tr></table></figure>
-<p>搜索引擎关键词:</p>
-<p>百度关键词接口：<a href="http://www.baidu.com/s?wd=keyword" target="_blank" rel="noopener">http://www.baidu.com/s?wd=keyword</a></p>
-<p>搜索方法：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">keyword = <span class="string">"python"</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    kv = &#123;<span class="string">'wd'</span>:keyword&#125;</span><br><span class="line">    r =requests.get(<span class="string">"http://www.baidu.com/s"</span>, params=kv)</span><br><span class="line">    print(r.request.url)</span><br><span class="line">    r.raise_for_status()</span><br><span class="line">    print(len(r.text))</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">"爬取失败"</span>)</span><br></pre></td></tr></table></figure>
-<p>爬取图片保存到本地：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">url = &quot;https://www.natgeomedia.com/wp-content/uploads/2018/11/1123.jpg&quot;</span><br><span class="line">root = &quot;/Users/qimeihu/Desktop/pic/&quot;</span><br><span class="line">path = root + url.split(&apos;/&apos;)[-1]</span><br><span class="line">path</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">    if not os.path.exists(root):</span><br><span class="line">        os.mkidr(root)</span><br><span class="line">    if not os.path.exists(path):</span><br><span class="line">        r = requests.get(url)</span><br><span class="line">        with open(path, &apos;wb&apos;) as f:</span><br><span class="line">            f.write(r.content)</span><br><span class="line">            f.close()</span><br><span class="line">            print(&apos;文件保存成功&apos;)</span><br><span class="line">    else:</span><br><span class="line">        print(&quot;文件已存在&quot;)</span><br><span class="line">except:</span><br><span class="line">    print(&quot;爬去失败&quot;)</span><br></pre></td></tr></table></figure>
-<p>思想：以网络爬虫的角度看待网络内容</p>
-<h2 id="网络爬虫与信息提取之二：提取-Beautiful-Soup"><a href="#网络爬虫与信息提取之二：提取-Beautiful-Soup" class="headerlink" title="网络爬虫与信息提取之二：提取(Beautiful Soup)"></a>网络爬虫与信息提取之二：提取(Beautiful Soup)</h2><p>官方文档：<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank" rel="noopener">https://www.crummy.com/software/BeautifulSoup/bs4/doc/</a></p>
-<p>Pip install beautifulsoup4</p>
-<p>from bs4 import BeautifulSoup</p>
-<p>beautifulsoup库的理解：是 解析、遍历、维护“标签树”的功能库。</p>
-<p class="title"> … </p>
-
-<p>可以将一个beautifulsoup类视为一个html文档。</p>
-<p>beautifulsoup类的基本元素：</p>
-<p>Tag 标签</p>
-<p>Name  标签的名字</p>
-<p>Attributes 标签的属性</p>
-<p>NavigableString标签内非属性字符串</p>
-<p>Comment 标签内字符串的注释部分</p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107194824311.png" alt="image-20181107194824311"></p>
-<p>r = requests.get(url)</p>
-<p>Demo = r.text</p>
-<p>Soup = BeautifulSoup(demo, “html.parser”)</p>
-<p>遍历html内容：</p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195135042.png" alt="image-20181107195135042"></p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195434568.png" alt="image-20181107195434568"></p>
-<p>上行遍历：</p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195516453.png" alt="image-20181107195516453"></p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195634449.png" alt="image-20181107195634449"></p>
-<p>平行遍历：（发生在同一个父节点下的各节点）</p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195709969.png" alt="image-20181107195709969"></p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107195958025.png" alt="image-20181107195958025"></p>
-<p>总结：</p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107200056033.png" alt="image-20181107200056033"></p>
-<p>如何让html内容更友好的显示：</p>
-<p>使用soup的prettify方法</p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107200602029.png" alt="image-20181107200602029"></p>
-<p>信息标记的三种形式：</p>
-<p>Xml，json，yaml</p>
-<p>eXtensible Markup Language 扩展标记语言 ，以标签为主表达信息。</p>
-<p>JavaScript Object Notation 有类型的键值对。</p>
-<p>YAML Ain’t Markup Language 无类型的键值对。（用缩进表达所属关系， - 表达并列关系 | 表示整块数据，# 表示注释）</p>
-<p>实例：</p>
-<p>Xml：(可扩展性好，但繁琐)</p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107201718580.png" alt="image-20181107201718580"></p>
-<p>JSON:（信息有类型，适合程序处理，较xml简洁）</p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107201737660.png" alt="image-20181107201737660"></p>
-<p>YAML：（无类型，文本信息比例较高，可读性好）</p>
-<p> <img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107201754174.png" alt="image-20181107201754174"></p>
-<p>比较：</p>
-<p>XML:Internet上的信息交互与传递。</p>
-<p>JSON:移动应用云端和节点的信息通信，无注释（缺点）。（用在程序对接口处理的地方）</p>
-<p>YAML:各类系统的配置文件，有注释易读。</p>
-<h3 id="信息提取的一般方法："><a href="#信息提取的一般方法：" class="headerlink" title="信息提取的一般方法："></a>信息提取的一般方法：</h3><h4 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h4><p>完整解析信息的标记形式，再提取关键信息。</p>
-<p>需要标记解析器，如bs4库的标签树遍历</p>
-<p>优点：信息解析准确</p>
-<p>缺点：提取过程繁琐，速度慢</p>
-<h4 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h4><p>无视信息标记形式，直接搜索关键信息。</p>
-<p>对信息的文本进行搜索查找即可。</p>
-<p>优点：提取过程简洁，速度较快</p>
-<p>缺点：提取结果的准确性与信息内容直接相关</p>
-<h4 id="融合方法："><a href="#融合方法：" class="headerlink" title="融合方法："></a>融合方法：</h4><p>结合形式解析与搜索方法，提取关键信息。</p>
-<p>需要标记解析器以及文本查找函数。</p>
-<p>实例：提取HTML中的所有url链接</p>
-<p>思路：1）搜索所有的a标签</p>
-<p>​    2)解析a标签格式，提取href后的链接内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for link in soup.find_all(&apos;a&apos;):</span><br><span class="line">    print(link.get(&apos;href&apos;))</span><br></pre></td></tr></table></figure>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107210325892.png" alt="image-20181107210325892"></p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107210348818.png" alt="image-20181107210348818"></p>
-<p><img src="/passages/网络爬虫与信息提取/Users/qimeihu/Library/Application Support/typora-user-images/image-20181107210620715.png" alt="image-20181107210620715"></p>
-<p>实战：</p>
-<p>定向爬虫（静态网页的爬取）</p>
-<p>爬取大学排名数据：<br>步骤1：从网络上获取大学排名网页内容</p>
-<p>​        getHTMLText()</p>
-<p>步骤2：提取网页内容中信息到合适的数据结构（二维数据）</p>
-<p>​        fillUnivList()</p>
-<p>步骤3：利用数据结构展示并输出结果</p>
-<p>​        printUnivList()</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#中国大学排名爬虫</span><br><span class="line">#定向爬虫</span><br><span class="line">import requests</span><br><span class="line">import bs4</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"></span><br><span class="line">def getHTMLText(url):</span><br><span class="line">    try:</span><br><span class="line">        r = requests.get(url, timeout=10)</span><br><span class="line">        r.raise_for_status()</span><br><span class="line">        r.encoding = r.apparent_encoding</span><br><span class="line">        return r.text</span><br><span class="line">    except:</span><br><span class="line">        return &quot;&quot;</span><br><span class="line"></span><br><span class="line">def fillUnivList(ulist, html):</span><br><span class="line">    soup = BeautifulSoup(html, &quot;html.parser&quot;)</span><br><span class="line">    for tr in soup.find(&apos;tbody&apos;).children:</span><br><span class="line">        if isinstance(tr, bs4.element.Tag):</span><br><span class="line">            tds = tr(&apos;td&apos;)</span><br><span class="line">            ulist.append([tds[0].string, tds[1].string, tds[2].string])</span><br><span class="line"></span><br><span class="line">def printUnivList(ulist, num):</span><br><span class="line">    print(&quot;&#123;:^10&#125;\t&#123;:^6&#125;\t&#123;:^10&#125;&quot;.format(&quot;排名&quot;, &quot;学校名称&quot;, &quot;总分&quot;))</span><br><span class="line">    for i in range(num):</span><br><span class="line">        u = ulist[i]</span><br><span class="line">        print(&quot;&#123;:^10&#125;\t&#123;:^6&#125;\t&#123;:^10&#125;&quot;.format(u[0], u[1], u[2]))</span><br><span class="line">    print(&quot;Suc&quot; + str(num))</span><br><span class="line">    </span><br><span class="line">def main():</span><br><span class="line">    uinfo = []</span><br><span class="line">    url = &apos;http://www.zuihaodaxue.com/zuihaodaxuepaiming2018.html&apos;</span><br><span class="line">    html = getHTMLText(url)</span><br><span class="line">    fillUnivList(uinfo, html)</span><br><span class="line">    printUnivList(uinfo, 30)</span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">排名    	 学校名称 	    总分    </span><br><span class="line">    1     	 清华大学 	    北京    </span><br><span class="line">    2     	 北京大学 	    北京    </span><br><span class="line">    3     	 浙江大学 	    浙江    </span><br><span class="line">    4     	上海交通大学	    上海    </span><br><span class="line">    5     	 复旦大学 	    上海    </span><br><span class="line">    6     	中国科学技术大学	    安徽    </span><br><span class="line">    7     	 南京大学 	    江苏    </span><br><span class="line">    8     	华中科技大学	    湖北    </span><br><span class="line">    9     	 中山大学 	    广东    </span><br><span class="line">    10    	哈尔滨工业大学	   黑龙江    </span><br><span class="line">    11    	 同济大学 	    上海    </span><br><span class="line">    12    	 武汉大学 	    湖北    </span><br><span class="line">    13    	 东南大学 	    江苏    </span><br><span class="line">    14    	西安交通大学	    陕西    </span><br><span class="line">    15    	北京航空航天大学	    北京    </span><br><span class="line">    16    	 南开大学 	    天津    </span><br><span class="line">    17    	 四川大学 	    四川    </span><br><span class="line">    18    	 天津大学 	    天津    </span><br><span class="line">    19    	华南理工大学	    广东    </span><br><span class="line">    20    	北京师范大学	    北京    </span><br><span class="line">    21    	北京理工大学	    北京    </span><br><span class="line">    22    	 厦门大学 	    福建    </span><br><span class="line">    23    	 吉林大学 	    吉林    </span><br><span class="line">    24    	 山东大学 	    山东    </span><br><span class="line">    25    	大连理工大学	    辽宁    </span><br><span class="line">    26    	 中南大学 	    湖南    </span><br><span class="line">    27    	 苏州大学 	    江苏    </span><br><span class="line">    28    	对外经济贸易大学	    北京    </span><br><span class="line">    29    	西北工业大学	    陕西    </span><br><span class="line">    30    	中国人民大学	    北京</span><br></pre></td></tr></table></figure>
-<p>优化：中文对齐问题</p>
-<p>采用中文字符的空格填充chr(12288)</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/programming//" class="article-tag-list-link color2">programming</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/passages/网络爬虫与信息提取/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
-            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
-            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-    <article id="post-conda 环境管理常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/passages/conda 环境管理常用命令/">和时间成为朋友</a>
-    </h1>
-  
-
-        
-        <a href="/passages/conda 环境管理常用命令/" class="archive-article-date">
-  	<time datetime="2018-10-18T16:39:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="conda-环境管理常用命令"><a href="#conda-环境管理常用命令" class="headerlink" title="conda 环境管理常用命令"></a>conda 环境管理常用命令</h1><p>从文件导入环境：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>激活环境：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate</span><br></pre></td></tr></table></figure>
-<p>回到默认环境：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disactivate</span><br></pre></td></tr></table></figure>
-<p>删除一个环境：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/dream//" class="article-tag-list-link color1">dream</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/passages/conda 环境管理常用命令/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
-            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
-            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-    <article id="post-正则表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/passages/正则表达式/">正则表达式</a>
-    </h1>
-  
-
-        
-        <a href="/passages/正则表达式/" class="archive-article-date">
-  	<time datetime="2018-10-18T16:39:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>特殊符号与字符：</p>
-<p>r1|r2    匹配r1或者r2        foo|bar</p>
-<p>.    匹配任何字符（\n除外）    b.b</p>
-<p>^    匹配字符串起始部分    ^Dear</p>
-<p>$    匹配字符串终止部分    /bin/*sh$    ^subject:hi$    任何有单独的字符串subject:hi构成的字符串。</p>
-<p><em>匹配0次或多次前面出现的正则表达式    [A-Za-z0-9] </em></p>
-<p>+一次或多次    [a-z]+\ .com</p>
-<p>? 0次或一次</p>
-<p>{N}匹配n次前面出现的表达式    [0-9]{3}</p>
-<p>{M,N}匹配m-n次前面出现的表达式</p>
-<p>[…]匹配来自字符集的任意单一字符</p>
-<p>[.x-y..]  【】 [0-9],[A-Za-z]</p>
-<p>\d任何十进制字符，与[0-9]一致，（\D不匹配任何数字）data\d+.txt</p>
-<p>\w任何字母以及数字，与[A-Zz-z0-9]相同。（\W与之相反）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">正则</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/programming//" class="article-tag-list-link color2">programming</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/passages/正则表达式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
-            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
-            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-    <article id="post-mac配置python版本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/passages/mac配置python版本/">Mac配置默认python版本</a>
-    </h1>
-  
-
-        
-        <a href="/passages/mac配置python版本/" class="archive-article-date">
-  	<time datetime="2018-10-18T16:39:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>将默认的python2更改为python3</p>
-<p>1.找到python3的路径：<code>which python3</code></p>
-<p>2.修改bashrc文件：<code>vi ~/.bashrc</code></p>
-<p>​    添加一行：alias python=’usr/local/bin/python3’</p>
-<p>3.重新加载bashrc： <code>. ~/.bashrc</code></p>
-<p>4.验证：python</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/programming//" class="article-tag-list-link color2">programming</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/passages/mac配置python版本/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
-            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
-            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -1535,7 +1457,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Hu Qimei
+    		&copy; 2020 Hu Qimei
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1667,11 +1589,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1679,11 +1601,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color5">知识图谱</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">知识图谱</a>
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">

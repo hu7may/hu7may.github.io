@@ -172,6 +172,400 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据库的设计原则" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/passages/数据库的设计原则/">数据库的设计原则</a>
+    </h1>
+  
+
+        
+        <a href="/passages/数据库的设计原则/" class="archive-article-date">
+  	<time datetime="2019-03-04T02:20:05.936Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近开始着手做一个老板交代的教学管理系统，第一件事就是设计数据，</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/passages/数据库的设计原则/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
+            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
+            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+    <article id="post-HashTable、HashMap、TreeMap的比较" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/passages/HashTable、HashMap、TreeMap的比较/">HashTable、HashMap、TreeMap的比较</a>
+    </h1>
+  
+
+        
+        <a href="/passages/HashTable、HashMap、TreeMap的比较/" class="archive-article-date">
+  	<time datetime="2019-02-27T16:39:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Map是广义Java集合框架的一部分。</p>
+<h4 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h4><p>HashTable，早期哈希表的实现，线程同步，不支持null键和值。</p>
+<p>HashTable扩展了Dictionary类，而两外两个则是扩展了AbstractMap。</p>
+<h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>实现基本与HashTable相同，支持null键和值，put，get方法操作常数时间，是大部分场景下利用键值对存取的选择。</p>
+<h4 id="HashMap源码分析："><a href="#HashMap源码分析：" class="headerlink" title="HashMap源码分析："></a>HashMap源码分析：</h4><h5 id="内部实现："><a href="#内部实现：" class="headerlink" title="内部实现："></a>内部实现：</h5><p>桶数组+链表的复合结构，通过键的哈希值决定在数组中的位置，哈希值相同的键值对，以链表形式存储，</p>
+<p><img src="/passages/HashTable、HashMap、TreeMap的比较/image-20190301221409131.png" alt="image-20190301221409131"></p>
+<h5 id="容量和负载系数："><a href="#容量和负载系数：" class="headerlink" title="容量和负载系数："></a>容量和负载系数：</h5><p>hashmap也是lazy-load原则，resize()方法在第一次putval时创建存储空间；容量不满足需求（当Capacity*loadFactor &lt; 已存入数据个数)时进行扩容（resize)</p>
+<h5 id="树化："><a href="#树化：" class="headerlink" title="树化："></a>树化：</h5><p>链表结构会在达到一定门限值时发生树化</p>
+<p>resize方法源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fnal Node&lt;K,V&gt;[] resize() &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> ((newCap = oldCap &lt;&lt; <span class="number">1</span>) &lt; MAXIMUM_CAPACIY &amp;&amp; oldCap &gt;= DEFAULT_INITIAL_CAPAITY)</span><br><span class="line">        newThr = oldThr &lt;&lt; <span class="number">1</span>; <span class="comment">// 门限值扩大一倍</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (oldThr &gt; <span class="number">0</span>) <span class="comment">// initial capacity was placed in threshold</span></span><br><span class="line">        newCap = oldThr; </span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// zero initial threshold signifes using defaultsfults</span></span><br><span class="line">        newCap = DEFAULT_INITIAL_CAPAITY;</span><br><span class="line">        newThr = (<span class="keyword">int</span>)(DEFAULT_LOAD_ATOR* DEFAULT_INITIAL_CAPACITY； &#125; <span class="keyword">if</span> (newThr ==<span class="number">0</span>) &#123;</span><br><span class="line">            foat ft = (foat)newCap * loadFator;</span><br><span class="line">            newThr = (newCap &lt; MAXIMUM_CAPACITY &amp;&amp; ft &lt; (foat)MAXIMUM_CAPACITY ?(<span class="keyword">int</span>)ft : Integer.MAX_VALUE); &#125; threshold = neThr; Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])<span class="keyword">new</span> Node[newap]; table = n； <span class="comment">// 移动到新的数组结构e数组结构 &#125;</span></span><br></pre></td></tr></table></figure>
+<p>其中看出:</p>
+<p>门限值=负载因子*容量，如果构建HashMap时没有指定则依据默认值，门限值在调整时以整数倍调整。扩容后，需要将原数组中的数据复制到新数组中，这个是主要开销。</p>
+<p>为减少开销，如果知道存取键值对的数量，可以预先设置合适的容量，需要满足容量*负载因子&gt;元素数量，同时是2的幂数。</p>
+<p>负载因子默认0.75。</p>
+<h4 id="树化改造"><a href="#树化改造" class="headerlink" title="树化改造"></a>树化改造</h4><p>当链表节点的数量大于一个门限值时，在扩容时进行数化改造。</p>
+<p>目的：提高存取性能；也是为了安全：可能有人恶意构造哈希冲突的数据大量与服务器交互，导致服务端CPU大量占用（哈希碰撞拒绝服务攻击）</p>
+<h4 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h4><p>基于红黑树的一种提供顺序访问的Map，put/get/remove操作O(logN),按照自然顺序或者指定的Comparator决定。</p>
+<p>LinkedHashMap和TreeMap都可以保证有序性，但二者原理不同。</p>
+<p>LinkedHashMap的遍历顺序符合插入顺序，通过为键值对维护一个双向链表实现。</p>
+<p>可以利用LinkedHashMap来实现一个空间敏感的资源池，将最不常被访问的对象释放。</p>
+<p>TreeMap按照自然顺序（Comparable）或Comparator决定。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/programing-notes//" class="article-tag-list-link color2">programing notes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/passages/HashTable、HashMap、TreeMap的比较/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
+            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
+            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+    <article id="post-jvm相关知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>jvm相关知识</p>
+<p>程序计数器是一个比较小的内存区域，用于指示当前线程所执行的字节码执行到了第几行，是线程隔离的</p>
+<p>虚拟机栈描述的是Java方法执行的内存模型，用于存储局部变量，操作数栈，动态链接，方法出口等信息，是线程隔离的</p>
+<p>方法区用于存储JVM加载的类信息（包括类的名称、方法信息、字段信息）、常量、静态变量、以及编译器编译后的代码等数据，与堆一样，是线程共享的</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/passages/jvm相关知识/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
+            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
+            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+    <article id="post-Vue.js入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/passages/Vue.js入门/">Vue.js入门</a>
+    </h1>
+  
+
+        
+        <a href="/passages/Vue.js入门/" class="archive-article-date">
+  	<time datetime="2019-02-27T09:11:48.369Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近开始着手开发老师交代的课程系统，虽然活都是一个人干，还是准备前后端分离，毕竟是主流趋势。所以要学习一点Vue。</p>
+<h4 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h4><p><code>npm install -g vue-cli</code></p>
+<p>初始化操作：</p>
+<p><code>vue init webpack myProject</code></p>
+<p>运行：</p>
+<p>cd myProject</p>
+<p>npm install </p>
+<p>npm run dev</p>
+<p>开发完成后:npm run build会编译源码会生成发布代码到dist目录</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/passages/Vue.js入门/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
+            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
+            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
     <article id="post-java基础知识总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -545,6 +939,83 @@
   </section>
 
   
+    <article id="post-http协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>http</p>
+<p>http请求：请求行（协议版本、请求方式、请求的资源）、请求头（发给服务器的一些信息，键值对表示）、请求体（请求方式为post时，请求体中会有请求的参数）</p>
+<p>http响应：响应行(协议版本、状态码。。。)、响应头、响应体</p>
+<p>请求方式：head（请求指定的页面信息，并返回头部信息）、<strong>get</strong>（请求指定的页面信息，并返回实体主体）、<strong>post</strong>（向指定资源提交数据进行处理请求），put（向指定资源位置上传最新内容）、delete、trace、connect</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/passages/http协议/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
+            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
+            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
     <article id="post-effective-java-笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -638,582 +1109,9 @@
   </section>
 
   
-    <article id="post-恩施游记之大峡谷" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/passages/恩施游记之大峡谷/">恩施游记之大峡谷</a>
-    </h1>
-  
-
-        
-        <a href="/passages/恩施游记之大峡谷/" class="archive-article-date">
-  	<time datetime="2019-01-27T14:16:31.369Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天去了大峡谷。</p>
-<p>早上睡到八点多起床，准备去航空路做班车去大峡谷，打那边一问才知道现在都只能在火车站做大巴去。还是之前调研没做好，网上看了一个不错的攻略就没管了，殊不知现在情况有变。于是又坐上了去火车站的车，在火车站坐上了去大峡谷的班车，一路上山路蜿蜒，大雾弥漫，到大峡谷售票处时已是一点半，匆匆买了门票又是被班车载去七星寨。走了一段路坐索道上行，可以浓雾太厚，能见度只有几米，一路惊心动魄的场景都显得一点也不可怕。到山上之后便是遍布满山的漫长台阶，走了将近一万步。由于大雾弥漫，这次游览不得不说是大打折扣，很多料想应是雄伟壮观的地方都啥也看不见。包括一炷香页只能隐隐约约的看见一点，其他的更是显得平淡无奇。</p>
-<p>走下来已是精疲力尽，然后还是勉强去云龙地缝走了一圈，这一段路程不长，走到谷底时所见差不多是一条有点流水的山沟，两边高高的绝壁。</p>
-<p>之后便乘车回到恩施市区。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/其他//" class="article-tag-list-link color3">其他</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/passages/恩施游记之大峡谷/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
-            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
-            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-    <article id="post-java内存空间的划分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/passages/java内存空间的划分/">java内存空间的划分</a>
-    </h1>
-  
-
-        
-        <a href="/passages/java内存空间的划分/" class="archive-article-date">
-  	<time datetime="2019-01-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>五部分：栈、堆、方法区、本地方法区、寄存器。</p>
-<p>栈内存：存储局部变量（方法中定义的变量），一旦变量的生命周期结束该变量就被释放。</p>
-<p>堆内存：存储的都是实体（对象（通过new创建的都是）），</p>
-<p>每个实体都有一个首地址值，堆内存的变量部都有默认初始化值（int 0,double 0.0,boolearn false,char ‘\u0000’）</p>
-<p>当实体不再使用时，就会被垃圾回收机制处理。（c++里面使用析构方法来清楚）</p>
-<p>三种引用类型：数组、类、接口</p>
-<p>方法区：分为：静态区：静态变量</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/programming//" class="article-tag-list-link color2">programming</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/passages/java内存空间的划分/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
-            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
-            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-    <article id="post-恩施游记之初见" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/passages/恩施游记之初见/">恩施游记之初见</a>
-    </h1>
-  
-
-        
-        <a href="/passages/恩施游记之初见/" class="archive-article-date">
-  	<time datetime="2019-01-26T11:44:36.760Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天起了个大早，踏上了到恩施的🚄，动车经过宜昌、巴东、建始到达恩施。</p>
-<p>初下火车，坐上去往市区的公交，车上放着多年前的流行歌曲，给人一种悠闲而遗世独立之感。</p>
-<p>到酒店放下行李，已过了中午，出门觅食，看到地图上推荐的有附近的张关合渣不错，就去了。</p>
-<p>问有什么特色，答腊肉。平时在家吃得多，就没点，合渣端上桌才知道是平时吃的懒豆腐。</p>
-<p>下午去女儿城转了转，地方不大，建筑比较有土家特色，屋檐上的花纹装饰精致而漂亮。</p>
-<p>里面卖的东西除了外面小吃街常有的东西外还有一些富有恩施特色的各种腊肉、竹筒酒等等。</p>
-<p>大概是因为同属湖北，整体上给我的感觉根宜昌相差不大，可能因为是土家族苗族自治区的缘故，在对民族特色的宣传上显得多一些，街上随处可见土家**开头的店名，另外在很多地方也能看见宣传本地旅游景区的巨幕广告，应该也是跟这几年恩施的旅游比较火有关。</p>
-<p>明天准备去大峡谷看看。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/其他//" class="article-tag-list-link color3">其他</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/passages/恩施游记之初见/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
-            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
-            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-    <article id="post-Java的集合框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/passages/Java的集合框架/">Java集合框架总结</a>
-    </h1>
-  
-
-        
-        <a href="/passages/Java的集合框架/" class="archive-article-date">
-  	<time datetime="2019-01-25T01:16:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Java的集合框架提供了很多基础数据结构，提高了开发者的生产力。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/programing//" class="article-tag-list-link color1">programing</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/passages/Java的集合框架/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
-            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
-            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-    <article id="post-如何设计一个类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/passages/如何设计一个类/">如何设计一个类</a>
-    </h1>
-  
-
-        
-        <a href="/passages/如何设计一个类/" class="archive-article-date">
-  	<time datetime="2019-01-15T02:42:26.233Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如何设计一个类</p>
-<p>不要编写返回引用可变对象的访问器方法（比如应使用LocalDate而不是Date）</p>
-<p>所有的对象都是在堆内存中构造的</p>
-<p>final实例域：构造对象时必须初始化这样的域，在后面的操作中不能再修改。</p>
-<p>final修饰符大都用于基本（primitive）类型域或不可变（immutable）类的域。</p>
-<p>静态域：static类域</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Employee &#123;</span><br><span class="line">    private static int nextId = 1;</span><br><span class="line">    private int id</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>每个雇员对象都有一个自己的id域，但这个类所有的实例将共享一个nextId域。</p>
-<p>即：如果有一千个对象，则有一千个实例域ID，但是只有一个静态域nextId。<strong>即使没有一个雇员对象，静态域nextId也存在。它属于类不属于任何独立的对象。</strong></p>
-<p>静态常量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public class Math &#123;</span><br><span class="line">    ...</span><br><span class="line">    public static final double PI = 3.1415926535897...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>构造函数的initialization list： :re(r),im(i)</li>
-<li>函数是否要加const</li>
-<li>参数的传递尽量考虑pass by reference 传引用（以及要不要加const）</li>
-<li>return时是value还是reference</li>
-<li>数据放在private</li>
-<li>函数主要放在public</li>
-</ol>
-<p>   防卫式声明：</p>
-<p>class with pointer member </p>
-<p>只要设计的类带着指针，就一定要设计拷贝构造，赋值构造两个函数。（string类为例）还要设计析构函数删除指针释放内存，防止内存泄漏。</p>
-<p>Class with pointer member 必须要有copy for constructors 和copy assignment operator</p>
-<p>如果没有写，就会使用默认的：</p>
-<p>Char<em> a = “hello”;char</em> b = “world”;b = a;  -&gt; ab都指向hello，world内存泄漏。</p>
-<p>拷贝构造，拷贝赋值，析构函数</p>
-<p>拷贝构造：</p>
-<ol>
-<li>检测自我赋值</li>
-<li>删除原来的</li>
-<li>确定新的长度</li>
-<li>赋值</li>
-</ol>
-<p>return by reference 语法分析</p>
-<p>传递者无需知道接收者是以何种形式（by value ,by reference）接收。</p>
-<p>一些地方不可以return by reference: 因为其返回的必定是个local object</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/passages/如何设计一个类/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "sKG9vYKUQoG5zCtzfrJBRnt1-gzGzoHsz",
-            app_key: "OW1uPnkQyltStq4wNMjJU6P1",
-            placeholder: "ヾﾉ≧∀≦)o 少侠，留下你的评论再走",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -1225,7 +1123,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Hu Qimei
+    		&copy; 2020 Hu Qimei
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1357,11 +1255,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1369,11 +1267,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color5">知识图谱</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">知识图谱</a>
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
